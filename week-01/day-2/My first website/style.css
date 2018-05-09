@@ -1,0 +1,51 @@
+
+body{
+    font-family: consolas, courier;
+    background-image: url("background.png");
+    margin: 0;
+}
+
+.header{
+    background-color: #333333;
+    text-align: right;
+}
+
+h1{
+    font-weight: bold;
+    font-family: "Space Mono";
+    padding: 60px 0 0 0;
+}
+
+h2{
+    text-align: center;
+    margin: 100px auto;
+    font-family: "Space Mono";
+}
+
+.bigpink{
+    color: #ff0099;
+    font-size:20px;
+}
+header{
+    text-align: right;
+    background-color: #333333;
+    padding: 20px 10% 20px 10%;
+}
+.logo{
+    float: left;
+    position: absolute;
+    margin-top: -5px;
+}
+
+.padding{
+     padding: 0 10%;
+}
+
+.small{
+    font-size:12px;
+}
+
+a{
+    color: #ff0099;
+    margin: 0 20px;
+}
