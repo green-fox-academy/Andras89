@@ -1,6 +1,6 @@
 # Andras89
-Tutorial repo
 
-My repo links:
-https://github.com/Andras89/git-lesson-repository.git
-https://github.com/Andras89/HTML-Tutorial.git
+<p>My repo links:</p>
+
+<p>https://github.com/Andras89/git-lesson-repository.git</p>
+<p>https://github.com/Andras89/HTML-Tutorial.git</p>
