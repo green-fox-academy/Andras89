@@ -21,39 +21,77 @@ namespace GreenFox
             // The diamond should have as many lines as the number was
 
             int num = int.Parse(Console.ReadLine());
-            for (int i = 1; i <= num; i++)
+            if (num % 2 != 0)
             {
-                for (int j = 0; j < (num - i); j++)
+                for (int i = 1; i <= (num / 2) + 1; i++)
                 {
-                    Console.Write(" ");
+                    for (int j = 0; j < (num - i); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    for (int k = 1; k < i; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                for (int j = 1; j <= i; j++)
+                for (int i = (num) / 2; i >= 1; i--)
                 {
-                    Console.Write("*");
+                    for (int j = 0; j < (num - i); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    for (int k = 1; k < i; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                for (int k = 1; k < i; k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
             }
-            for (int i = num - 1; i >= 1; i--)
+            else
             {
-                for (int j = 0; j < (num - i); j++)
+                for (int i = 1; i <= (num / 2); i++)
                 {
-                    Console.Write(" ");
+                    for (int j = 0; j < (num - i); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    for (int k = 1; k < i; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                for (int j = 1; j <= i; j++)
+                for (int i = ((num) / 2); i >= 1; i--)
                 {
-                    Console.Write("*");
+                    for (int j = 0; j < (num - i); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int j = 1; j <= i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    for (int k = 1; k < i; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                for (int k = 1; k < i; k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
 
+            }
             Console.ReadLine();
 
         }
