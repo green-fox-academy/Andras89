@@ -21,11 +21,11 @@ namespace GreenFox
             string temp = "";
             int counter = 0;
 
-            for (int i = 0; i < number + 1; i++)
+            for (int i = 0; i < number; i++)
             {
-                if (i == 0 || i == number)
+                if (i == 0 || i == number-1)
                 {
-                    for (int j = 0; j < number+1; j++)
+                    for (int j = 0; j < number; j++)
                     {
                         temp += "%";
                     }
@@ -35,7 +35,7 @@ namespace GreenFox
                 else
                 {
                     temp += "%";
-                    for (int j = 1; j < number; j++)
+                    for (int j = 1; j < number-1; j++)
                     {
                         if(j == counter)
                         {
