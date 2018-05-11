@@ -16,7 +16,13 @@ namespace GreenFox
             double bSide = double.Parse(Console.ReadLine());
             double cSide = double.Parse(Console.ReadLine());
 
-            double cubeVolume = aSide * bSide * cSide;
+            double cuboidVolume = aSide * bSide * cSide;
+            double cuboidSurfaceArea = 2 * (aSide * bSide + aSide * cSide + bSide * cSide);
+
+            Console.WriteLine("Volume: " + cuboidVolume);
+            Console.WriteLine("Surface Area: " + cuboidSurfaceArea);
+            Console.ReadLine();
+
         }
     }
 }
