@@ -15,6 +15,13 @@ namespace Practice
             Console.WriteLine(SubStringGenerator(sampleString1).ToUpper());
             Console.WriteLine(SubStringGenerator(sampleString1).ToLower());
 
+            string sampleEmptyString = string.Empty;
+
+            if (string.IsNullOrEmpty(sampleEmptyString))
+            {
+
+            }
+
             Console.ReadLine();
         }
 
