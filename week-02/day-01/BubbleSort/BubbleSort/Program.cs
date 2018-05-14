@@ -36,15 +36,15 @@ namespace GreenFox
             {
                 int temp = 0;
 
-                for (int write = 0; write < array.Length; write++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    for (int sort = 0; sort < array.Length - 1; sort++)
+                    for (int j = 0; j < array.Length - 1; j++)
                     {
-                        if (array[sort] > array[sort + 1])
+                        if (array[j] > array[j + 1])
                         {
-                            temp = array[sort + 1];
-                            array[sort + 1] = array[sort];
-                            array[sort] = temp;
+                            temp = array[j + 1];
+                            array[j + 1] = array[j];
+                            array[j] = temp;
                         }
                     }
                 }
@@ -55,15 +55,15 @@ namespace GreenFox
                 int[] tempArray = new int[array.Length]; 
                 int temp = 0;
 
-                for (int write = 0; write < array.Length; write++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    for (int sort = 0; sort < array.Length - 1; sort++)
+                    for (int j = 0; j < array.Length - 1; j++)
                     {
-                        if (array[sort] > array[sort + 1])
+                        if (array[j] > array[j + 1])
                         {
-                            temp = array[sort + 1];
-                            array[sort + 1] = array[sort];
-                            array[sort] = temp;
+                            temp = array[j + 1];
+                            array[j + 1] = array[j];
+                            array[j] = temp;
                         }
                     }
                 }
@@ -80,15 +80,15 @@ namespace GreenFox
         {
             int temp = 0;
 
-            for (int write = 0; write < array.Length; write++)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int sort = 0; sort < array.Length - 1; sort++)
+                for (int j = 0; j < array.Length - 1; j++)
                 {
-                    if (array[sort] > array[sort + 1])
+                    if (array[j] > array[j + 1])
                     {
-                        temp = array[sort + 1];
-                        array[sort + 1] = array[sort];
-                        array[sort] = temp;
+                        temp = array[j + 1];
+                        array[j + 1] = array[j];
+                        array[j] = temp;
                     }
                 }
             }
