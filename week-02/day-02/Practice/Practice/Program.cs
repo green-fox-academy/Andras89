@@ -14,6 +14,8 @@ namespace Practice
 
             sampleString1 = sampleString1.Trim();
 
+            Console.WriteLine(sampleString1.Replace("This", "AppleJuice"));
+
             Console.WriteLine(SubStringGenerator(sampleString1).ToUpper());
             Console.WriteLine(SubStringGenerator(sampleString1).ToLower());
 
