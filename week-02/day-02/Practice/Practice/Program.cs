@@ -10,7 +10,9 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            string sampleString1 = "ThisIsaString";
+            string sampleString1 = "ThisIsaString  ";
+
+            sampleString1 = sampleString1.Trim();
 
             Console.WriteLine(SubStringGenerator(sampleString1).ToUpper());
             Console.WriteLine(SubStringGenerator(sampleString1).ToLower());
