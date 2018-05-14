@@ -11,6 +11,13 @@ namespace Practice
         static void Main(string[] args)
         {
             string sampleString1 = "ThisIsaString  ";
+            string sampleString2 = "string1,string2,string3,string4,string5,string6";
+
+            string[] words = sampleString2.Split(',');
+            for (int i = 0; i < words.Length; i++)
+            {
+                Console.WriteLine(words[i]);
+            }
 
             sampleString1 = sampleString1.Trim();
 
