@@ -12,14 +12,15 @@ namespace Practice
         {
             string sampleString1 = "ThisIsaString";
 
-            Console.WriteLine(SubStringGenerator(sampleString1));
+            Console.WriteLine(SubStringGenerator(sampleString1).ToUpper());
+            Console.WriteLine(SubStringGenerator(sampleString1).ToLower());
 
             Console.ReadLine();
         }
 
         public static string SubStringGenerator(string word)
         {
-            word = word.Substring(1, 4);
+            word = word.Substring(1, 6);
             return word;
         }
     }
