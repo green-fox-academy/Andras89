@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GreenFox
 {
@@ -10,24 +11,26 @@ namespace GreenFox
             //  Returns a list of numbers where every number in the list occurs only once
 
             //  Example
-            int[] array = Unique(new int[]{ 1, 11, 34, 11, 52, 61, 1, 34});
-            for (int i = 0; i < array.Length; i++)
+            List<int> list = Unique(new int[]{ 1, 11, 34, 11, 52, 61, 1, 34});
+            for (int i = 0; i < list.Count; i++)
             {
-                Console.Write(array[i]+ " ");
+                Console.Write(list[i]+ " ");
             }
             //  should print: `[1, 11, 34, 52, 61]`
             Console.ReadLine();
         }
-        public static int[] Unique(int[] array)
+        public static List<int> Unique(int[] array)
         {
-            int[] newArray = new int[array.Length];
+            List<int> list = new List<int>();
+
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < newArray.Length; j++)
+                if (!list.Contains(array[i]))
                 {
+                    list.Add(array[i]);
                 }
             }
-            return newArray;
+            return list;
         }
     }
 }
