@@ -19,6 +19,9 @@ namespace Practice
                 Console.WriteLine(words[i]);
             }
 
+            string joinedString = string.Join(",", words);
+            Console.WriteLine(joinedString);
+
             sampleString1 = sampleString1.Trim();
 
             Console.WriteLine(sampleString1.Replace("This", "AppleJuice"));
