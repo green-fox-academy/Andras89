@@ -35,7 +35,7 @@ namespace Practice
             try
             {
                 int x = 1;
-                int y = 1;
+                int y = 0;
                 double z = x / y;
             }
             catch (Exception error)
