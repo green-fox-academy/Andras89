@@ -43,7 +43,7 @@ namespace GreenFox
 
             for (int i = 0; i < tempWordTwo.Length; i++)
             {
-                if (tempWordOne.Equals(tempWordTwo[i]))
+                if (tempWordOne == tempWordTwo[i].ToString())
                 {
                     isNumberInIt = true;
                 }
