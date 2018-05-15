@@ -51,8 +51,7 @@ namespace Calculator
             }
             else if (operation == "/" && secondOperand != 0)
             {
-                double divide = firstOperand / secondOperand;
-                result = divide.ToString();
+                result = (firstOperand / secondOperand).ToString();
                 return result;
             }
             else if (operation == "%" && secondOperand != 0)
