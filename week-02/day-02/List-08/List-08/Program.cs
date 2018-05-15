@@ -29,8 +29,8 @@ namespace Calculator
         public static string Calculate()
         {
             string operation = Console.ReadLine();
-            int firstOperand = int.Parse(Console.ReadLine());
-            int secondOperand = int.Parse(Console.ReadLine());
+            double firstOperand = double.Parse(Console.ReadLine());
+            double secondOperand = double.Parse(Console.ReadLine());
 
             string result = string.Empty;
 
@@ -51,7 +51,8 @@ namespace Calculator
             }
             else if (operation == "/" && secondOperand != 0)
             {
-                result = (firstOperand / secondOperand).ToString();
+                double divide = firstOperand / secondOperand;
+                result = divide.ToString();
                 return result;
             }
             else if (operation == "%" && secondOperand != 0)
