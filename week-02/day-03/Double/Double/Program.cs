@@ -21,13 +21,15 @@ namespace Double
 
             Decryptor(filePathes);
 
+            Console.ReadLine();
+
         }
 
         public static void Decryptor(List<string> filePath)
         {
             StreamReader sr = new StreamReader(filePath[0]);
             string tempDataStorageLine = sr.ReadLine();
-            string tempConcatCharsLine = string.Empty;
+            string tempConcatCharsLine;
 
             while(tempDataStorageLine != null)
             {
@@ -43,7 +45,9 @@ namespace Double
                         }
                     }
                 }
-                tempConcatCharsLine += " \n";
+                Console.WriteLine(tempConcatCharsLine);
+
+                tempConcatCharsLine += " | ";
                 File.AppendAllText(filePath[1], tempConcatCharsLine);
                 tempDataStorageLine = sr.ReadLine();
             }
