@@ -18,9 +18,11 @@ namespace TicTacToe
 
             Console.Write(ticTacResult("win-o.txt"));
             // should print O
+            Console.WriteLine();
 
             Console.Write(ticTacResult("win-x.txt"));
             // should print X
+            Console.WriteLine();
 
             Console.Write(ticTacResult("draw.txt"));
             // should print draw
@@ -47,12 +49,88 @@ namespace TicTacToe
                 }
                 dataStorageLine = sr.ReadLine(); 
             }
+            string output = MatrixChecker(matrix);
 
+            return output;
         }
 
         public static string MatrixChecker(string[,] matrix)
         {
+            bool xWins = false;
+            bool oWins = false;
+            
 
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                if(matrix[i,0]==matrix[i,1] && matrix[i, 0] == matrix[i, 2])
+                {
+                    if (matrix[i, 0] == "X")
+                    {
+                        xWins = true;
+                    }
+                    else
+                    {
+                        oWins = true;
+                    }
+                }
+                else if(matrix[0,i]==matrix[1,i] && matrix[0, i] == matrix[2, i])
+                {
+                    if (matrix[0, i] == "X")
+                    {
+                        xWins = true;
+                    }
+                    else
+                    {
+                        oWins = true;
+                    }
+                }
+            }
+            if(!(xWins || oWins))
+            {
+                int indexOne = 0;
+                int indexTwo = matrix.GetLength(0) - 1;
+
+                if(matrix[indexOne, indexOne]==matrix[indexOne+1, indexOne+1]
+                    && matrix[indexOne, indexOne] == matrix[indexTwo, indexTwo])
+                {
+                    if (matrix[indexOne, indexOne] == "X")
+                    {
+                        xWins = true;
+                    }
+                    else
+                    {
+                        oWins = true;
+                    }
+                }
+                else if(matrix[indexOne, indexTwo] == matrix[indexOne + 1, indexTwo - 1]
+                    && matrix[indexOne, indexTwo] == matrix[indexTwo, indexOne])
+                {
+                    if (matrix[indexOne, indexTwo] == "X")
+                    {
+                        xWins = true;
+                    }
+                    else
+                    {
+                        oWins = true;
+                    }
+                }
+            }
+
+            string output = string.Empty;
+            if (xWins)
+            {
+                output = "X";
+            }
+            else if (oWins)
+            {
+                output = "O";
+            }
+            else
+            {
+                output = "Draw";
+            }
+
+            return output;
         }
     }
 }
