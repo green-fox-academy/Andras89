@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ACAE7CBF-94D1-46F1-80BF-85FA01AF67F3}</ProjectGuid>
+    <ProjectGuid>{715966DF-7B84-40B6-AD0C-A2108D114D2C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Reversed</RootNamespace>
-    <AssemblyName>Reversed</AssemblyName>
+    <RootNamespace>ReversedOrder</RootNamespace>
+    <AssemblyName>ReversedOrder</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,10 +49,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="char.txt">
+    <Content Include="revesed-order.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="solution.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="solution.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

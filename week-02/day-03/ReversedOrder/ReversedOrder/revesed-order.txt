@@ -1,0 +1,22 @@
+﻿Namespaces are one honking great idea -- let's do more of those!
+If the implementation is easy to explain, it may be a good idea.
+If the implementation is hard to explain, it's a bad idea.
+Although never is often better than *right* now.
+Now is better than never.
+Although that way may not be obvious at first unless you're Dutch.
+There should be one-- and preferably only one --obvious way to do it.
+In the face of ambiguity, refuse the temptation to guess.
+Unless explicitly silenced.
+Errors should never pass silently.
+Although practicality beats purity.
+Special cases aren't special enough to break the rules.
+Readability counts.
+Sparse is better than dense.
+Flat is better than nested.
+Complex is better than complicated.
+Simple is better than complex.
+Explicit is better than implicit.
+Beautiful is better than ugly.
+
+by Tim Peters
+The Zen of Python
