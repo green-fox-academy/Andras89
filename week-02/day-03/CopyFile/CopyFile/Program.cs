@@ -18,32 +18,23 @@ namespace CopyFile
             FilePath.Add("Source.txt");
             FilePath.Add("CopiedFile.txt");
 
-            CopyContentOfFile(FilePath);
+            Console.WriteLine(CopyContentOfFile(FilePath));
 
+            Console.ReadLine();
         }
 
-        public static void CopyContentOfFile(List<string> FilePath)
+        public static bool CopyContentOfFile(List<string> FilePath)
         {
-            string sourceFilePath = FilePath[0];
-            string copyFilePath = FilePath[1];
 
-            StreamReader sr = new StreamReader(sourceFilePath);
-            StreamWriter sw = new StreamWriter(copyFilePath);
-
-            string getLine = sr.ReadLine();
-            sw.WriteLine(getLine);
-
-            while(getLine != null)
+            try
             {
-                getLine = sr.ReadLine();
-
-                if (getLine != null)
-                {
-                    sw.WriteLine();
-                }
+                File.WriteAllText(FilePath[1], File.ReadAllText(FilePath[0]));
+                return true;
             }
-            sr.Dispose();
-            sw.Dispose();
+            catch (IOException)
+            {
+                return false;
+            }
         }
     }
 }

@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CopiedFile.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Source.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
