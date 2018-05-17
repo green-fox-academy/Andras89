@@ -20,7 +20,23 @@ namespace Drawing
             //DrawDiagonal(canvas, foxDraw);
 
             //DrawToMiddle(40, 80);
-            DrawHorizontalLinesFromCord(100, 100);
+            //DrawHorizontalLinesFromCord(100, 100);
+
+            CenteredSquare(foxDraw);
+        }
+
+        public void CenteredSquare(FoxDraw foxDraw)
+        {
+            // Draw a green 10x10 square to the canvas' center.
+            foxDraw.StrokeColor(Colors.Purple);
+            foxDraw.DrawLine(canvas.Width / 2 - 5, canvas.Height / 2 - 5,
+                             canvas.Width / 2 + 5, canvas.Height / 2 - 5, 2);
+            foxDraw.DrawLine(canvas.Width / 2 - 5, canvas.Height / 2 + 5,
+                             canvas.Width / 2 + 5, canvas.Height / 2 + 5, 2);
+            foxDraw.DrawLine(canvas.Width / 2 - 5, canvas.Height / 2 - 5,
+                             canvas.Width / 2 - 5, canvas.Height / 2 + 5, 2);
+            foxDraw.DrawLine(canvas.Width / 2 + 5, canvas.Height / 2 - 5,
+                             canvas.Width / 2 + 5, canvas.Height / 2 + 5, 2);
         }
 
         public void DrawHorizontalLinesFromCord(int x, int y)
