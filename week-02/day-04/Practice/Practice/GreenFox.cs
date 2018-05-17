@@ -60,10 +60,11 @@ namespace GreenFox
             Canvas.Children.Add(line);
         }
 
-        public void DrawLine(double x1, double y1, double x2, double y2)
+        public void DrawLine(double x1, double y1, double x2, double y2, double thickness)
         {
             var line = new Line()
             {
+                StrokeThickness = thickness,
                 Stroke = LineColor,
                 X1 = x1,
                 Y1 = y1,
