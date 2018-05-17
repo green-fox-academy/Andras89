@@ -26,7 +26,32 @@ namespace Drawing
             //FourRectangles(foxDraw);
 
             //SquarePositioning(50, 50);
-            CenterBoxFunction(50);
+            //CenterBoxFunction(50);
+            RainBowFunction(50, Colors.Red);
+        }
+
+        public void RainBowFunction(double sizeOfBox, Color color)
+        {
+            // Create a square drawing function that takes 2 parameters:
+            // The square size, and the fill color,
+            // and draws a square of that size and color to the center of the canvas.
+            // Create a loop that fills the canvas with rainbow colored squares,
+            // all squares should be centered, but growing in size
+
+            var foxDraw = new FoxDraw(canvas);
+            Random randomColor = new Random();
+            Color[] colorContainer = { Colors.Red, Colors.Purple, Colors.Yellow, Colors.Green,
+                                       Colors.Orange};
+
+            for (int i = 3; i >= 1; i--)
+            {
+                foxDraw.FillColor(colorContainer[randomColor.Next(0, 4)]);
+
+                foxDraw.DrawRectangle(canvas.Width / 2 - (sizeOfBox / 2)*i, canvas.Height / 2 - (sizeOfBox / 2)*i,
+                                      sizeOfBox * i, sizeOfBox * i);
+
+            }
+
         }
 
         public void CenterBoxFunction(double sizeOfBox)
