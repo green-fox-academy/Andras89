@@ -29,7 +29,25 @@ namespace Drawing
             //CenterBoxFunction(50);
 
             //RainBowFunction(50, Colors.Red);
-            StarryNight(foxDraw, 200);
+            //StarryNight(foxDraw, 200);
+
+            CheckerBoard(foxDraw);
+
+        }
+
+        public void CheckerBoard(FoxDraw foxDraw)
+        {
+            foxDraw.FillColor(Colors.Black);
+            for (double i = 0; i < canvas.Height/10; i++)
+            {
+                for (double j = 0; j < canvas.Width/10; j++)
+                {
+                    if ((i + j) % 2 == 0)
+                    {
+                        foxDraw.DrawRectangle(i*10, j*10, 10, 10);
+                    }
+                }
+            }
         }
 
         public void StarryNight(FoxDraw foxDraw, int numberOfStars)
