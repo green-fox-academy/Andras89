@@ -22,7 +22,16 @@ namespace Drawing
             //DrawToMiddle(40, 80);
             //DrawHorizontalLinesFromCord(100, 100);
 
-            CenteredSquare(foxDraw);
+            //CenteredSquare(foxDraw);
+            FourRectangles(foxDraw);
+        }
+
+        public void FourRectangles(FoxDraw foxDraw)
+        {
+            for (int i = 1; i <= 4; i++)
+            {
+                foxDraw.DrawRectangle(25*i*i, 25*i*i, 50*i, 50*i);
+            }
         }
 
         public void CenteredSquare(FoxDraw foxDraw)
