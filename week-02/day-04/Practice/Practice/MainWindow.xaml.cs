@@ -19,8 +19,24 @@ namespace Drawing
             //DrawDifferentSideColorBox(canvas, foxDraw);
             //DrawDiagonal(canvas, foxDraw);
 
-            DrawToMiddle(40, 80);
-            
+            //DrawToMiddle(40, 80);
+            DrawHorizontalLinesFromCord(100, 100);
+        }
+
+        public void DrawHorizontalLinesFromCord(int x, int y)
+        {
+            // Create a line drawing function that takes 2 parameters:
+            // The x and y coordinates of the line's starting point
+            // and draws a 50 long horizontal line from that point.
+            // Draw 3 lines with that function. Use loop for that.
+            var foxDraw = new FoxDraw(canvas);
+
+            foxDraw.StrokeColor(Colors.Orange);
+
+            for (int i = 1; i <= 3; i++)
+            {
+                foxDraw.DrawLine(x, y*i, x + 50, y*i, 10);
+            }
         }
 
         public void DrawToMiddle(int x, int y)
