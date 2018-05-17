@@ -27,7 +27,33 @@ namespace Drawing
 
             //SquarePositioning(50, 50);
             //CenterBoxFunction(50);
-            RainBowFunction(50, Colors.Red);
+
+            //RainBowFunction(50, Colors.Red);
+            StarryNight(foxDraw, 200);
+        }
+
+        public void StarryNight(FoxDraw foxDraw, int numberOfStars)
+        {
+            //  - The background should be black
+            //  - The stars can be small squares
+            //  - The stars should have random positions on the canvas
+            //  - The stars should have random color (some shade of grey)
+            foxDraw.BackgroundColor(Colors.Black);
+            Random randomPos = new Random();
+
+            int width = (int)canvas.Width;
+            int heigth = (int)canvas.Height;
+            int size = 0;
+
+            Color[] colorContainer = {Colors.Gray, Colors.DimGray, Colors.LightSlateGray, Colors.SlateGray };
+
+            for (int i = 0; i < numberOfStars; i++)
+            {
+                size = randomPos.Next(3, 10);
+                foxDraw.FillColor(colorContainer[randomPos.Next(0,3)]);
+                foxDraw.DrawRectangle(randomPos.Next(0, width), randomPos.Next(0, heigth), size, size);
+                
+            }
         }
 
         public void RainBowFunction(double sizeOfBox, Color color)
@@ -41,11 +67,12 @@ namespace Drawing
             var foxDraw = new FoxDraw(canvas);
             Random randomColor = new Random();
             Color[] colorContainer = { Colors.Red, Colors.Purple, Colors.Yellow, Colors.Green,
-                                       Colors.Orange};
+                                       Colors.Orange, Colors.Pink, Colors.Blue, Colors.Bisque,
+                                       Colors.BlanchedAlmond, Colors.Moccasin};
 
             for (int i = 3; i >= 1; i--)
             {
-                foxDraw.FillColor(colorContainer[randomColor.Next(0, 4)]);
+                foxDraw.FillColor(colorContainer[randomColor.Next(0, 9)]);
 
                 foxDraw.DrawRectangle(canvas.Width / 2 - (sizeOfBox / 2)*i, canvas.Height / 2 - (sizeOfBox / 2)*i,
                                       sizeOfBox * i, sizeOfBox * i);
