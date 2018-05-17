@@ -54,7 +54,7 @@ namespace GreenFox
                 X1 = p1.X,
                 Y1 = p1.Y,
                 X2 = p2.X,
-                Y2 = p2.Y
+                Y2 = p2.Y,
             };
 
             Canvas.Children.Add(line);

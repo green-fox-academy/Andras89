@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using GreenFox;
+using System.Windows.Shapes;
 
 namespace Drawing
 {
@@ -14,41 +15,14 @@ namespace Drawing
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
 
-            DrawGreenLines(foxDraw);
-            DrawEllipse(foxDraw);
-            DrawRectangle(foxDraw);
-            DrawGreenPolygon(foxDraw);
+            DrawPlus(canvas, foxDraw);
         }
 
-        public static void DrawGreenLines(FoxDraw foxDraw)
+        public void DrawPlus(Canvas canvas, FoxDraw foxDraw)
         {
-            foxDraw.StrokeColor(Colors.Green);
-            foxDraw.DrawLine(0, 10, 100, 10);
-
-            var startPoint = new Point(0, 20);
-            var endPoint = new Point(100, 20);
-            foxDraw.DrawLine(startPoint, endPoint);
-        }
-
-        public static void DrawEllipse(FoxDraw foxDraw)
-        {
-            foxDraw.DrawEllipse(10, 10, 150, 50);
-        }
-
-        public static void DrawRectangle(FoxDraw foxDraw)
-        {
-            foxDraw.DrawRectangle(10, 10, 150, 50);
-        }
-
-        public static void DrawGreenPolygon(FoxDraw foxDraw)
-        {
-            var points = new List<Point>();
-            points.Add(new Point(10, 10));
-            points.Add(new Point(40, 210));
-            points.Add(new Point(170, 190));
-            points.Add(new Point(130, 40));
-            foxDraw.FillColor(Colors.Green);
-            foxDraw.DrawPolygon(points);
-        }
+            foxDraw.DrawLine(canvas.Width / 2, 0, canvas.Width / 2, canvas.Height);
+            foxDraw.FillColor(Colors.Red);
+            foxDraw.DrawLine(0, canvas.Width / 2, canvas.Height, canvas.Width / 2);
+        } 
     }
 }
