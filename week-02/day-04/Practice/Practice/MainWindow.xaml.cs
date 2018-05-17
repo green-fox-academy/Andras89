@@ -25,7 +25,37 @@ namespace Drawing
             //CenteredSquare(foxDraw);
             //FourRectangles(foxDraw);
 
-            SquarePositioning(50, 50);
+            //SquarePositioning(50, 50);
+            CenterBoxFunction(50);
+        }
+
+        public void CenterBoxFunction(double sizeOfBox)
+        {
+            // create a square drawing function that takes 1 parameter:
+            // the square size
+            // and draws a square of that size to the center of the canvas.
+            // draw 3 squares with that function.
+            // avoid code duplication.
+            var foxDraw = new FoxDraw(canvas);
+            double centerWidth = canvas.Width / 2;
+            double centerHeight = canvas.Height / 2;
+            double size = 0;
+
+            foxDraw.StrokeColor(Colors.Purple);
+
+            for (int i = 1; i <= 3; i++)
+            {
+                size = sizeOfBox * i;
+
+                foxDraw.DrawLine(centerWidth - size / 2, centerHeight - size / 2,
+                                 centerWidth + size / 2, centerHeight - size / 2, 6);
+                foxDraw.DrawLine(centerWidth - size / 2, centerHeight - size / 2,
+                                 centerWidth - size / 2, centerHeight + size / 2, 6);
+                foxDraw.DrawLine(centerWidth + size / 2, centerHeight + size / 2,
+                                 centerWidth + size / 2, centerHeight - size / 2, 6);
+                foxDraw.DrawLine(centerWidth + size / 2, centerHeight + size / 2,
+                                 centerWidth - size / 2, centerHeight + size / 2, 6);
+            }
         }
 
         public void SquarePositioning(int x, int y)
