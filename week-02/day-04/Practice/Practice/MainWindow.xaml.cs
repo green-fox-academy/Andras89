@@ -23,7 +23,24 @@ namespace Drawing
             //DrawHorizontalLinesFromCord(100, 100);
 
             //CenteredSquare(foxDraw);
-            FourRectangles(foxDraw);
+            //FourRectangles(foxDraw);
+
+            SquarePositioning(50, 50);
+        }
+
+        public void SquarePositioning(int x, int y)
+        {
+            var foxDraw = new FoxDraw(canvas);
+            foxDraw.StrokeColor(Colors.Blue);
+
+            for (int i = 1; i <= 3; i++)
+            {
+                foxDraw.DrawLine(x, y, (x + 50) * i, y, 6);
+                foxDraw.DrawLine(x, y, x, (y+50) * i, 6);
+                foxDraw.DrawLine((x + 50) * i, (y + 50) * i, (x + 50) * i, y, 6);
+                foxDraw.DrawLine((x + 50) * i, (y + 50) * i, x, (y + 50) * i, 6);
+            }
+
         }
 
         public void FourRectangles(FoxDraw foxDraw)
