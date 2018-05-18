@@ -19,10 +19,18 @@ namespace Drawing
 
         public void Optical(FoxDraw foxDraw)
         {
-            for (int i = 1; i < 10; i++)
-            {
-                foxDraw.DrawLine(0, 0, canvas.Width, (canvas.Height/10)*(i+10), 6);
+            foxDraw.StrokeColor(Colors.Green);
 
+            for (int i = 0; i < canvas.Width; i+=25)
+            {
+                foxDraw.DrawLine(i, 0, canvas.Width, i+25, 3);
+            }
+
+            foxDraw.StrokeColor(Colors.Purple);
+
+            for (int i = 0; i < canvas.Width; i+=25)
+            {
+                foxDraw.DrawLine(0, i, i+25, canvas.Width, 3);
             }
 
         }

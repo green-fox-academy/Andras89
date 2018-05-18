@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Drawing" Height="600" Width="900">
+        Title="Drawing" Height="900" Width="900">
     <Grid>
-        <Canvas  Name="canvas"/>
+        <Canvas  Name="canvas" Height="600" Width="600"/>
     </Grid>
 </Window>
