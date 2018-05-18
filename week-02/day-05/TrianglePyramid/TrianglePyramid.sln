@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "Triangle\Triangle.csproj", "{684D69DB-4BA1-4D92-9B9C-0936070CD8F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrianglePyramid", "TrianglePyramid\TrianglePyramid.csproj", "{0C8133D9-5941-42DF-A3BA-8D3F56677906}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{684D69DB-4BA1-4D92-9B9C-0936070CD8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{684D69DB-4BA1-4D92-9B9C-0936070CD8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{684D69DB-4BA1-4D92-9B9C-0936070CD8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{684D69DB-4BA1-4D92-9B9C-0936070CD8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8133D9-5941-42DF-A3BA-8D3F56677906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8133D9-5941-42DF-A3BA-8D3F56677906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8133D9-5941-42DF-A3BA-8D3F56677906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8133D9-5941-42DF-A3BA-8D3F56677906}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {748B656D-A542-4A81-87CD-0A1191B6F5D9}
+		SolutionGuid = {FB76A1CC-7E47-4CC8-845E-5389E7C46F03}
 	EndGlobalSection
 EndGlobal

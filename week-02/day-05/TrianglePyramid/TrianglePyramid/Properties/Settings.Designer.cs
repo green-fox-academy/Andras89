@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Triangle.Properties
+namespace TrianglePyramid.Properties
 {
 
 

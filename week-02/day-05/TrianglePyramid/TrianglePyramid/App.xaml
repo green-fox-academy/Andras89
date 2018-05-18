@@ -1,7 +1,7 @@
-﻿<Application x:Class="Triangle.App"
+﻿<Application x:Class="TrianglePyramid.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Triangle"
+             xmlns:local="clr-namespace:TrianglePyramid"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
