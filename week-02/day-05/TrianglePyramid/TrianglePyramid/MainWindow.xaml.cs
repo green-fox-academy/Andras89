@@ -13,20 +13,39 @@ namespace Drawing
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            DrawTriangle(foxDraw, 200, 200, 100);
+            //DrawTriangle(200, 200, 100);
+            IteratePyramid(100);
         }
 
-
-
-        private void DrawTriangle(FoxDraw foxDraw, double xCord, double yCord, double triangleHeight)
+        private void IteratePyramid(double triangleHeight)
         {
+            
+            double xCordIterate = (Math.Sqrt(4/3*triangleHeight*triangleHeight))/2;
+            //double xCord = 0;
+            double yCord = canvas.Height;
+
+            for (int i = 0; i < canvas.Height/triangleHeight; i++)
+            {
+
+                for (double xCord = xCordIterate * i; xCord < canvas.Width-(xCordIterate*i); xCord += xCordIterate*2)
+                {
+                    DrawTriangle(xCord, yCord, triangleHeight);
+                }
+                yCord -= triangleHeight;
+            }
+            
+
+        }
+
+        private void DrawTriangle(double xCord, double yCord, double triangleHeight)
+        {
+            var foxDraw = new FoxDraw(canvas);
             double aSideDividedWithTwo = (Math.Sqrt(4 / 3 * triangleHeight * triangleHeight)) / 2;
 
-            foxDraw.DrawLine(xCord, yCord, xCord + aSideDividedWithTwo, yCord + triangleHeight, 2);
-            foxDraw.DrawLine(xCord, yCord, xCord - aSideDividedWithTwo, yCord + triangleHeight, 2);
-            foxDraw.DrawLine(xCord + aSideDividedWithTwo, yCord + triangleHeight,
-                             xCord - aSideDividedWithTwo, yCord + triangleHeight, 2);
-
+            foxDraw.DrawLine(xCord, yCord, xCord + (aSideDividedWithTwo)*2, yCord, 2);
+            foxDraw.DrawLine(xCord, yCord, xCord + aSideDividedWithTwo, yCord - triangleHeight, 2);
+            foxDraw.DrawLine(xCord + aSideDividedWithTwo, yCord - triangleHeight,
+                             xCord + (aSideDividedWithTwo)*2, yCord, 2);
         }
     }
 }
