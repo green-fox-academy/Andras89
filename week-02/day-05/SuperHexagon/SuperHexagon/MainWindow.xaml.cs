@@ -17,7 +17,28 @@ namespace Drawing
 
             double hexaWholeHeight = 32;
 
-            IterateSuperMegaHexagon(hexaWholeHeight);
+            //IterateSuperMegaHexagon(hexaWholeHeight);
+            IterateSuperHexagon(hexaWholeHeight);
+        }
+
+        public void IterateSuperHexagon(double hexaWholeHeight)
+        {
+            double xStartCoord = hexaWholeHeight;
+            double yStartCoord = hexaWholeHeight;
+
+            double yIteration = hexaWholeHeight / 2;
+            double hexaASide = Math.Sqrt(4 / 3 * yIteration * yIteration);
+
+            double hexaRadius = 2 * hexaASide / Math.Sqrt(3);
+            double xIteration = 2 * hexaRadius + hexaASide;
+
+            List<object> hexaProperties = new List<object>();
+            Point hexaCenterCoords = new Point(0, 0);
+
+            hexaProperties.Add(hexaCenterCoords);
+            hexaProperties.Add(yIteration);
+            hexaProperties.Add(hexaASide);
+            hexaProperties.Add(hexaRadius);
         }
 
         public void IterateSuperMegaHexagon(double hexaWholeHeight)
