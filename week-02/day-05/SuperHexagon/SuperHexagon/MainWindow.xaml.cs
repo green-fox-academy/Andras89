@@ -17,22 +17,21 @@ namespace Drawing
 
             double hexaWholeHeight = 32;
 
-            IterateHexagon(hexaWholeHeight);
+            IterateSuperMegaHexagon(hexaWholeHeight);
         }
 
-        private void IterateHexagon(double hexaWholeHeight)
+        public void IterateSuperMegaHexagon(double hexaWholeHeight)
         {
-            Point hexaCenterCoords = new Point(0,0);
-            List<object> hexaProperties = new List<object>();
-
-            hexaProperties.Add(hexaCenterCoords);
-
             double yIteration = hexaWholeHeight / 2;
             double hexaASide = Math.Sqrt(4 / 3 * yIteration * yIteration);
 
             double hexaRadius = 2 * hexaASide / Math.Sqrt(3);
             double xIteration = 2 * hexaRadius + hexaASide;
 
+            List<object> hexaProperties = new List<object>();
+            Point hexaCenterCoords = new Point(0, 0);
+
+            hexaProperties.Add(hexaCenterCoords);
             hexaProperties.Add(yIteration);
             hexaProperties.Add(hexaASide);
             hexaProperties.Add(hexaRadius);
@@ -57,12 +56,11 @@ namespace Drawing
                         hexaProperties[0] = new Point(xCoord, yCoord);
                         DrawHexagon(hexaProperties);
                     }
-
                 }
             }
         }
 
-        private void DrawHexagon(List<object> hexaProperties)
+        public void DrawHexagon(List<object> hexaProperties)
         {
             foxDraw = new FoxDraw(canvas);
 
