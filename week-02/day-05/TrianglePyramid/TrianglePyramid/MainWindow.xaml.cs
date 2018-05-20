@@ -14,7 +14,7 @@ namespace Drawing
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             //DrawTriangle(200, 200, 100);
-            IteratePyramid(100);
+            IteratePyramid(1.56);
         }
 
         private void IteratePyramid(double triangleHeight)

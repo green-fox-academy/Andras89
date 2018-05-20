@@ -6,6 +6,6 @@
         mc:Ignorable="d"
         Title="Drawing" Height="900" Width="900">
     <Grid>
-        <Canvas  Name="canvas" Height="600" Width="600/>
+        <Canvas  Name="canvas" Height="600" Width="600"/>
     </Grid>
 </Window>
