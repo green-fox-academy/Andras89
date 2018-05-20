@@ -14,14 +14,22 @@ namespace Drawing
         public MainWindow()
         {
             InitializeComponent();
-            Point hexaCenterCoords = new Point(300, 300);
-            double hexaHeight = 10;
 
+            double hexaHeight = 100;
+
+            IterateHexagon(hexaHeight);
+        }
+
+        private void IterateHexagon(double hexaHeight)
+        {
+            Point hexaCenterCoords = new Point(300, 300);
             List<object> hexaProperties = new List<object>();
+            
             hexaProperties.Add(hexaCenterCoords);
             hexaProperties.Add(hexaHeight);
 
             DrawHexagon(hexaProperties);
+
         }
 
         private void DrawHexagon(List<object> hexagonCoordAndHeight)
