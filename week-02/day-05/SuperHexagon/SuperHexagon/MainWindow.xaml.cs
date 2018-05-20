@@ -37,16 +37,28 @@ namespace Drawing
             hexaProperties.Add(hexaASide);
             hexaProperties.Add(hexaRadius);
 
-            for (double yCoord = canvas.Height-yIteration; yCoord >= yIteration; yCoord-=yIteration)
+            for (double yCoord = canvas.Height - yIteration; yCoord >= yIteration; yCoord -= yIteration)
             {
 
-                for (double xCoord = hexaRadius; xCoord <= canvas.Width - xIteration;
-                     xCoord += (2*hexaRadius + hexaASide))
+                if ((canvas.Height - yCoord) % (2 * yIteration) == 0)
                 {
-                    hexaProperties[0] = new Point(xCoord, yCoord);
-                    DrawHexagon(hexaProperties);
+                    for (double xCoord = hexaRadius; xCoord <= canvas.Width - xIteration;
+                                xCoord += (2 * hexaRadius + hexaASide))
+                    {
+                        hexaProperties[0] = new Point(xCoord, yCoord);
+                        DrawHexagon(hexaProperties);
+                    }
                 }
+                else
+                {
+                    for (double xCoord = 2*hexaRadius + hexaASide / 2; xCoord <= canvas.Width - xIteration;
+                                xCoord += (2 * hexaRadius + hexaASide))
+                    {
+                        hexaProperties[0] = new Point(xCoord, yCoord);
+                        DrawHexagon(hexaProperties);
+                    }
 
+                }
             }
         }
 
