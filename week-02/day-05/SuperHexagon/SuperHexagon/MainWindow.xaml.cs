@@ -15,7 +15,7 @@ namespace Drawing
         {
             InitializeComponent();
 
-            double hexaWholeHeight = 100;
+            double hexaWholeHeight = 32;
 
             IterateHexagon(hexaWholeHeight);
         }
