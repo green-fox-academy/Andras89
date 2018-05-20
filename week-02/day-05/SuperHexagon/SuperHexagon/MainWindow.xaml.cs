@@ -15,7 +15,7 @@ namespace Drawing
         {
             InitializeComponent();
 
-            double hexaWholeHeight = 80;
+            double hexaWholeHeight = 70;
 
             //IterateSuperMegaHexagon(hexaWholeHeight);
             IterateSuperHexagon(hexaWholeHeight);
@@ -101,7 +101,6 @@ namespace Drawing
 
             for (double yCoord = canvas.Height - yIteration; yCoord >= yIteration; yCoord -= yIteration)
             {
-
                 if ((canvas.Height - yCoord) % (2 * yIteration) == 0)
                 {
                     for (double xCoord = hexaRadius; xCoord <= canvas.Width - xIteration;
