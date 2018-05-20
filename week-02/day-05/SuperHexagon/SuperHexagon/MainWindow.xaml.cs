@@ -15,7 +15,7 @@ namespace Drawing
         {
             InitializeComponent();
 
-            double hexaWholeHeight = 32;
+            double hexaWholeHeight = 50;
 
             //IterateSuperMegaHexagon(hexaWholeHeight);
             IterateSuperHexagon(hexaWholeHeight);
@@ -23,8 +23,8 @@ namespace Drawing
 
         public void IterateSuperHexagon(double hexaWholeHeight)
         {
-            double xStartCoord = hexaWholeHeight;
-            double yStartCoord = hexaWholeHeight;
+            Point startCoordinates = new Point(hexaWholeHeight+10, hexaWholeHeight+10);
+            Point startCoordTemp;
 
             double yIteration = hexaWholeHeight / 2;
             double hexaASide = Math.Sqrt(4 / 3 * yIteration * yIteration);
@@ -39,7 +39,42 @@ namespace Drawing
             hexaProperties.Add(yIteration);
             hexaProperties.Add(hexaASide);
             hexaProperties.Add(hexaRadius);
+
+            for (int i = 1; i <= 7; i++)
+            {
+                startCoordTemp = startCoordinates;
+                if (i <= 4)
+                {
+                    for (int j = 1; j < i + 4; j++)
+                    {
+                        hexaProperties[0] = startCoordTemp;
+                        DrawHexagon(hexaProperties);
+                        startCoordTemp.Y += hexaWholeHeight;
+                    }
+                    startCoordinates.X += (hexaRadius + hexaASide/2);
+                    if (i != 4)
+                    {
+                        startCoordinates.Y -= yIteration;
+                    }
+                    else
+                    {
+                        startCoordinates.Y += yIteration;
+                    }
+                }
+                else
+                {
+                    for (int k = 11 - i; k > 0; k--)
+                    {
+                        hexaProperties[0] = startCoordTemp;
+                        DrawHexagon(hexaProperties);
+                        startCoordTemp.Y += 2*yIteration;
+                    }
+                    startCoordinates.X += (hexaRadius + hexaASide/2);
+                    startCoordinates.Y += yIteration;
+                }
+            }
         }
+    
 
         public void IterateSuperMegaHexagon(double hexaWholeHeight)
         {
