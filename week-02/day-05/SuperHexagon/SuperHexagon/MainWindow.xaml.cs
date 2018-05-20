@@ -15,7 +15,7 @@ namespace Drawing
         {
             InitializeComponent();
 
-            double hexaWholeHeight = 50;
+            double hexaWholeHeight = 80;
 
             //IterateSuperMegaHexagon(hexaWholeHeight);
             IterateSuperHexagon(hexaWholeHeight);
@@ -23,14 +23,19 @@ namespace Drawing
 
         public void IterateSuperHexagon(double hexaWholeHeight)
         {
-            Point startCoordinates = new Point(hexaWholeHeight+10, hexaWholeHeight+10);
-            Point startCoordTemp;
-
             double yIteration = hexaWholeHeight / 2;
             double hexaASide = Math.Sqrt(4 / 3 * yIteration * yIteration);
 
             double hexaRadius = 2 * hexaASide / Math.Sqrt(3);
             double xIteration = 2 * hexaRadius + hexaASide;
+
+            double xStartCoordFromCenter = (canvas.Width / 2) - (3 * hexaRadius + 2 * hexaASide);
+            double yStartCoordFromCenter = (canvas.Height / 2) - (7 * yIteration);
+
+            double xStopCoordFromCenter = (canvas.Width / 2) + (3 * hexaRadius + 2 * hexaASide);
+            double yStopCoordFromCenter = (canvas.Height / 2) + (6 * yIteration);
+
+            Point Coordinates = new Point(xStartCoordFromCenter, yStartCoordFromCenter);
 
             List<object> hexaProperties = new List<object>();
             Point hexaCenterCoords = new Point(0, 0);
@@ -40,41 +45,43 @@ namespace Drawing
             hexaProperties.Add(hexaASide);
             hexaProperties.Add(hexaRadius);
 
-            for (int i = 1; i <= 7; i++)
+            for (Coordinates.Y = yStartCoordFromCenter; Coordinates.Y <= yStopCoordFromCenter;
+                 Coordinates.Y += yIteration)
             {
-                startCoordTemp = startCoordinates;
-                if (i <= 4)
+                if (-(yStartCoordFromCenter - Coordinates.Y) % (2 * yIteration) == 0)
                 {
-                    for (int j = 1; j < i + 4; j++)
+                    for (Coordinates.X = xStartCoordFromCenter; Coordinates.X <= xStopCoordFromCenter;
+                         Coordinates.X += xIteration)
                     {
-                        hexaProperties[0] = startCoordTemp;
-                        DrawHexagon(hexaProperties);
-                        startCoordTemp.Y += hexaWholeHeight;
-                    }
-                    startCoordinates.X += (hexaRadius + hexaASide/2);
-                    if (i != 4)
-                    {
-                        startCoordinates.Y -= yIteration;
-                    }
-                    else
-                    {
-                        startCoordinates.Y += yIteration;
+                        if (IsWithinHexaCenterRadius(Coordinates, yIteration))
+                        {
+                            hexaProperties[0] = Coordinates;
+                            DrawHexagon(hexaProperties);
+                        }
                     }
                 }
                 else
                 {
-                    for (int k = 11 - i; k > 0; k--)
+                    for (Coordinates.X = xStartCoordFromCenter + hexaRadius + hexaASide/2;
+                         Coordinates.X <= xStopCoordFromCenter;
+                         Coordinates.X += xIteration)
                     {
-                        hexaProperties[0] = startCoordTemp;
-                        DrawHexagon(hexaProperties);
-                        startCoordTemp.Y += 2*yIteration;
+                        if (IsWithinHexaCenterRadius(Coordinates, yIteration))
+                        {
+                            hexaProperties[0] = Coordinates;
+                            DrawHexagon(hexaProperties);
+                        }
                     }
-                    startCoordinates.X += (hexaRadius + hexaASide/2);
-                    startCoordinates.Y += yIteration;
                 }
             }
         }
-    
+        
+        public bool IsWithinHexaCenterRadius(Point Coordinates, double yIteration)
+        {
+            return (Math.Pow(Math.Abs(Coordinates.X - canvas.Width / 2), 2) +
+                    Math.Pow(Math.Abs(Coordinates.Y - canvas.Height / 2), 2) <=
+                    Math.Pow(6.5 * yIteration, 2));
+        }
 
         public void IterateSuperMegaHexagon(double hexaWholeHeight)
         {
