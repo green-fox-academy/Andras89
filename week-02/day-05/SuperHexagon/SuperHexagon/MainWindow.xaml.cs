@@ -78,8 +78,8 @@ namespace Drawing
         
         public bool IsWithinHexaCenterRadius(Point Coordinates, double yIteration)
         {
-            return (Math.Pow(Math.Abs(Coordinates.X - canvas.Width / 2), 2) +
-                    Math.Pow(Math.Abs(Coordinates.Y - canvas.Height / 2), 2) <=
+            return (Math.Pow(Coordinates.X - canvas.Width / 2, 2) +
+                    Math.Pow(Coordinates.Y - canvas.Height / 2, 2) <=
                     Math.Pow(6.5 * yIteration, 2));
         }
 
