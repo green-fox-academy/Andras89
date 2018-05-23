@@ -13,6 +13,17 @@ namespace EverythingIsBetterWithPirates
             PirateShip theBlackPearl = new PirateShip();
             PirateShip queenAnnesRevenge = new PirateShip();
 
+            theBlackPearl.FillShip();
+            theBlackPearl.ShipStatus();
+
+            queenAnnesRevenge.FillShip();
+            queenAnnesRevenge.ShipStatus();
+
+            theBlackPearl.Battle(queenAnnesRevenge);
+
+            theBlackPearl.ShipStatus();
+            queenAnnesRevenge.ShipStatus();
+
             Console.ReadLine();
         }
     }

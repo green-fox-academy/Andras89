@@ -8,20 +8,31 @@ namespace EverythingIsBetterWithPirates
 {
     class PirateShip
     {
-        Random RandomValue = new Random();
+        private static readonly Random RandomValue = new Random();
 
         private List<Pirate> PirateManifest = new List<Pirate>();
         private Pirate Captain;
 
+        public PirateShip()
+        {
+            Captain = new Pirate();
+        }
+
         public bool Battle(PirateShip otherBarge)
         {
             bool victory = (MembersAlive() + PirateManifest[0].HowDrunk() >
+                            otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk());
+            bool draw = (MembersAlive() + PirateManifest[0].HowDrunk() ==
                             otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk());
 
             if (victory)
             {
                 Party();
                 otherBarge.RandomDeaths();
+            }
+            else if (draw)
+            {
+
             }
             else
             {
@@ -51,7 +62,7 @@ namespace EverythingIsBetterWithPirates
             int deathcount = RandomValue.Next(0, PirateManifest.Count);
             int aliveMemebers = MembersAlive();
 
-            while(deathcount != 0 || aliveMemebers != 0)
+            while(deathcount != 0 && aliveMemebers != 0)
             {
                 for (int i = PirateManifest.Count - 1; i >= 0; i--)
                 {
@@ -94,7 +105,7 @@ namespace EverythingIsBetterWithPirates
         {
             Console.WriteLine($"The 'capitain' is (Alive / Passed Out):" +
                               $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()}");
-            Console.WriteLine($"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive");
+            Console.WriteLine($"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n");
         }
 
 

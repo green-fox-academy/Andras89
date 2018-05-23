@@ -8,19 +8,17 @@ namespace EverythingIsBetterWithPirates
 {
     class Pirate
     {
-        Random RandomValue = new Random();
+        private static readonly Random RandomValue = new Random();
 
         private int ToxicityLevel;
         private bool Awake;
         private bool Alive;
-        private bool Parrot;
 
         public Pirate()
         {
             ToxicityLevel = 0;
             Awake = true;
             Alive = true;
-            Parrot = true;
         }
 
         public void PrintOut()
@@ -49,6 +47,11 @@ namespace EverythingIsBetterWithPirates
             }
         }
 
+        public int HowDrunk()
+        {
+            return ToxicityLevel;
+        }
+
         public void PassOut()
         {
             Awake = false;
@@ -56,7 +59,7 @@ namespace EverythingIsBetterWithPirates
 
         public bool IsPassedOut()
         {
-            return Awake;
+            return !Awake;
         }
 
         public bool IsAlive()
@@ -67,6 +70,7 @@ namespace EverythingIsBetterWithPirates
         public void Die()
         {
             Alive = false;
+            ToxicityLevel = 0;
         }
 
         public void DrinkSomeRum()
@@ -83,7 +87,7 @@ namespace EverythingIsBetterWithPirates
 
         public void HowsItGoingMate()
         {
-            if (Alive)
+            if (Alive && Awake)
             {
                 if (ToxicityLevel < 5)
                 {
