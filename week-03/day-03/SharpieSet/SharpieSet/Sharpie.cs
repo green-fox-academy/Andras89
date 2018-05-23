@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sharpie
+namespace SharpieSet
 {
     class Sharpie
     {
@@ -21,7 +21,10 @@ namespace Sharpie
 
         public void Use()
         {
-            InkNumber--;
+            if(InkNumber > 10)
+            {
+                InkNumber -= 10;
+            }
         }
 
         public float NumberOfUsesLeft()
