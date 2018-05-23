@@ -11,6 +11,35 @@ namespace Domino
         public static void Main(string[] args)
         {
             var dominoes = InitializeDominoes();
+
+            var snake = MakeSnake(dominoes);
+
+            foreach (var domino in snake)
+            {
+                Console.Write($"[{domino.GetValues()[0]}, {domino.GetValues()[1]}] ");
+            }
+            Console.ReadLine();
+        }
+
+        public static List<Domino> MakeSnake(List<Domino> dominoes)
+        {
+            var snake = new List<Domino>();
+            snake.Add(dominoes[0]);
+            dominoes.RemoveAt(0);
+
+            while(dominoes.Count !=0 )
+            {
+                for (int i = 0; i < dominoes.Count; i++)
+                {
+                    if (snake[snake.Count - 1].GetValues()[1] == dominoes[i].GetValues()[0])
+                    {
+                        snake.Add(dominoes[i]);
+                        dominoes.RemoveAt(i);
+                    }
+                }
+            }
+
+            return snake;
         }
 
         public static List<Domino> InitializeDominoes()
