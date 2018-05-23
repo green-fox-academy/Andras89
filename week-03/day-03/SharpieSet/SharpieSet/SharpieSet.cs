@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace SharpieSet
 {
-    class SharpieSet : List<Sharpie>
+    class SharpieSet
     {
-        private List<Sharpie> SharpList;
-
-        public SharpieSet() { }
+        private List<Sharpie> SharpList = new List<Sharpie>();
 
         public void Removetrash()
         {
@@ -24,18 +22,32 @@ namespace SharpieSet
             }
         }
 
+        public void Add(Sharpie sharpie)
+        {
+            SharpList.Add(sharpie);
+        }
+
         public int CountUsable()
         {
             int counter = 0;
-            foreach (Sharpie item in SharpList)
+
+            for (int i = 0; i < SharpList.Count; i++)
             {
-                if(item.NumberOfUsesLeft() > 0)
+                if (SharpList[i].NumberOfUsesLeft() > 0)
                 {
                     counter++;
                 }
             }
 
             return counter;
+        }
+
+        public void PrintOut()
+        {
+            foreach (Sharpie item in SharpList)
+            {
+                Console.Write($"{item.NumberOfUsesLeft()} ");
+            }
         }
     }
 }

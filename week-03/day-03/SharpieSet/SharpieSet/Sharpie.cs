@@ -12,11 +12,11 @@ namespace SharpieSet
         private float Width;
         private float InkNumber;
 
-        public Sharpie(string Color, float Width)
+        public Sharpie(string Color, float Width, float InkNumber)
         {
             this.Color = Color;
             this.Width = Width;
-            InkNumber = 100;
+            this.InkNumber = InkNumber;
         }
 
         public void Use()
