@@ -25,11 +25,11 @@ namespace PostIt
         public string TextColor;
         public string Text;
 
-        public Postit(string backgroundColor, string textColor, string text)
+        public Postit(string BackgroundColor, string TextColor, string Text)
         {
-            BackgroundColor = backgroundColor;
-            TextColor = textColor;
-            Text = text;
+            this.BackgroundColor = BackgroundColor;
+            this.TextColor = TextColor;
+            this.Text = Text;
         }
     } 
 }
