@@ -19,10 +19,12 @@ namespace EverythingIsBetterWithPirates
             queenAnnesRevenge.FillShip();
             queenAnnesRevenge.ShipStatus();
 
-            theBlackPearl.Battle(queenAnnesRevenge);
+            Console.WriteLine(theBlackPearl.Battle(queenAnnesRevenge));
 
             theBlackPearl.ShipStatus();
             queenAnnesRevenge.ShipStatus();
+
+
 
             Console.ReadLine();
         }
