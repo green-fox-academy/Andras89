@@ -10,6 +10,13 @@ namespace PetrolStation
     {
         static void Main(string[] args)
         {
+            Car car = new Car();
+            Station station = new Station();
+
+            station.Refill(car);
+
+            Console.WriteLine(station.ReturnGasAmount());
+            Console.ReadLine();
         }
     }
 }

@@ -8,5 +8,22 @@ namespace PetrolStation
 {
     class Station
     {
+        private int GasAmount;
+        
+        public Station()
+        {
+            GasAmount = 10000;
+        }
+
+        public void Refill(Car car)
+        {
+            GasAmount -= car.ReturnCap();
+            car.GasAmount = 100;
+        }
+
+        public int ReturnGasAmount()
+        {
+            return GasAmount;
+        }
     }
 }

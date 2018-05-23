@@ -8,5 +8,18 @@ namespace PetrolStation
 {
     class Car
     {
+        public int GasAmount;
+        private int Capacity;
+
+        public Car()
+        {
+            GasAmount = 0;
+            Capacity = 100;
+        }
+
+        public int ReturnCap()
+        {
+            return Capacity;
+        }
     }
 }
