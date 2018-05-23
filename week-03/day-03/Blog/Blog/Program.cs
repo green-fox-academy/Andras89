@@ -14,7 +14,9 @@ namespace Blog
 
             blogList = BlogInitializer(blogList);
 
+            blogList.PrintOutBlog();
 
+            Console.ReadLine();
         }
 
         private static Blog BlogInitializer(Blog blogList)

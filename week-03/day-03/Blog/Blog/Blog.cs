@@ -15,6 +15,14 @@ namespace Blog
             BlogList.Add(blogPost);
         }
 
+        public void PrintOutBlog()
+        {
+            foreach (BlogPost item in BlogList)
+            {
+                Console.WriteLine($"{item.AuthorName}, {item.Title}, {item.Text}, {item.PublicationDate}");
+            }
+        }
+
         public void Update(int index, BlogPost blogPost)
         {
             BlogList[index] = blogPost;
