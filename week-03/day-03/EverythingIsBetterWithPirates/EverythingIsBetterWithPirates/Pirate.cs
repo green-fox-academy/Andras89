@@ -54,6 +54,11 @@ namespace EverythingIsBetterWithPirates
             Awake = false;
         }
 
+        public bool IsPassedOut()
+        {
+            return Awake;
+        }
+
         public bool IsAlive()
         {
             return Alive;

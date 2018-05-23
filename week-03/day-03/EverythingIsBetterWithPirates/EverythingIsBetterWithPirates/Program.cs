@@ -10,15 +10,8 @@ namespace EverythingIsBetterWithPirates
     {
         static void Main(string[] args)
         {
-            Pirate seaScumOne = new Pirate();
-            Pirate seaScumTwo = new Pirate();
-
-            seaScumOne.HowsItGoingMate();
-
-            seaScumOne.Brawl(seaScumTwo);
-
-            seaScumOne.PrintOut();
-            seaScumTwo.PrintOut();
+            PirateShip theBlackPearl = new PirateShip();
+            PirateShip queenAnnesRevenge = new PirateShip();
 
             Console.ReadLine();
         }
