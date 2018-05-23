@@ -16,6 +16,12 @@ namespace Blog
 
             blogList.PrintOutBlog();
 
+            blogList.Delete(9);
+
+            Console.WriteLine();
+            blogList.Update(3, new BlogPost("Andrew", "Leo", "Awsome", "Now!"));
+            blogList.PrintOutBlog();
+
             Console.ReadLine();
         }
 
