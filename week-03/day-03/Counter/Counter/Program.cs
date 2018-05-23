@@ -10,6 +10,12 @@ namespace Counter
     {
         static void Main(string[] args)
         {
+            Counter sum = new Counter();
+
+            sum.Add(345);
+            Console.WriteLine(sum.Get());
+
+            Console.ReadLine();
         }
     }
 }
