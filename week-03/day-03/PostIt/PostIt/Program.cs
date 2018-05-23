@@ -12,7 +12,7 @@ namespace PostIt
         {
             Postit postitOne = new Postit("Orange", "Blue", "Idea1");
             Postit postitTwo = new Postit("Pink", "Black", "Awesome");
-            Postit postitThree = new Postit("Yellow", "Green", "Superb");
+            Postit postitThree = new Postit("Yellow", "Green", "Superb!");
 
             Console.WriteLine($"{postitOne.BackgroundColor} {postitOne.TextColor} {postitOne.Text}");
 
