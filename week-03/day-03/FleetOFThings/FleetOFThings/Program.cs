@@ -18,9 +18,36 @@ namespace FleetOfThings
             // 4. [x] Eat lunch
             // Hint: You have to create a Print method also
             fleet = FleetOThings(fleet);
+            PrintOut(fleet);
+
+            Console.ReadLine();
         }
 
-        
+        public static void PrintOut(Fleet fleet)
+        {
+            foreach (Thing thing in fleet)
+            {
+                if (thing.IsComplete())
+                {
+                    for (int i = 0; i < thing.RecallName().Length; i++)
+                    {
+                        if (i == 4)
+                        {
+                            Console.Write("X");
+                        }
+                        else
+                        {
+                            Console.Write(thing.RecallName()[i]);
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine(thing.RecallName());
+                }
+            }
+        }
 
         public static Fleet FleetOThings(Fleet fleet)
         {
