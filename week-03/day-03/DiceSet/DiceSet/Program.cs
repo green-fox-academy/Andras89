@@ -10,21 +10,18 @@ namespace DiceSet
     {
         static void Main(string[] args)
         {
-            /*
-            Random RandomValue = new Random();
-            Dice myDice = new Dice();
-            myDice.GetCurrent();
-            myDice.Roll();
-            myDice.GetCurrent();
-            myDice.GetCurrent(5);
-            myDice.Reroll();
-            myDice.GetCurrent();
-            myDice.Reroll(4);
-            myDice.GetCurrent();*/
-
             Dice handOfDice = new Dice();
-            
+
             var dices = handOfDice.Roll();
+
+            GetSixes(dices);
+
+            Console.ReadLine();
+        }
+
+        public static void GetSixes(int[] dices)
+        {
+            Dice handOfDice = new Dice();
 
             int sum;
 
@@ -40,12 +37,10 @@ namespace DiceSet
 
                 Console.WriteLine();
 
-                
+
                 dices = handOfDice.Roll();
 
             } while (sum != dices.Length * 6);
-
-            Console.ReadLine();
         }
     }
 }
