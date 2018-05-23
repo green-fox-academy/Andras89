@@ -8,5 +8,21 @@ namespace Blog
 {
     class Blog
     {
+        List<BlogPost> BlogList = new List<BlogPost>();
+
+        public void Add(BlogPost blogPost)
+        {
+            BlogList.Add(blogPost);
+        }
+
+        public void Update(int index, BlogPost blogPost)
+        {
+            BlogList[index] = blogPost;
+        }
+
+        public void Delete(int index)
+        {
+            BlogList.RemoveAt(index);
+        }
     }
 }
