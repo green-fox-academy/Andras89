@@ -26,13 +26,27 @@ namespace _08_StringsAgain
 
             if (0 >= input.Length - 1)
             {
-                return input[0].ToString();
+                if (input[0] != 'x')
+                {
+                    return input[0].ToString(); 
+                }
+                else
+                {
+                    return "";
+                }
             }
             else
             {
-                output += input[0];
+                if (input[0] != 'x')
+                {
+                    output += input[0];
 
-                return output + ConvertxToNothing(input.Remove(0, 1));
+                    return output + ConvertxToNothing(input.Remove(0, 1)); 
+                }
+                else
+                {
+                    return output + ConvertxToNothing(input.Remove(0, 1));
+                }
             }
 
         }
