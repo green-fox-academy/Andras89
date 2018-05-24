@@ -15,14 +15,26 @@ namespace _07_Strings
 
             string input = "xxxxxx";
 
-            Console.WriteLine(ConvertxToy());
+            Console.WriteLine(ConvertxToy(input));
 
             Console.ReadLine();
         }
 
-        public static int ConvertxToy()
+        public static string ConvertxToy(string input)
         {
-            
+            string output = String.Empty;
+
+            if (0 >= input.Length - 1)
+            {
+                return input[0].ToString().Replace('x', 'y');
+            }
+            else
+            {
+                output += input[0].ToString().Replace('x', 'y');
+
+                return output + ConvertxToy(input.Remove(0, 1));
+            }
+
         }
     }
 }
