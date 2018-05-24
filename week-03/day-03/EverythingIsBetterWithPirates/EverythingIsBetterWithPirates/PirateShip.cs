@@ -116,11 +116,11 @@ namespace EverythingIsBetterWithPirates
             return counter;
         }
 
-        public void ShipStatus()
+        public string ShipStatus()
         {
-            Console.WriteLine($"The 'capitain' is (Alive / Passed Out):" +
-                              $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()}");
-            Console.WriteLine($"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n");
+            return ($"The 'capitain' is (Alive / Passed Out):" +
+                    $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()} \n" +
+                    $"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n");
         }
 
 

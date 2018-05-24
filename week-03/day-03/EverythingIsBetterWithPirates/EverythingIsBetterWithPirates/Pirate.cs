@@ -73,37 +73,38 @@ namespace EverythingIsBetterWithPirates
             ToxicityLevel = 0;
         }
 
-        public void DrinkSomeRum()
+        public string DrinkSomeRum()
         {
             if (Alive)
             {
                 ToxicityLevel++;
+                return "Haaaaarrr!!!";
             }
             else
             {
-                Console.WriteLine("He's Dead, mate!");
+                return "He's Dead, mate!";
             }
         }
 
-        public void HowsItGoingMate()
+        public string HowsItGoingMate()
         {
             if (Alive && Awake)
             {
                 if (ToxicityLevel < 5)
                 {
-                    Console.WriteLine("Pour me anudder!");
                     ToxicityLevel++;
+                    return "Pour Me A'nother!!!";
                 }
                 else
                 {
-                    Console.WriteLine("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
                     ToxicityLevel = 0;
                     Awake = false;
+                    return "Arghh, I'ma Pirate. How d'ya d'ink its goin?";
                 }
             }
             else
             {
-                Console.WriteLine("He's Dead, mate!");
+                return "He's Dead, mate!";
             }
         }
 

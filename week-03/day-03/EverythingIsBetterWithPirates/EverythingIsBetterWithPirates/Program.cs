@@ -14,15 +14,16 @@ namespace EverythingIsBetterWithPirates
             PirateShip queenAnnesRevenge = new PirateShip();
 
             theBlackPearl.FillShip();
-            theBlackPearl.ShipStatus();
-
             queenAnnesRevenge.FillShip();
-            queenAnnesRevenge.ShipStatus();
 
-            Console.WriteLine(theBlackPearl.Battle(queenAnnesRevenge));
+            Console.WriteLine(theBlackPearl.ShipStatus());
+            Console.WriteLine(queenAnnesRevenge.ShipStatus());
 
-            theBlackPearl.ShipStatus();
-            queenAnnesRevenge.ShipStatus();
+            Console.WriteLine($"Does the Black Pearl win: " +
+                              $"{theBlackPearl.Battle(queenAnnesRevenge)} \n");
+
+            Console.WriteLine(theBlackPearl.ShipStatus());
+            Console.WriteLine(queenAnnesRevenge.ShipStatus());
 
 
 
