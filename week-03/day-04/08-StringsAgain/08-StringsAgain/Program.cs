@@ -13,7 +13,7 @@ namespace _08_StringsAgain
             // Given a string, compute recursively a new string 
             //where all the 'x' chars have been removed.
 
-            string input = "xxxYxxx";
+            string input = "xxxYxxXFDGDgx";
 
             Console.WriteLine(ConvertxToNothing(input));
 
