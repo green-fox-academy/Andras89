@@ -12,6 +12,27 @@ namespace _09_StringAgainAgain
         {
             // Given a string, compute recursively a new string where all the
             // adjacent chars are now separated by a "*".
+
+            string input = "xxxxxxxx";
+            Console.WriteLine(SeparateWithStar(input));
+
+            Console.ReadLine();
+        }
+
+        public static string SeparateWithStar(string input)
+        {
+            string output = String.Empty;
+
+            if (input.Length - 1 <= 0)
+            {
+                return input[0].ToString();
+            }
+            else
+            {
+                output += input[0] + "*";
+
+                return output + SeparateWithStar(input.Remove(0, 1));
+            }
         }
     }
 }
