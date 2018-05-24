@@ -12,5 +12,17 @@ namespace _02_NumberAdder
         {
 
         }
+
+        public static int NumberAdder(int n)
+        {
+            if (n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return NumberAdder(n - 1) + n;
+            }
+        }
     }
 }
