@@ -10,20 +10,20 @@ using GreenFox;
 
 namespace TreeFractal
 {
-    class Tree
+    public class Tree
     {
-        private Canvas canvas;
+        public static readonly Canvas canvas;
 
-        private Point StartPoint { get; set; }
+        public Point StartPoint { get; set; }
 
-        private double Pi { get; set; } = Math.PI;
-        private int Depth { get; set; }
+        public double Pi { get; set; } = Math.PI;
+        public int Depth { get; set; }
 
-        private double Theta { get; set; }
-        private double DeltaTheta { get; set; }
+        public double Theta { get; set; }
+        public double DeltaTheta { get; set; }
 
-        private double Length { get; set; }
-        private double LengthScale { get; set; }
+        public double Length { get; set; }
+        public double LengthScale { get; set; }
 
         public Tree(int Depth, double Length, double LengthScale, double DeltaTheta)
         {
@@ -35,9 +35,21 @@ namespace TreeFractal
             this.DeltaTheta = DeltaTheta * Pi /180;
             Theta = Pi / 2;
 
-            StartPoint = new Point(canvas.Width / 2, canvas.Height * 0.9);
+            StartPoint = new Point(300, 500);
         }
-        
 
+        public Tree(int Depth, double Length, double LengthScale, double DeltaTheta, Point StartPoint, double Theta)
+        {
+            this.StartPoint = StartPoint;
+
+            this.Depth = Depth;
+            this.Length = Length;
+
+            this.Theta = Theta;
+            this.DeltaTheta = DeltaTheta;
+
+            this.LengthScale = LengthScale;
+
+        }
     }
 }

@@ -15,14 +15,13 @@ namespace TreeFractal
         public MainWindow()
         {
             InitializeComponent();
-            //double pi = Math.PI;
-            //DrawTree(new Point(canvas.Width / 2, canvas.Height / 5 * 4.5), 9, 80, pi/2, 27*pi/180, 0.865);
 
             Tree oneTree = new Tree(9, 80, 0.86, 27);
+
+            DrawTree(oneTree);
         }
         
-        public void DrawTree(Point startPoint, int depth, double length, double theta,
-                             double deltaTheta, double lengthScale)
+        public void DrawTree(Tree tree)
         {
             foxDraw = new FoxDraw(canvas);
 
@@ -30,19 +29,18 @@ namespace TreeFractal
             foxDraw.StrokeColor(Colors.Yellow);
 
             Point newPoint = new Point();
-            newPoint.X = startPoint.X + length * Math.Cos(theta);
-            newPoint.Y = startPoint.Y - length * Math.Sin(theta);
+            newPoint.X = tree.StartPoint.X + tree.Length * Math.Cos(tree.Theta);
+            newPoint.Y = tree.StartPoint.Y - tree.Length * Math.Sin(tree.Theta);
 
-            foxDraw.DrawLine(startPoint, newPoint);
+            foxDraw.DrawLine(tree.StartPoint, newPoint);
 
-            if (depth > 1)
+            if (tree.Depth > 1)
             {
-                DrawTree(newPoint, depth - 1, length * lengthScale, theta + deltaTheta, deltaTheta, lengthScale);
+                DrawTree(new Tree(tree.Depth - 1, tree.Length * tree.LengthScale, tree.LengthScale, tree.DeltaTheta, newPoint, tree.Theta + tree.DeltaTheta));
 
-                DrawTree(newPoint, depth - 1, length * lengthScale, theta - deltaTheta, deltaTheta, lengthScale);
+                DrawTree(new Tree(tree.Depth - 1, tree.Length * tree.LengthScale, tree.LengthScale, tree.DeltaTheta, newPoint, tree.Theta - tree.DeltaTheta));
 
-                DrawTree(newPoint, depth - 1, length * lengthScale, theta, deltaTheta, lengthScale);
-
+                DrawTree(new Tree(tree.Depth - 1, tree.Length * tree.LengthScale, tree.LengthScale *1.02, tree.DeltaTheta, newPoint, tree.Theta));
             }
         }
     }
