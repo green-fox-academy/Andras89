@@ -21,9 +21,9 @@ namespace EverythingIsBetterWithPirates
             Alive = true;
         }
 
-        public void PrintOut()
+        public string PrintOut()
         {
-            Console.WriteLine($"ToxLev: {ToxicityLevel}, Awake: {Awake}, Alive: {Alive}");
+            return $"ToxLev: {ToxicityLevel}, Awake: {Awake}, Alive: {Alive}";
         }
 
         public void Brawl(Pirate otherSeaScum)

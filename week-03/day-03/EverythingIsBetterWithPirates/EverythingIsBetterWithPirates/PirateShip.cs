@@ -118,9 +118,9 @@ namespace EverythingIsBetterWithPirates
 
         public string ShipStatus()
         {
-            return ($"The 'capitain' is (Alive / Passed Out):" +
-                    $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()} \n" +
-                    $"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n");
+            return $"The 'capitain' is (Alive / Passed Out):" +
+                   $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()} \n" +
+                   $"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n";
         }
 
 
