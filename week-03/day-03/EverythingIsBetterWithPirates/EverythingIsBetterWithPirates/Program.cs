@@ -10,22 +10,9 @@ namespace EverythingIsBetterWithPirates
     {
         static void Main(string[] args)
         {
-            PirateShip theBlackPearl = new PirateShip();
-            PirateShip queenAnnesRevenge = new PirateShip();
+            BattleApp battle = new BattleApp();
 
-            theBlackPearl.FillShip();
-            queenAnnesRevenge.FillShip();
-
-            Console.WriteLine(theBlackPearl.ShipStatus());
-            Console.WriteLine(queenAnnesRevenge.ShipStatus());
-
-            Console.WriteLine($"Does the Black Pearl win: " +
-                              $"{theBlackPearl.Battle(queenAnnesRevenge)} \n");
-
-            Console.WriteLine(theBlackPearl.ShipStatus());
-            Console.WriteLine(queenAnnesRevenge.ShipStatus());
-
-
+            Console.WriteLine(battle.Battle());
 
             Console.ReadLine();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EverythingIsBetterWithPirates
 {
-    class PirateShip
+    public class PirateShip
     {
         private static readonly Random RandomValue = new Random();
 
