@@ -25,10 +25,8 @@ namespace EverythingIsBetterWithPirates
 
             do
             {
-                victory = (MembersAlive() - MembersPassedOut() + PirateManifest[0].HowDrunk() >
-                                otherBarge.MembersAlive() - otherBarge.MembersPassedOut() + otherBarge.PirateManifest[0].HowDrunk());
-                draw = (MembersAlive() + PirateManifest[0].HowDrunk() ==
-                                otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk());
+                victory = IsVictory(otherBarge);
+                draw = IsDraw(otherBarge);
 
                 if (victory)
                 {
@@ -48,6 +46,18 @@ namespace EverythingIsBetterWithPirates
             } while (draw);
 
             return victory;
+        }
+
+        private bool IsVictory(PirateShip otherBarge)
+        {
+            return MembersAlive() - MembersPassedOut() + PirateManifest[0].HowDrunk() >
+                   otherBarge.MembersAlive() - otherBarge.MembersPassedOut() + otherBarge.PirateManifest[0].HowDrunk();
+        }
+
+        private bool IsDraw(PirateShip otherBarge)
+        {
+            return MembersAlive() + PirateManifest[0].HowDrunk() - MembersPassedOut() ==
+                   otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk() - otherBarge.MembersPassedOut();
         }
 
         public void Party()
