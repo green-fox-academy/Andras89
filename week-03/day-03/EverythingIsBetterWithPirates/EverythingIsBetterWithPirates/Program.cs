@@ -10,13 +10,9 @@ namespace EverythingIsBetterWithPirates
     {
         static void Main(string[] args)
         {
-            Armada firstFleet = new Armada();
-            Armada secondFleet = new Armada();
+            WarApp warNeverChangesWellItDoesHere = new WarApp();
 
-            firstFleet.Battle(secondFleet);
-
-            Console.WriteLine(firstFleet.ArmadaStatus());
-            Console.WriteLine(secondFleet.ArmadaStatus());
+            Console.WriteLine(warNeverChangesWellItDoesHere.FightUltimatePirateFleetBattle());
 
             Console.ReadLine();
         }

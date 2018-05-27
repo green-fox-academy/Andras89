@@ -49,7 +49,7 @@ namespace EverythingIsBetterWithPirates
 
             for (int i = 0; i < Fleet.Count; i++)
             {
-                output += Fleet[i].ShipStatus() + "\n";
+                output += i+1+ ". Ship:\n" + Fleet[i].ShipStatus() + "\n";
             }
 
             return output;
