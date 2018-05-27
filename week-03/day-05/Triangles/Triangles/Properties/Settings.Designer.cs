@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KochLine.Properties
+namespace Triangles.Properties
 {
 
 

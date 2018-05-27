@@ -12,16 +12,8 @@ namespace Drawing
         public MainWindow()
         {
             InitializeComponent();
+            var foxDraw = new FoxDraw(canvas);
 
-            Point start = new Point(0, canvas.Height / 2);
-            Point end = new Point(canvas.Width, canvas.Height / 2);
-
-            DrawKochLine(start, end);
-        }
-
-        public void DrawKochLine(Point start, Point end)
-        {
-            
         }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KochLine", "KochLine\KochLine.csproj", "{9847542A-4620-4555-B146-A128FF784432}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles", "Triangles\Triangles.csproj", "{A78FD578-5C47-47C2-8709-1CB0D15C4E1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9847542A-4620-4555-B146-A128FF784432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9847542A-4620-4555-B146-A128FF784432}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9847542A-4620-4555-B146-A128FF784432}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9847542A-4620-4555-B146-A128FF784432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A78FD578-5C47-47C2-8709-1CB0D15C4E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78FD578-5C47-47C2-8709-1CB0D15C4E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78FD578-5C47-47C2-8709-1CB0D15C4E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78FD578-5C47-47C2-8709-1CB0D15C4E1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D439B0D9-A3FD-428F-BA8B-A827CE62E70F}
+		SolutionGuid = {04859CB2-3F52-431F-92A7-422F6F6BE18E}
 	EndGlobalSection
 EndGlobal
