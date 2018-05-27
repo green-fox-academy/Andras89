@@ -1,6 +1,8 @@
 # András Pálfi
 
-<p>from Fulvipes Ocelot:</p>
+<p>from Fulvipes Ocelot</p>
+
+<p>Other Repos:</p>
 
 <p>https://github.com/Andras89/git-lesson-repository.git</p>
 <p>https://github.com/Andras89/HTML-Tutorial.git</p>
