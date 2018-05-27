@@ -66,7 +66,7 @@ namespace EverythingIsBetterWithPirates
             {
                 if (PirateManifest[i].IsAlive())
                 {
-                    for (int j = 0; j < RandomValue.Next(0,7); j++)
+                    for (int j = 0; j < RandomValue.Next(1,7); j++)
                     {
                         PirateManifest[i].HowsItGoingMate();
                     }
@@ -76,7 +76,7 @@ namespace EverythingIsBetterWithPirates
 
         public void RandomDeaths()
         {
-            int deathcount = RandomValue.Next(0, PirateManifest.Count);
+            int deathcount = RandomValue.Next(1, PirateManifest.Count);
             int aliveMemebers = MembersAlive();
 
             while(deathcount != 0 && aliveMemebers != 0)
