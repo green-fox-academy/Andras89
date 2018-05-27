@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circles", "Circles\Circles.csproj", "{ACFD4360-F421-42F4-A0BF-B82530C45F27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACFD4360-F421-42F4-A0BF-B82530C45F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFD4360-F421-42F4-A0BF-B82530C45F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFD4360-F421-42F4-A0BF-B82530C45F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFD4360-F421-42F4-A0BF-B82530C45F27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39F61DD9-AF41-42AE-973C-B9C52D613EEB}
+	EndGlobalSection
+EndGlobal
