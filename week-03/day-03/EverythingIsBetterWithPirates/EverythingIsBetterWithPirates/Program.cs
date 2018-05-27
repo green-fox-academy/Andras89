@@ -10,9 +10,13 @@ namespace EverythingIsBetterWithPirates
     {
         static void Main(string[] args)
         {
-            BattleApp battle = new BattleApp();
+            Armada firstFleet = new Armada();
+            Armada secondFleet = new Armada();
 
-            Console.WriteLine(battle.Battle());
+            firstFleet.Battle(secondFleet);
+
+            Console.WriteLine(firstFleet.ArmadaStatus());
+            Console.WriteLine(secondFleet.ArmadaStatus());
 
             Console.ReadLine();
         }

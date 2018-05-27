@@ -137,7 +137,7 @@ namespace EverythingIsBetterWithPirates
         {
             return $"The 'capitain' is (Alive / Passed Out):" +
                    $" {PirateManifest[0].IsAlive()} / {PirateManifest[0].IsPassedOut()} \n" +
-                   $"From the {PirateManifest.Count} Crew there are {MembersAlive()} Pirates Alive \n";
+                   $"Full Crew: {PirateManifest.Count}\t Drunk: {MembersPassedOut()}\n";
         }
 
 

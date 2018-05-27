@@ -36,7 +36,7 @@ namespace EverythingIsBetterWithPirates
                     Fleet.RemoveAt(0);
                 }
 
-                fleetSunk = Fleet.Count == 0 || otherFleet.Fleet.Count == 0;
+                fleetSunk = Fleet.Count > 0 && otherFleet.Fleet.Count > 0;
 
             } while (fleetSunk);
 
