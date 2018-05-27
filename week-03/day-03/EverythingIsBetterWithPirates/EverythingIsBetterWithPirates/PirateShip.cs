@@ -20,25 +20,32 @@ namespace EverythingIsBetterWithPirates
 
         public bool Battle(PirateShip otherBarge)
         {
-            bool victory = (MembersAlive() - MembersPassedOut() + PirateManifest[0].HowDrunk() >
-                            otherBarge.MembersAlive() - otherBarge.MembersPassedOut() + otherBarge.PirateManifest[0].HowDrunk());
-            bool draw = (MembersAlive() + PirateManifest[0].HowDrunk() ==
-                            otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk());
+            bool victory;
+            bool draw;
 
-            if (victory)
+            do
             {
-                Party();
-                otherBarge.RandomDeaths();
-            }
-            else if (draw)
-            {
+                victory = (MembersAlive() - MembersPassedOut() + PirateManifest[0].HowDrunk() >
+                                otherBarge.MembersAlive() - otherBarge.MembersPassedOut() + otherBarge.PirateManifest[0].HowDrunk());
+                draw = (MembersAlive() + PirateManifest[0].HowDrunk() ==
+                                otherBarge.MembersAlive() + otherBarge.PirateManifest[0].HowDrunk());
 
-            }
-            else
-            {
-                RandomDeaths();
-                otherBarge.Party();
-            }
+                if (victory)
+                {
+                    Party();
+                    otherBarge.RandomDeaths();
+                }
+                else if (draw)
+                {
+                    Party();
+                    otherBarge.Party();
+                }
+                else
+                {
+                    RandomDeaths();
+                    otherBarge.Party();
+                } 
+            } while (draw);
 
             return victory;
         }
