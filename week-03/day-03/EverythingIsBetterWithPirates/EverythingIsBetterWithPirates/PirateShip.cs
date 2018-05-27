@@ -66,7 +66,7 @@ namespace EverythingIsBetterWithPirates
             {
                 if (PirateManifest[i].IsAlive())
                 {
-                    for (int j = 0; j < RandomValue.Next(1,7); j++)
+                    for (int j = 0; j < RandomValue.Next(1,10); j++)
                     {
                         PirateManifest[i].HowsItGoingMate();
                     }
