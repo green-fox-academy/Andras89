@@ -31,7 +31,7 @@ namespace GreenFoxOrganization
             return String.Format("Hi, I'm {0}, a {1} year old {2}.", name, age, sex);
         }
 
-        public virtual GetGoal()
+        public virtual string GetGoal()
         {
             return "My goal is: Live for the moment!";
         }
