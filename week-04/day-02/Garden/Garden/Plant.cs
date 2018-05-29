@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Garden
 {
-    class Plant
+    public class Plant
     {
         private string color;
         private bool needsWater;
         private double waterAmount;
+
+        public Plant(string color)
+        {
+            this.color = color;
+            needsWater = true;
+            waterAmount = 0;
+        }
 
         public string Color
         {
@@ -34,6 +41,11 @@ namespace Garden
             {
                 return waterAmount;
             }
+        }
+
+        public void Water(int amount)
+        {
+
         }
     }
 }
