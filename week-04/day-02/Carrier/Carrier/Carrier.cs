@@ -20,6 +20,18 @@ namespace Carrier
             carrier = new List<Aircraft>();
         }
 
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                health = value;
+            }
+        }
+
         public void Add(Aircraft plane)
         {
             carrier.Add(plane);
@@ -46,6 +58,12 @@ namespace Carrier
             } while (ammo > 0);
         }
 
-
+        public void Fight(Carrier otherCarrier)
+        {
+            for (int i = 0; i < carrier.Count; i++)
+            {
+                otherCarrier.Health -= carrier[i].Fight();
+            }
+        }
     }
 }
