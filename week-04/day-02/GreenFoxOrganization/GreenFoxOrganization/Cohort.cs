@@ -12,7 +12,7 @@ namespace GreenFoxOrganization
         private List<Student> students;
         private List<Mentor> mentors;
 
-        public Cohort(name)
+        public Cohort(string name)
         {
             this.name = name;
             students = new List<Student>();

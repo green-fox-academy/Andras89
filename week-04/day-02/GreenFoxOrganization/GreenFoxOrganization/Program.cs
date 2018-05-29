@@ -10,13 +10,21 @@ namespace GreenFoxOrganization
     {
         static void Main(string[] args)
         {
-            Sponsor Jane = new Sponsor();
+            Cohort fulvipes = new Cohort("FulVipes");
 
-            Console.WriteLine(Jane.Introduce());
+            fulvipes.AddMentor(new Mentor());
+            fulvipes.AddMentor(new Mentor());
+            fulvipes.AddMentor(new Mentor());
 
-            Jane.Hire();
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
+            fulvipes.AddStudent(new Student());
 
-            Console.WriteLine(Jane.Introduce());
+            Console.WriteLine(fulvipes.Info());
 
             Console.ReadLine();
         }
