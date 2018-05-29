@@ -19,5 +19,10 @@ namespace Carrier
 
             carrier = new List<Aircraft>();
         }
+
+        public void Add(Aircraft plane)
+        {
+            carrier.Add(plane);
+        }
     }
 }
