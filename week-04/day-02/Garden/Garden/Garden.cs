@@ -43,7 +43,7 @@ namespace Garden
 
             for (int i = 0; i < garden.Count; i++)
             {
-                if(garden[i].NeedsWater == false)
+                if(garden[i].NeedsWater == true)
                 {
                     counter++;
                 }
@@ -66,7 +66,7 @@ namespace Garden
 
         private string PrintNeed(Plant plant)
         {
-            if(plant.NeedsWater == false)
+            if(plant.NeedsWater == true)
             {
                 return "needs";
             }

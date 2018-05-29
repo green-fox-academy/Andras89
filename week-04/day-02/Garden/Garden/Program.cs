@@ -13,6 +13,10 @@ namespace Garden
             Garden garden = new Garden();
 
             Console.WriteLine(garden.Info());
+            Console.WriteLine();
+            Console.WriteLine(garden.Water(40));
+            Console.WriteLine();
+            Console.WriteLine(garden.Water(70));
 
             Console.ReadLine();
         }
