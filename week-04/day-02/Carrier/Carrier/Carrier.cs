@@ -80,15 +80,24 @@ namespace Carrier
 
         public string GetStatus()
         {
-            string output = $"HP: {Health}, Aircraft count: {carrier.Count}, Ammo Storage: {Ammo}, " +
-                            $"Total Damage: {GetTotalDamage()}\nAircrafts: \n";
+            string output = String.Empty;
 
-            for (int i = 0; i < carrier.Count; i++)
+            if (Health > 0)
             {
-                output += carrier[i].GetStatus() + "\n";
-            }
+                output = $"HP: {Health}, Aircraft count: {carrier.Count}, Ammo Storage: {Ammo}, " +
+                                    $"Total Damage: {GetTotalDamage()}\nAircrafts: \n";
 
-            return output;
+                for (int i = 0; i < carrier.Count; i++)
+                {
+                    output += carrier[i].GetStatus() + "\n";
+                }
+
+                return output; 
+            }
+            else
+            {
+                output += "It' Dead Jim :(";
+            }
         }
 
         private int GetTotalDamage()
