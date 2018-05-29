@@ -35,11 +35,9 @@ namespace GreenFoxOrganization
             return "Be a junior software developer.";
         }
 
-        public int SkipDays(int DaysToSkip)
+        public void SkipDays(int DaysToSkip)
         {
             skippedDays += DaysToSkip;
-
-            return skippedDays;
         }
     }
 }
