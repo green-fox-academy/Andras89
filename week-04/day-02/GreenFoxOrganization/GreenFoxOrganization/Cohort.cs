@@ -23,5 +23,10 @@ namespace GreenFoxOrganization
         {
             students.Add(student);
         }
+
+        public void AddMentor(Mentor mentor)
+        {
+            mentors.Add(mentor);
+        }
     }
 }
