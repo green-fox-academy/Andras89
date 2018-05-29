@@ -32,6 +32,18 @@ namespace Carrier
             }
         }
 
+        public int Ammo
+        {
+            get
+            {
+                return ammo;
+            }
+            set
+            {
+                ammo = value;
+            }
+        }
+
         public void Add(Aircraft plane)
         {
             carrier.Add(plane);
@@ -43,19 +55,19 @@ namespace Carrier
             {
                 for (int i = 0; i < carrier.Count; i++)
                 {
-                    if (carrier[i].isPriority())
+                    if (carrier[i].IsPriority())
                     {
-                        ammo = carrier[i].ReFill(ammo);
+                        Ammo = carrier[i].ReFill(Ammo);
                     }
                 }
                 for (int i = 0; i < carrier.Count; i++)
                 {
-                    if (!carrier[i].isPriority())
+                    if (!carrier[i].IsPriority())
                     {
-                        ammo = carrier[i].ReFill(ammo);
+                        Ammo = carrier[i].ReFill(Ammo);
                     }
                 }
-            } while (ammo > 0);
+            } while (Ammo <= 0);
         }
 
         public void Fight(Carrier otherCarrier)
@@ -68,8 +80,8 @@ namespace Carrier
 
         public string GetStatus()
         {
-            string output = $"HP: {Health}, Aircraft count: {carrier.Count}, Ammo Storage: {ammo}" +
-                            $"Total Damage: {GetTotalDamage()}\n";
+            string output = $"HP: {Health}, Aircraft count: {carrier.Count}, Ammo Storage: {Ammo}, " +
+                            $"Total Damage: {GetTotalDamage()}\nAircrafts: \n";
 
             for (int i = 0; i < carrier.Count; i++)
             {

@@ -23,6 +23,10 @@ namespace Carrier
             {
                 return ammoStore;
             }
+            set
+            {
+                ammoStore = value;
+            }
         }
 
         public int MaxAmmo
@@ -51,20 +55,22 @@ namespace Carrier
 
         public int Fight()
         {
-            int damage = BaseDamage * ammoStore;
+            int damage = BaseDamage * AmmoStore;
 
-            ammoStore = 0;
+            AmmoStore = 0;
 
             return damage;
         }
 
         public int ReFill(int allAmmo)
         {
-            for (int i = 0; i < MaxAmmo; i++)
+            int indexer = ammoStore;
+
+            for (int i = 0; i < MaxAmmo - indexer; i++)
             {
                 if (allAmmo > 0)
                 {
-                    ammoStore++;
+                    AmmoStore++;
                     allAmmo--;
                 }
             }
@@ -79,12 +85,19 @@ namespace Carrier
 
         public string GetStatus()
         {
-            return $"Type {GetType()}, Ammo: {ammoStore}, Base Damage: {BaseDamage}, All Damage: {Fight()}";
+            return $"Type {GetType()}, Ammo: {AmmoStore}, Base Damage: {BaseDamage}, All Damage: {Fight()}";
         }
 
-        public bool isPriority()
+        public bool IsPriority()
         {
             return GetType() == "F35";
+        }
+
+        public int GetFullDamage()
+        {
+            int damage = BaseDamage * MaxAmmo;
+
+            return damage;
         }
     }
 }
