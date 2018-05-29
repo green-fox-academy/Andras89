@@ -23,11 +23,17 @@ namespace GreenFoxOrganization
             studentsHired = 0;
         }
 
-
+        public override string Introduce()
+        {
+            return $"Hi, I'm {Name}, a {Age} year old {Sex}" +
+                   $" who represents {company} and hired {studentsHired} students so far.";
+        }
 
         public override string GetGoal()
         {
             return "Hire brilliant junior software developers.";
         }
+
+
     }
 }
