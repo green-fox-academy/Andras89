@@ -28,5 +28,12 @@ namespace GreenFoxOrganization
         {
             mentors.Add(mentor);
         }
+
+        public string Info()
+        {
+            return $"Cohort name: {name}\n" +
+                   $"Number of Students: {students.Count}\n" +
+                   $"Number of Mentors: {mentors.Count}";
+        }
     }
 }
