@@ -51,7 +51,7 @@ namespace Garden
             }
         }
 
-        public virtual void Water(int amount)
+        public virtual void Water(double amount)
         {
 
         }

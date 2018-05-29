@@ -23,7 +23,18 @@ namespace Garden
 
         public string Water(double amount)
         {
+            string output = $"Watering with {amount}\n";
 
+            amount /= GetAmountOfWateringNeeded();
+
+            for (int i = 0; i < garden.Count; i++)
+            {
+                garden[i].Water(amount);
+            }
+
+            output += Info();
+
+            return output;
         }
 
         private int GetAmountOfWateringNeeded()

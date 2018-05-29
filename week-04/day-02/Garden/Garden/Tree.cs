@@ -10,7 +10,7 @@ namespace Garden
     {
         public Tree(string color) : base(color) { }
 
-        public override void Water(int amount)
+        public override void Water(double amount)
         {
             WaterAmount += (amount * 0.4);
 
