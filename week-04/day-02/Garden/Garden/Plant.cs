@@ -33,6 +33,10 @@ namespace Garden
             {
                 return needsWater;
             }
+            set
+            {
+                needsWater = value;
+            }
         }
 
         public double WaterAmount
@@ -41,9 +45,13 @@ namespace Garden
             {
                 return waterAmount;
             }
+            set
+            {
+                waterAmount = value;
+            }
         }
 
-        public void Water(int amount)
+        public virtual void Water(int amount)
         {
 
         }

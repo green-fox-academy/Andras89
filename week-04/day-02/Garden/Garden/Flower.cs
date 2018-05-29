@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Garden
 {
-    class Flower
+    public class Flower : Plant
     {
+        public Flower(string color) : base(color) { }
+
+        public override void Water(int amount)
+        {
+            WaterAmount += (amount * 0.75);
+
+            DecideNeedsWater(WaterAmount);
+        }
+
+        private void DecideNeedsWater(double waterAmount)
+        {
+            if(waterAmount >= 5)
+            {
+                NeedsWater = false;
+            }
+        }
     }
 }

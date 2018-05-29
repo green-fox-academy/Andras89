@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Garden
 {
-    class Tree
+    class Tree : Plant
     {
+        public Tree(string color) : base(color) { }
     }
 }
