@@ -26,7 +26,31 @@ namespace GreenFoxOrganization
             sex = "female";
         }
 
-        public string Introduce()
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+        }
+
+        public string Sex
+        {
+            get
+            {
+                return sex;
+            }
+        }
+
+        public virtual string Introduce()
         {
             return String.Format("Hi, I'm {0}, a {1} year old {2}.", name, age, sex);
         }
