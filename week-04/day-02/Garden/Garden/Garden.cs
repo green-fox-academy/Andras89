@@ -21,6 +21,27 @@ namespace Garden
             };
         }
 
+        public string Info()
+        {
+            string output = String.Empty;
 
+            for (int i = 0; i < garden.Count; i++)
+            {
+                output += $"The {garden[i].Color} {garden[i]} {PrintNeed(garden[i])} water.";
+            }
+
+        }
+
+        private string PrintNeed(Plant plant)
+        {
+            if(plant.NeedsWater == false)
+            {
+                return "needs";
+            }
+            else
+            {
+                return "doesn't need";
+            }
+        }
     }
 }
