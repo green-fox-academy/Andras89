@@ -97,7 +97,7 @@ namespace Carrier
 
             for (int i = 0; i < carrier.Count; i++)
             {
-                damage += carrier[i].Fight();
+                damage += carrier[i].GetFullDamage();
             }
 
             return damage;

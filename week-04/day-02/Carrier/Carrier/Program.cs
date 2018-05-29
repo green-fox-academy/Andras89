@@ -27,6 +27,8 @@ namespace Carrier
             Console.WriteLine(ussBenedict.GetStatus());
             Console.WriteLine();
 
+            ussBenedict.Fill();
+
             Console.WriteLine(ussBenedict.GetStatus());
 
             Console.ReadLine();

@@ -95,7 +95,7 @@ namespace Carrier
 
         public int GetFullDamage()
         {
-            int damage = BaseDamage * MaxAmmo;
+            int damage = BaseDamage * AmmoStore;
 
             return damage;
         }
