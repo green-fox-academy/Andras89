@@ -10,7 +10,11 @@ namespace GreenFoxOrganization
     {
         static void Main(string[] args)
         {
+            Person Jane = new Student();
 
+            Console.WriteLine(Jane.Introduce());
+
+            Console.ReadLine();
         }
     }
 }
