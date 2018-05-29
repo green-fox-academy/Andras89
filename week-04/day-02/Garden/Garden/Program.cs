@@ -10,6 +10,11 @@ namespace Garden
     {
         static void Main(string[] args)
         {
+            Garden garden = new Garden();
+
+            Console.WriteLine(garden.Info());
+
+            Console.ReadLine();
         }
     }
 }

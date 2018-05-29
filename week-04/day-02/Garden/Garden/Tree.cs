@@ -25,5 +25,9 @@ namespace Garden
             }
         }
 
+        public override string ToString()
+        {
+            return "Tree";
+        }
     }
 }

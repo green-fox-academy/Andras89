@@ -24,5 +24,10 @@ namespace Garden
                 NeedsWater = false;
             }
         }
+
+        public override string ToString()
+        {
+            return "Flower";
+        }
     }
 }
