@@ -17,7 +17,7 @@ namespace Garden
             DecideNeedsWater(WaterAmount);
         }
 
-        private void DecideNeedsWater(double waterAmount)
+        public override void DecideNeedsWater(double waterAmount)
         {
             if(waterAmount >= 5)
             {

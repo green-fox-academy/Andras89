@@ -55,5 +55,10 @@ namespace Garden
         {
 
         }
+
+        public virtual void DecideNeedsWater(double waterAmount)
+        {
+
+        }
     }
 }
