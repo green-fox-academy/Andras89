@@ -10,6 +10,20 @@ namespace Carrier
     {
         private int maxAmmo;
         private int baseDamage;
+        private int ammoStore;
+
+        public Aircraft()
+        {
+            ammoStore = 0;
+        }
+
+        public int AmmoStore
+        {
+            get
+            {
+                return ammoStore;
+            }
+        }
 
         public int MaxAmmo
         {
