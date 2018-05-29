@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace GreenFoxOrganization
 {
-    class Cohort
+    public class Cohort
     {
+        private string name;
+        private List<Student> students;
+        private List<Mentor> mentors;
+
+        public Cohort(name)
+        {
+            this.name = name;
+            students = new List<Student>();
+            mentors = new List<Mentor>();
+        }
+
+        public void AddStudent(Student student)
+        {
+            students.Add(student);
+        }
     }
 }
