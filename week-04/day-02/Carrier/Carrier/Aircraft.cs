@@ -72,9 +72,14 @@ namespace Carrier
             return "";
         }
 
-        public virtual string GetStatus()
+        public string GetStatus()
         {
             return $"Type {GetType()}, Ammo: {ammoStore}, Base Damage: {BaseDamage}, All Damage: {Fight()}";
+        }
+
+        public bool isPriority()
+        {
+            return GetType() == "F35";
         }
     }
 }
