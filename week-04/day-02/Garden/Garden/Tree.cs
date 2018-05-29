@@ -12,14 +12,14 @@ namespace Garden
 
         public override void Water(int amount)
         {
-            WaterAmount += (amount * 0.75);
+            WaterAmount += (amount * 0.4);
 
             DecideNeedsWater(WaterAmount);
         }
 
         public override void DecideNeedsWater(double waterAmount)
         {
-            if (waterAmount >= 5)
+            if (waterAmount >= 10)
             {
                 NeedsWater = false;
             }
