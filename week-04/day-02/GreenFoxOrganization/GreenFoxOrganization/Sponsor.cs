@@ -34,7 +34,7 @@ namespace GreenFoxOrganization
             return "Hire brilliant junior software developers.";
         }
 
-        private void Hire()
+        public void Hire()
         {
             studentsHired++;
         }
