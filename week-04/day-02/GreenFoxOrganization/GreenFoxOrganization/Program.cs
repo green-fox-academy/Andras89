@@ -10,7 +10,7 @@ namespace GreenFoxOrganization
     {
         static void Main(string[] args)
         {
-            Person Jane = new Student();
+            Person Jane = new Mentor();
 
             Console.WriteLine(Jane.Introduce());
 
