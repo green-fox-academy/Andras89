@@ -10,12 +10,8 @@ namespace Carrier
     {
         static void Main(string[] args)
         {
-            F16 plane = new F16();
-            plane.ReFill(100);
-            Console.WriteLine(plane.GetStatus());
-            Console.WriteLine();
-
             Carrier ussBenedict = new Carrier(5000, 2300);
+            Carrier ussOriga = new Carrier(4000, 200);
 
             ussBenedict.Add(new F35());
             ussBenedict.Add(new F35());
@@ -24,12 +20,7 @@ namespace Carrier
             ussBenedict.Add(new F16());
             ussBenedict.Add(new F16());
 
-            Console.WriteLine(ussBenedict.GetStatus());
-            Console.WriteLine();
-
-            ussBenedict.Fill();
-
-            Console.WriteLine(ussBenedict.GetStatus());
+            Console.WriteLine(ussBenedict.Fight(ussOriga));
 
             Console.ReadLine();
         }

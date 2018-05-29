@@ -70,12 +70,20 @@ namespace Carrier
             } while (Ammo <= 0);
         }
 
-        public void Fight(Carrier otherCarrier)
+        public string Fight(Carrier otherCarrier)
         {
+            string output = String.Empty;
+
+            Fill();
+
             for (int i = 0; i < carrier.Count; i++)
             {
                 otherCarrier.Health -= carrier[i].Fight();
             }
+
+            output += otherCarrier.GetStatus();
+
+            return output;
         }
 
         public string GetStatus()
@@ -97,6 +105,8 @@ namespace Carrier
             else
             {
                 output += "It's Dead Jim :(";
+
+                return output;
             }
         }
 

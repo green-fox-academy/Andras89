@@ -78,7 +78,7 @@ namespace Carrier
             return allAmmo;
         }
 
-        public virtual string GetType()
+        public new virtual string GetType()
         {
             return "";
         }
