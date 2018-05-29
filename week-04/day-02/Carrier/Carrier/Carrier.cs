@@ -24,5 +24,28 @@ namespace Carrier
         {
             carrier.Add(plane);
         }
+
+        public void Fill()
+        {
+            do
+            {
+                for (int i = 0; i < carrier.Count; i++)
+                {
+                    if (carrier[i].isPriority())
+                    {
+                        ammo = carrier[i].ReFill(ammo);
+                    }
+                }
+                for (int i = 0; i < carrier.Count; i++)
+                {
+                    if (!carrier[i].isPriority())
+                    {
+                        ammo = carrier[i].ReFill(ammo);
+                    }
+                } 
+            } while (ammo > 0);
+        }
+
+
     }
 }

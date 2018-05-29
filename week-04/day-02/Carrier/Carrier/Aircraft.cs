@@ -60,9 +60,14 @@ namespace Carrier
 
         public int ReFill(int allAmmo)
         {
-            allAmmo = allAmmo - MaxAmmo + ammoStore;
-
-            ammoStore = MaxAmmo;
+            for (int i = 0; i < MaxAmmo; i++)
+            {
+                if (allAmmo > 0)
+                {
+                    ammoStore++;
+                    allAmmo--;
+                }
+            }
 
             return allAmmo;
         }
