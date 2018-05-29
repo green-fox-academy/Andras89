@@ -48,5 +48,33 @@ namespace Carrier
                 baseDamage = value;
             }
         }
+
+        public int Fight()
+        {
+            int damage = BaseDamage * ammoStore;
+
+            ammoStore = 0;
+
+            return damage;
+        }
+
+        public int ReFill(int allAmmo)
+        {
+            allAmmo = allAmmo - MaxAmmo + ammoStore;
+
+            ammoStore = MaxAmmo;
+
+            return allAmmo;
+        }
+
+        public virtual string GetType()
+        {
+            return "";
+        }
+
+        public virtual string GetStatus()
+        {
+            return $"Type {GetType()}, Ammo: {ammoStore}, Base Damage: {BaseDamage}, All Damage: {Fight()}";
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace Carrier
             BaseDamage = 30;
             MaxAmmo = 8;
         }
+
+        public override string GetType()
+        {
+            return "F16";
+        }
     }
 }
