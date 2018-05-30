@@ -27,14 +27,14 @@ namespace Reservations
 
         public string GetCodeBooking()
         {
-            string output = dow[generateRandom.Next(0, 7)];
-
-            return output;
+            return null;
         }
 
         public string GetDowBooking()
         {
-            throw new NotImplementedException();
+            string output = dow[generateRandom.Next(0, 7)];
+
+            return output;
         }
 
         private void FillLetterList()
