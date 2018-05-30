@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE933AB7-F74C-4FB4-8519-3C08CD9C0EE0}</ProjectGuid>
+    <ProjectGuid>{041DFB2A-1203-4D34-AF5F-A999FA2CB96E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Zoo</RootNamespace>
-    <AssemblyName>Zoo</AssemblyName>
+    <RootNamespace>Flyable</RootNamespace>
+    <AssemblyName>Flyable</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,12 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="Bird.cs" />
-    <Compile Include="Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reptile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

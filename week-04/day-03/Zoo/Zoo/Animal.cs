@@ -19,6 +19,11 @@ namespace Zoo
         public bool Happiness { get => happiness; set => happiness = value; }
 
         public abstract void Greet();
-        public abstract void WantChild();
+        public abstract string WantChild();
+
+        public string GetName()
+        {
+            return Name;
+        }
     }
 }
