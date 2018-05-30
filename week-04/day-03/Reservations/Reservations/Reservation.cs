@@ -8,7 +8,6 @@ namespace Reservations
 {
     public class Reservation : IReservation
     {
-        private readonly Random generateRandom;
         private string[] dow;
         private List<char> letters;
 
@@ -27,6 +26,10 @@ namespace Reservations
 
         public string GetCodeBooking()
         {
+            FillLetterList();
+
+            Random generateRandom = new Random();
+
             string output = String.Empty;
 
             for (int i = 0; i < 8; i++)
@@ -39,6 +42,8 @@ namespace Reservations
 
         public string GetDowBooking()
         {
+            Random generateRandom = new Random();
+
             string output = dow[generateRandom.Next(0, 7)];
 
             return output;
@@ -47,11 +52,6 @@ namespace Reservations
         private void FillLetterList()
         {
             for (int i = 65; i <= 90; i++)
-            {
-                Letters.Add((char)i);
-            }
-
-            for (int i = 97; i <= 122; i++)
             {
                 Letters.Add((char)i);
             }

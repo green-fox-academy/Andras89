@@ -10,7 +10,11 @@ namespace Reservations
     {
         static void Main(string[] args)
         {
+            Reservation booking = new Reservation();
 
+            Console.WriteLine($"Booking# {booking.GetCodeBooking()} for {booking.GetDowBooking()}");
+
+            Console.ReadLine();
         }
     }
 }
