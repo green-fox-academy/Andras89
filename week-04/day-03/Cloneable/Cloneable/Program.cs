@@ -10,6 +10,13 @@ namespace Cloneable
     {
         static void Main(string[] args)
         {
+            Student jane = new Student("Jane", 27, "Female", "Something");
+
+            Student john = (Student)jane.Clone();
+
+            Console.WriteLine(john.Introduce());
+
+            Console.ReadLine();
         }
     }
 }

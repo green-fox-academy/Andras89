@@ -32,6 +32,10 @@ namespace Cloneable
             {
                 return name;
             }
+            set
+            {
+                name = value;
+            }
         }
 
         public int Age
@@ -40,6 +44,10 @@ namespace Cloneable
             {
                 return age;
             }
+            set
+            {
+                age = value;
+            }
         }
 
         public string Sex
@@ -47,6 +55,10 @@ namespace Cloneable
             get
             {
                 return sex;
+            }
+            set
+            {
+                sex = value;
             }
         }
 
