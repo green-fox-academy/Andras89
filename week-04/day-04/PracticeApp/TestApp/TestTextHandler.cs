@@ -16,7 +16,7 @@ namespace TestApp
         [Test]
         public void TestMakeUpperCase()
         {
-            Assert.AreEqual("ANDREW", test.MakeUpperCase("adrew"));
+            Assert.AreEqual("ANDREW", test.MakeUpperCase("andrew"));
         }
 
         [Test]
