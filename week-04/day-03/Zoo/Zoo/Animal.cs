@@ -10,10 +10,15 @@ namespace Zoo
     {
         private string name;
         private int age;
+        private string gender;
+        private bool happiness;
 
         public string Name { get => name; set => name = value; }
         public int Age { get => age; set => age = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public bool Happiness { get => happiness; set => happiness = value; }
 
-
+        public abstract void Greet();
+        public abstract void WantChild();
     }
 }
