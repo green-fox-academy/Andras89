@@ -27,7 +27,14 @@ namespace Reservations
 
         public string GetCodeBooking()
         {
-            return null;
+            string output = String.Empty;
+
+            for (int i = 0; i < 8; i++)
+            {
+                output += Letters[generateRandom.Next(0, Letters.Count)];
+            }
+
+            return output;
         }
 
         public string GetDowBooking()
