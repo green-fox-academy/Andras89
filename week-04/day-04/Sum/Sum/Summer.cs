@@ -10,6 +10,11 @@ namespace Sum
     {
         public List<int> NumberList { get; set; }
 
+        public Summer(List<int> NumberList)
+        {
+            this.NumberList = NumberList;
+        }
+
         public int Sum()
         {
             int sum = 0;
