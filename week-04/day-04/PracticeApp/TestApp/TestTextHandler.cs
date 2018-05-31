@@ -11,12 +11,24 @@ namespace TestApp
     [TestFixture]
     public class TestTextHandler
     {
-        TextHandler test = new TextHandler();
+        private TextHandler test;
 
-        [Test]
-        public void TestMakeUpperCase()
+        [SetUp]
+        public void SetUp()
         {
-            Assert.AreEqual("ANDREW", test.MakeUpperCase("andrew"));
+            test = new TextHandler();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            test = null;
+        }
+
+        [TestCase("ANDREW", "andrew")]
+        public void TestMakeUpperCase(string nameOne, string nameTwo)
+        {
+            Assert.AreEqual(nameOne, test.MakeUpperCase(nameTwo));
         }
 
         [Test]
