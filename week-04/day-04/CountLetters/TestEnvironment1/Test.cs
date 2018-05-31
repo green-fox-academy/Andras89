@@ -28,7 +28,7 @@ namespace Test
         [TestCase("")]
         public void IsEmptyStringEqualToNumber(string word)
         {
-            Assert.AreEqual(0, dict.StringToDictionary(word)[word[0]]);
+            Assert.AreEqual(0, dict.StringToDictionary(word).Count);
         }
 
         [TestCase("applesoda")]
