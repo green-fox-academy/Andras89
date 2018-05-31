@@ -11,20 +11,18 @@ namespace Test
     [TestFixture]
     public class Test
     {
-        private List<int> integerList;
         private Summer sum;
 
         [SetUp]
         public void SetUp()
         {
-            integerList = new List<int>() { 1, 5, 6, 8 };
-            sum = new Summer(integerList);
+            sum = new Summer(new List<int>());
         }
 
         [Test]
         public void Tester()
         {
-            Asser
+            Assert.AreEqual(0, sum.Sum());
         }
     }
 }
