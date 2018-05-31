@@ -25,7 +25,7 @@ namespace Test
             shineyRedApple = null;
         }
 
-        [TestCase("aple")]
+        [TestCase("apple")]
         public void Tester(string apple)
         {
             Assert.AreEqual(apple, shineyRedApple.GetApple());
