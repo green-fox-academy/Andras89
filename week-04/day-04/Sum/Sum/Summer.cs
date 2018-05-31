@@ -17,11 +17,9 @@ namespace Sum
 
         public int Sum()
         {
-            int sum;
-
             if (!NumberList.Count.Equals(null))
             {
-                sum = 0;
+                int sum = 0;
 
                 foreach (int current in NumberList)
                 {

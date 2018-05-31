@@ -38,7 +38,7 @@ namespace Test
         }
 
         [TestCase(null)]
-        public void TesterForNull(int allSum)
+        public void TesterForNull(Int32 allSum)
         {
             sum = new Summer(new List<int>());
 
