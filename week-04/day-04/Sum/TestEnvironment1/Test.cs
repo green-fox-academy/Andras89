@@ -13,16 +13,20 @@ namespace Test
     {
         private Summer sum;
 
-        [SetUp]
-        public void SetUp()
+        [TestCase(0)]
+        public void TesterForZero(int allSum)
         {
             sum = new Summer(new List<int>());
+
+            Assert.AreEqual(allSum, sum.Sum());
         }
 
-        [Test]
-        public void Tester()
+        [TestCase(1)]
+        public void TesterForSingleElement(int allSum)
         {
-            Assert.AreEqual(0, sum.Sum());
+            sum = new Summer(new List<int>() { 1 });
+
+            Assert.AreEqual(allSum, sum.Sum());
         }
     }
 }
