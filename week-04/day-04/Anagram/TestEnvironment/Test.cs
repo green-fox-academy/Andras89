@@ -36,5 +36,11 @@ namespace Test
         {
             Assert.AreEqual(true, anagram.AreAnagrams(first, second));
         }
+
+        [TestCase(null, null)]
+        public void IsNull(string first, string second)
+        {
+            Assert.AreEqual(true, anagram.AreAnagrams(first, second));
+        }
     }
 }
