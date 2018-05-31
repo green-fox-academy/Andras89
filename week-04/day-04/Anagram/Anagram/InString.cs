@@ -11,7 +11,7 @@ namespace Anagram
         public bool AreAnagrams(string first, string second)
         {
             char[] temp = second.ToCharArray();
-            temp.Reverse();
+            Array.Reverse(temp);
             second = new string(temp);
 
             return (first.ToLower() == second.ToLower());

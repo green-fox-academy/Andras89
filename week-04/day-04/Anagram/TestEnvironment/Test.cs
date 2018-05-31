@@ -24,5 +24,17 @@ namespace Test
         {
             Assert.AreEqual(true, anagram.AreAnagrams(first, second));
         }
+
+        [TestCase("Alucard", "Dracula")]
+        public void IsReverse(string first, string second)
+        {
+            Assert.AreEqual(true, anagram.AreAnagrams(first, second));
+        }
+
+        [TestCase("", "")]
+        public void IsEmptyStrings(string first, string second)
+        {
+            Assert.AreEqual(true, anagram.AreAnagrams(first, second));
+        }
     }
 }
