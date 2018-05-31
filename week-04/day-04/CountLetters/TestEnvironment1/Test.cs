@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CountLetters;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Test
         [SetUp]
         public void SetUp()
         {
-            
+            DictionLetter dict = new DictionLetter();
         }
 
         [Test]
