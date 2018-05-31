@@ -17,14 +17,23 @@ namespace Sum
 
         public int Sum()
         {
-            int sum = 0;
+            int sum;
 
-            foreach ( int current in NumberList)
+            if (!NumberList.Count.Equals(null))
             {
-                sum += current;
-            }
+                sum = 0;
 
-            return sum;
+                foreach (int current in NumberList)
+                {
+                    sum += current;
+                }
+
+                return sum;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Test
         [TestCase(0)]
         public void TesterForZero(int allSum)
         {
-            sum = new Summer(new List<int>());
+            sum = new Summer(new List<int>() { 0 });
 
             Assert.AreEqual(allSum, sum.Sum());
         }
@@ -37,6 +37,12 @@ namespace Test
             Assert.AreEqual(allSum, sum.Sum());
         }
 
+        [TestCase(null)]
+        public void TesterForNull(int allSum)
+        {
+            sum = new Summer(new List<int>());
 
+            Assert.AreEqual(allSum, sum.Sum());
+        }
     }
 }
