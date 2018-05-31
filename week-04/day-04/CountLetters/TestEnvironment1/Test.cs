@@ -20,9 +20,10 @@ namespace Test
         }
 
         [TestCase("applesoda")]
+        [TestCase("aaaaapplesoda")]
         public void IsNumberOfAsEqualToNumber(string word)
         {
-            Assert.AreEqual(2, dict.StringToDictionary(word)['a']);
+            Assert.AreEqual(word.Count(x => x == 'a'), dict.StringToDictionary(word)[word[0]]);
         }
     }
 }
