@@ -25,5 +25,10 @@ namespace Test
             Assert.AreEqual(1, fibo.FibonacciMaker(index));
         }
 
+        [TestCase(2)]
+        public void WhatsIsIndexTwo(int index)
+        {
+            Assert.AreEqual(1, fibo.FibonacciMaker(index));
+        }
     }
 }
