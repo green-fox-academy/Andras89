@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetters", "CountLetters\CountLetters.csproj", "{8B0D711C-6CE6-47A8-9A56-AE79717A85C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEnvironment1", "TestEnvironment1\TestEnvironment1.csproj", "{3EE4A1AE-2004-4A4F-BC8F-1E08BD6EA26F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8B0D711C-6CE6-47A8-9A56-AE79717A85C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B0D711C-6CE6-47A8-9A56-AE79717A85C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B0D711C-6CE6-47A8-9A56-AE79717A85C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE4A1AE-2004-4A4F-BC8F-1E08BD6EA26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE4A1AE-2004-4A4F-BC8F-1E08BD6EA26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE4A1AE-2004-4A4F-BC8F-1E08BD6EA26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE4A1AE-2004-4A4F-BC8F-1E08BD6EA26F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

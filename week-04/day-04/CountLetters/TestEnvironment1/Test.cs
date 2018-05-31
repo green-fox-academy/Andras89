@@ -10,6 +10,12 @@ namespace Test
     [TestFixture]
     public class Test
     {
+        [SetUp]
+        public void SetUp()
+        {
+            
+        }
+
         [Test]
         public void Tester()
         {
