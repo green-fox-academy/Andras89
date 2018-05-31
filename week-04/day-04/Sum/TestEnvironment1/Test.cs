@@ -28,5 +28,15 @@ namespace Test
 
             Assert.AreEqual(allSum, sum.Sum());
         }
+
+        [TestCase(20)]
+        public void TesterForMultipleElement(int allSum)
+        {
+            sum = new Summer(new List<int>() { 1, 5, 8, 6 });
+
+            Assert.AreEqual(allSum, sum.Sum());
+        }
+
+
     }
 }
