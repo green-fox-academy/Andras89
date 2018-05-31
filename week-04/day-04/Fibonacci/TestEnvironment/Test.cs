@@ -37,10 +37,10 @@ namespace Test
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
 
-        [TestCase('a')]
+        [TestCase("a")]
         public void WhatsIsIndexA(int index)
         {
-            Assert.AreEqual(1, fibo.FibonacciMaker(index));
+            Assert.Throws<ArgumentException>(() => fibo.FibonacciMaker(index));
         }
     }
 }

@@ -17,7 +17,11 @@ namespace Fibonacci
 
         public int FibonacciMaker(int index)
         {
-            if(index < 0)
+            if(index.GetType() != typeof(int))
+            {
+                throw new ArgumentException("This is not a good sign, Jim!");
+            }
+            else if(index < 0)
             {
                 return 0;
             }
