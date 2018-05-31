@@ -19,6 +19,12 @@ namespace Test
             dict = new DictionLetter();
         }
 
+        [TestCase("a")]
+        public void IsSingleAEquelToNumberOfAs(string word)
+        {
+            Assert.AreEqual(1, dict.StringToDictionary(word)[word[0]]);
+        }
+
         [TestCase("applesoda")]
         [TestCase("aaaaapplesoda")]
         public void IsNumberOfAsEqualToNumber(string word)
