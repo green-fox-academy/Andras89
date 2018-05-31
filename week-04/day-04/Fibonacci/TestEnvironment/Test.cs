@@ -11,36 +11,48 @@ namespace Test
     [TestFixture]
     public class Test
     {
-        Fibonacciziator fibo = new Fibonacciziator();
+        Fibonacciziator fibo;
 
-        [TestCase(0)]
-        public void WhatsIsIndexZero(int index)
+        [SetUp]
+        public void SetUp()
+        {
+            fibo = new Fibonacciziator();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            fibo = null;
+        }
+
+        [TestCase('0')]
+        public void WhatsIsIndexZero(char index)
         {
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
 
-        [TestCase(1)]
-        public void WhatsIsIndexOne(int index)
+        [TestCase('1')]
+        public void WhatsIsIndexOne(char index)
         {
             Assert.AreEqual(1, fibo.FibonacciMaker(index));
         }
 
-        [TestCase(2)]
-        public void WhatsIsIndexTwo(int index)
+        [TestCase('2')]
+        public void WhatsIsIndexTwo(char index)
         {
             Assert.AreEqual(1, fibo.FibonacciMaker(index));
         }
 
-        [TestCase(-1)]
-        public void WhatsIsIndexMinusOne(int index)
+        [TestCase("-1")]
+        public void WhatsIsIndexMinusOne(char index)
         {
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
 
-        [TestCase("a")]
-        public void WhatsIsIndexA(int index)
+        [TestCase('a')]
+        public void WhatsIsIndexA(char index)
         {
-            Assert.Throws<ArgumentException>(() => fibo.FibonacciMaker(index));
+            Assert.Catch<ArgumentException>(() => fibo.FibonacciMaker(index));
         }
     }
 }

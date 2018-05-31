@@ -15,25 +15,27 @@ namespace Fibonacci
             Fibonacci = new List<int>() { 0, 1 };
         }
 
-        public int FibonacciMaker(int index)
+        public int FibonacciMaker(char index)
         {
-            if(index.GetType() != typeof(int))
+            int temp = index - '0';
+
+            if(!Char.IsNumber(index))
             {
-                throw new ArgumentException("This is not a good sign, Jim!");
+                throw new ArgumentException("It's Life Jim, But Not As We Know It!");
             }
-            else if(index < 0)
+            else if(temp < 0)
             {
                 return 0;
             }
-            else if(index > 1)
+            else if(temp > 1)
             {
-                for (int i = 0; i < index - 1; i++)
+                for (int i = 0; i < temp - 1; i++)
                 {
                     Fibonacci.Add(Fibonacci[i] + Fibonacci[i + 1]);
                 }
             }
 
-            return Fibonacci[index];
+            return Fibonacci[temp];
         }
     }
 }
