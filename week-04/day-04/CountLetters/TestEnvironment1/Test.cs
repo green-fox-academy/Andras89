@@ -11,16 +11,18 @@ namespace Test
     [TestFixture]
     public class Test
     {
+        DictionLetter dict;
+
         [SetUp]
         public void SetUp()
         {
-            DictionLetter dict = new DictionLetter();
+            dict = new DictionLetter();
         }
 
-        [Test]
-        public void Tester()
+        [TestCase("applesoda")]
+        public void IsNumberOfAsEqualToNumber(string word)
         {
-
+            Assert.AreEqual(2, dict.StringToDictionary(word)['a']);
         }
     }
 }
