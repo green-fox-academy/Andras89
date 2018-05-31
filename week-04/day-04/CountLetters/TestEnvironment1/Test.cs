@@ -25,6 +25,12 @@ namespace Test
             Assert.AreEqual(1, dict.StringToDictionary(word)[word[0]]);
         }
 
+        [TestCase("")]
+        public void IsEmptyStringEqualToNumber(string word)
+        {
+            Assert.AreEqual(0, dict.StringToDictionary(word)[word[0]]);
+        }
+
         [TestCase("applesoda")]
         [TestCase("aaaaapplesoda")]
         public void IsNumberOfAsEqualToNumber(string word)
