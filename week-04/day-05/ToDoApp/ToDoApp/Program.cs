@@ -10,6 +10,10 @@ namespace ToDoApp
     {
         static void Main(string[] args)
         {
+            if(args[0] == "yolo")
+            {
+                Console.WriteLine("Whats up homie?!");
+            }
         }
     }
 }
