@@ -59,7 +59,7 @@ namespace Test
 
         [TestCase("-1")]
         [TestCase(-156565)]
-        public void WhatsIsIndexMinusOne(object index)
+        public void WhatsIsIndexMinus(object index)
         {
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
@@ -69,7 +69,7 @@ namespace Test
         [TestCase(0.453456)]
         [TestCase(0.4545f)]
         [TestCase("0.4343")]
-        public void WhatsIsIndexA(object index)
+        public void WhatsIsIndexRandomMonkeyTest(object index)
         {
             Assert.Catch<ArgumentException>(() => fibo.FibonacciMaker(index));
         }
