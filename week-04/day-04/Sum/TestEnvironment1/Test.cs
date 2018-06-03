@@ -11,38 +11,36 @@ namespace Test
     [TestFixture]
     public class Test
     {
-        private Summer sum;
+        Summer sum;
+
+        [SetUp]
+        public void SetUp()
+        {
+            sum = new Summer();
+        }
 
         [TestCase(0)]
         public void TesterForZero(int allSum)
         {
-            sum = new Summer(new List<int>() { 0 });
-
-            Assert.AreEqual(allSum, sum.Sum());
+            Assert.AreEqual(allSum, sum.Sum(new List<int>() { 0 }));
         }
 
         [TestCase(1)]
         public void TesterForSingleElement(int allSum)
         {
-            sum = new Summer(new List<int>() { 1 });
-
-            Assert.AreEqual(allSum, sum.Sum());
+            Assert.AreEqual(allSum, sum.Sum(new List<int>() { 1 }));
         }
 
         [TestCase(20)]
         public void TesterForMultipleElement(int allSum)
         {
-            sum = new Summer(new List<int>() { 1, 5, 8, 6 });
-
-            Assert.AreEqual(allSum, sum.Sum());
+            Assert.AreEqual(allSum, sum.Sum(new List<int>() { 0, 3, 6, 8, 0, 2, 1 }));
         }
 
         [TestCase(null)]
         public void TesterForNull(Int32 allSum)
         {
-            sum = new Summer(new List<int>());
-
-            Assert.AreEqual(allSum, sum.Sum());
+            Assert.AreEqual(allSum, sum.Sum(new List<int>()));
         }
     }
 }

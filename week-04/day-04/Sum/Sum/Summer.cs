@@ -8,20 +8,13 @@ namespace Sum
 {
     public class Summer
     {
-        public List<int> NumberList { get; set; }
-
-        public Summer(List<int> NumberList)
+        public int Sum(List<int> numberList)
         {
-            this.NumberList = NumberList;
-        }
-
-        public int Sum()
-        {
-            if (!NumberList.Count.Equals(null))
+            if (!numberList.Count.Equals(null))
             {
                 int sum = 0;
 
-                foreach (int current in NumberList)
+                foreach (int current in numberList)
                 {
                     sum += current;
                 }
