@@ -15,11 +15,11 @@ namespace Fibonacci
             Fibonacci = new List<int>() { 0, 1 };
         }
 
-        public int FibonacciMaker(char index)
+        public int FibonacciMaker(object index)
         {
-            int temp = index - '0';
+            string convertedInput = index.ToString();
 
-            if(!Char.IsNumber(index))
+            if(!int.TryParse(convertedInput, out int temp))
             {
                 throw new ArgumentException("It's Life Jim, But Not As We Know It!");
             }

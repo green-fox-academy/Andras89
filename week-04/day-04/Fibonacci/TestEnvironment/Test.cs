@@ -25,32 +25,38 @@ namespace Test
             fibo = null;
         }
 
-        [TestCase('0')]
-        public void WhatsIsIndexZero(char index)
+        [TestCase("0")]
+        public void WhatsIsIndexZero(object index)
         {
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
 
-        [TestCase('1')]
-        public void WhatsIsIndexOne(char index)
+        [TestCase("1")]
+        public void WhatsIsIndexOne(object index)
         {
             Assert.AreEqual(1, fibo.FibonacciMaker(index));
         }
 
-        [TestCase('2')]
-        public void WhatsIsIndexTwo(char index)
+        [TestCase("2")]
+        public void WhatsIsIndexTwo(object index)
         {
             Assert.AreEqual(1, fibo.FibonacciMaker(index));
+        }
+
+        [TestCase("3")]
+        public void WhatsIsIndexThree(object index)
+        {
+            Assert.AreEqual(2, fibo.FibonacciMaker(index));
         }
 
         [TestCase("-1")]
-        public void WhatsIsIndexMinusOne(char index)
+        public void WhatsIsIndexMinusOne(object index)
         {
             Assert.AreEqual(0, fibo.FibonacciMaker(index));
         }
 
         [TestCase('a')]
-        public void WhatsIsIndexA(char index)
+        public void WhatsIsIndexA(object index)
         {
             Assert.Catch<ArgumentException>(() => fibo.FibonacciMaker(index));
         }
