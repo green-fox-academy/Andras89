@@ -25,6 +25,12 @@ namespace Test
             Assert.AreEqual(5, extension.Add(1, 4));
         }
 
+        [TestCase(3,5)]
+        public void TestAddTwoNumbers(int first, int second)
+        {
+            Assert.AreEqual(8, extension.Add(first, second));
+        }
+
         [Test]
         public void TestMaxOfThree_First()
         {
@@ -33,6 +39,12 @@ namespace Test
 
         [Test]
         public void TestMaxOfThree_Fhird()
+        {
+            Assert.AreEqual(5, extension.MaxOfThree(3, 4, 5));
+        }
+
+        [Test]
+        public void TestMaxOfThreeAnyThree()
         {
             Assert.AreEqual(5, extension.MaxOfThree(3, 4, 5));
         }

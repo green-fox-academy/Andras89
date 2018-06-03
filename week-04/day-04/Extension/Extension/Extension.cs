@@ -10,15 +10,25 @@ namespace Extensions
     {
         public int Add(int a, int b)
         {
-            return 5;
+            int c = a + b;
+
+            return c;
         }
 
         public int MaxOfThree(int a, int b, int c)
         {
-            if (a > b)
-                return a;
-            else
-                return c;
+            int max = a;
+
+            if(max < b)
+            {
+                max = b;
+            }
+            if(max < c)
+            {
+                max = c;
+            }
+
+            return max;
         }
 
         public int Median(List<int> pool)
