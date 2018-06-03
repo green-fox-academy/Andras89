@@ -80,6 +80,12 @@ namespace Test
         }
 
         [Test]
+        public void TestIsVowel_U()
+        {
+            Assert.True(extension.IsVowel('U'));
+        }
+
+        [Test]
         public void testTranslate_bemutatkozik()
         {
             Assert.AreEqual("bevemuvutavatkovozivik", extension.Translate("bemutatkozik"));

@@ -46,6 +46,9 @@ namespace Extensions
 
         public bool IsVowel(char c)
         {
+            string temp = c.ToString().ToLower();
+            c = temp[0];
+
             return (new List<char>() { 'a', 'u', 'o', 'e', 'i' }).Contains(c);
         }
 
