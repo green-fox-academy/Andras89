@@ -52,13 +52,19 @@ namespace Test
         [Test]
         public void TestMedian_Four()
         {
-            Assert.AreEqual(5, extension.Median(new List<int>() { 7, 5, 3, 5 }));
+            Assert.AreEqual(4, extension.Median(new List<int>() { 7, 5, 3, 5 }));
         }
 
         [Test]
         public void TestMedian_Five()
         {
             Assert.AreEqual(3, extension.Median(new List<int>() { 1, 2, 3, 4, 5 }));
+        }
+
+        [Test]
+        public void TestMedianEight()
+        {
+            Assert.AreEqual(5.5, extension.Median(new List<int>() { 1, 2, 3, 4, 7, 6, 7, 8 }));
         }
 
         [Test]

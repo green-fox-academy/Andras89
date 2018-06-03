@@ -19,11 +19,11 @@ namespace Extensions
         {
             int max = a;
 
-            if(max < b)
+            if (max < b)
             {
                 max = b;
             }
-            if(max < c)
+            if (max < c)
             {
                 max = c;
             }
@@ -31,9 +31,17 @@ namespace Extensions
             return max;
         }
 
-        public int Median(List<int> pool)
+        public double Median(List<int> pool)
         {
-            return pool[(pool.Count - 1) / 2];
+            if (pool.Count % 2 == 1)
+            {
+                return pool[(pool.Count - 1) / 2];
+            }
+            else
+            {
+                double output = (double)(pool[pool.Count / 2] + pool[pool.Count / 2 - 1]) / 2;
+                return output;
+            }
         }
 
         public bool IsVowel(char c)
