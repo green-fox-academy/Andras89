@@ -66,6 +66,9 @@ namespace Test
 
         [TestCase('a')]
         [TestCase("dhghFGHfbgf")]
+        [TestCase(0.453456)]
+        [TestCase(0.4545f)]
+        [TestCase("0.4343")]
         public void WhatsIsIndexA(object index)
         {
             Assert.Catch<ArgumentException>(() => fibo.FibonacciMaker(index));
