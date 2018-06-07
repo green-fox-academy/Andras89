@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sharpie
 {
-    public class Sharpie
+    public class Shar
     {
         private string Color;
         private float Width;
         private float InkNumber;
 
-        public Sharpie(string Color, float Width)
+        public Shar(string Color, float Width)
         {
             this.Color = Color;
             this.Width = Width;

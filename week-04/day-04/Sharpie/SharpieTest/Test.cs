@@ -1,19 +1,33 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sharpie;
 
 namespace Test
 {
     [TestFixture]
     public class Test
     {
-        [Test]
-        public void Tester()
-        {
+        Shar sharpie;
 
+        [SetUp]
+        public void SetUp()
+        {
+            sharpie = new Shar("Black", 100f);            
+        }
+
+        [Test]
+        public void NumberOfUsesLeftAfterUsage([Range(1, 99)] int input)
+        {
+            LoopIt(input);
+
+            Assert.AreEqual(100 - input, sharpie.NumberOfUsesLeft());
+        }
+
+        public void LoopIt(int input)
+        {
+            for (int i = 0; i < input; i++)
+            {
+                sharpie.Use();
+            }
         }
     }
 }
