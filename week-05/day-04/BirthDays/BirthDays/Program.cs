@@ -13,9 +13,16 @@ namespace BirthDays
         {
             string filePath = @"../../birthdaysdata.txt";
 
+            AGoodRubberDuckySaysNothing(filePath);
+        }
+
+        public static void AGoodRubberDuckySaysNothing(string filePath)
+        {
             string reader = File.ReadAllText(filePath);
 
-            string[] splitReader = reader.Split(';');
+            string[] splitReader = reader.Split(';', '-');
+
+            Console.ReadLine();
         }
     }
 }
