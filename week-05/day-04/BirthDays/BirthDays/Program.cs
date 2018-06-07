@@ -18,6 +18,8 @@ namespace BirthDays
 
         public static void AGoodRubberDuckySaysNothing(string filePath)
         {
+            string mostBirthYears = String.Empty;
+
             string reader = File.ReadAllText(filePath);
 
             string[] splitReader = reader.Split(';', '-');
@@ -26,7 +28,7 @@ namespace BirthDays
 
             foreach (string word in splitReader)
             {
-                if(word.Length == 4 && int.TryParse(word, out int n))
+                if (word.Length == 4 && int.TryParse(word, out int n))
                 {
                     if (funkyDictionaryName.ContainsKey(word))
                     {
@@ -37,6 +39,31 @@ namespace BirthDays
                         funkyDictionaryName.Add(word, 1);
                     }
                 }
+            }
+
+            List<string> yearContainer = new List<string>();
+
+            foreach (KeyValuePair<string, int> current in funkyDictionaryName)
+            {
+                if (yearContainer.Count == 0)
+                {
+                    yearContainer.Add(current.Key);
+                }
+                else if (current.Value > funkyDictionaryName[yearContainer[0]])
+                {
+                    yearContainer.Clear();
+                    yearContainer.Add(current.Key);
+                }
+                else if(current.Value == funkyDictionaryName[yearContainer[0]])
+                {
+                    yearContainer.Add(current.Key);
+                }
+                else { }
+            }
+
+            foreach (string word in yearContainer)
+            {
+
             }
 
             Console.ReadLine();
