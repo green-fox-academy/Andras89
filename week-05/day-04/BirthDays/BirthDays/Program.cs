@@ -56,7 +56,7 @@ namespace BirthDays
                     yearContainer.Clear();
                     yearContainer.Add(current.Key);
                 }
-                else if(current.Value == funkyDictionaryName[yearContainer[0]])
+                else if (current.Value == funkyDictionaryName[yearContainer[0]])
                 {
                     yearContainer.Add(current.Key);
                 }

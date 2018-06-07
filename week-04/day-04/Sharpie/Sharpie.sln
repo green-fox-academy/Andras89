@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpie", "Sharpie\Sharpie.csproj", "{0F592302-BB68-49D9-AEEB-DC295D608829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpieTest", "SharpieTest\SharpieTest.csproj", "{F1B13F69-54F7-43CE-B46E-A79B1ADE17AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F592302-BB68-49D9-AEEB-DC295D608829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F592302-BB68-49D9-AEEB-DC295D608829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F592302-BB68-49D9-AEEB-DC295D608829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F592302-BB68-49D9-AEEB-DC295D608829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B13F69-54F7-43CE-B46E-A79B1ADE17AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B13F69-54F7-43CE-B46E-A79B1ADE17AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B13F69-54F7-43CE-B46E-A79B1ADE17AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B13F69-54F7-43CE-B46E-A79B1ADE17AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC7D1926-89CD-4409-9DAD-0E7163F409E1}
+	EndGlobalSection
+EndGlobal
