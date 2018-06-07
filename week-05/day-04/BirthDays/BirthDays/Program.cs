@@ -13,10 +13,12 @@ namespace BirthDays
         {
             string filePath = @"../../birthdaysdata.txt";
 
-            AGoodRubberDuckySaysNothing(filePath);
+            Console.WriteLine(AGoodRubberDuckySaysNothing(filePath));
+
+            Console.ReadLine();
         }
 
-        public static void AGoodRubberDuckySaysNothing(string filePath)
+        public static string AGoodRubberDuckySaysNothing(string filePath)
         {
             string mostBirthYears = String.Empty;
 
@@ -63,10 +65,10 @@ namespace BirthDays
 
             foreach (string word in yearContainer)
             {
-
+                mostBirthYears += $"{word}, ";
             }
 
-            Console.ReadLine();
+            return mostBirthYears;
         }
     }
 }
