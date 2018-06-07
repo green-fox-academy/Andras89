@@ -22,6 +22,23 @@ namespace BirthDays
 
             string[] splitReader = reader.Split(';', '-');
 
+            Dictionary<string, int> funkyDictionaryName = new Dictionary<string, int>();
+
+            foreach (string word in splitReader)
+            {
+                if(word.Length == 4 && int.TryParse(word, out int n))
+                {
+                    if (funkyDictionaryName.ContainsKey(word))
+                    {
+                        funkyDictionaryName[word]++;
+                    }
+                    else
+                    {
+                        funkyDictionaryName.Add(word, 1);
+                    }
+                }
+            }
+
             Console.ReadLine();
         }
     }
