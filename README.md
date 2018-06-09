@@ -4,7 +4,7 @@
 
 <p>Other Repos:</p>
 
-<h3>FOUNDATION PHASE:</h3>
+<h2>FOUNDATION PHASE:</h2>
 
 <a href="https://github.com/Andras89/git-lesson-repository.git">GIT-LESSON</a><span> | </span><a href="https://github.com/Andras89/HTML-Tutorial.git">HTML-TUTORIAL</a> 
 
