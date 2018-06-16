@@ -20,7 +20,14 @@ namespace LINQPractice
 
             ListZipper(new List<int> { 1, 3, 5 }, new List<int> { 2, 4, 6 });
 
+            ListAggregate(new List<int> { 1, 3, 5 });
+
             Console.ReadLine();
+        }
+
+        private static void ListAggregate(List<int> list)
+        {
+
         }
 
         private static void ListZipper(List<int> listOne, List<int> listTwo)
