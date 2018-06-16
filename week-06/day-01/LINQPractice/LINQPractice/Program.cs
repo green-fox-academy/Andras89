@@ -23,9 +23,16 @@ namespace LINQPractice
             Console.ReadLine();
         }
 
-        private static void ListZipper(List<int> list1, List<int> list2)
+        private static void ListZipper(List<int> listOne, List<int> listTwo)
         {
+            IEnumerable<int> zipListSum = listOne.Zip(listTwo, (x, y) => x + y);
 
+            foreach (var item in zipListSum)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
         }
 
         private static void GetSquares(List<int> list)
