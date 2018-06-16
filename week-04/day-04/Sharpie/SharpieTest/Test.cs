@@ -14,6 +14,12 @@ namespace Test
             sharpie = new Shar("Black", 100f);            
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            sharpie = null;
+        }
+
         [Test]
         public void NumberOfUsesLeftAfterUsage([Range(1, 99)] int input)
         {
