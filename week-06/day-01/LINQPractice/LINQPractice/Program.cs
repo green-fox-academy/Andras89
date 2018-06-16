@@ -18,7 +18,14 @@ namespace LINQPractice
 
             GetSquares(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
 
+            ListZipper(new List<int> { 1, 3, 5 }, new List<int> { 2, 4, 6 });
+
             Console.ReadLine();
+        }
+
+        private static void ListZipper(List<int> list1, List<int> list2)
+        {
+
         }
 
         private static void GetSquares(List<int> list)
