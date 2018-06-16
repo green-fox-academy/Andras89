@@ -17,7 +17,21 @@ namespace LINQPractice
 
         private static void SearchInBetweenNumbers(List<int> list)
         {
-            
+            IEnumerable<int> queryBetweenNums = from num in list
+                                                where num > 4 && num <= 11
+                                                select num;
+
+            IEnumerable<int> lambdaBetweenNums = list.Where(x => (x > 4 && x <= 11)).ToList();
+
+            List<int> tempQuery = queryBetweenNums.ToList();
+            List<int> tempLambda = (List<int>)lambdaBetweenNums;
+
+            for (int i = 0, j = 0; i < tempQuery.Count || j < tempLambda.Count; i++, j++)
+            {
+                Console.Write($"{tempQuery[i]} {tempLambda[i]}\t");
+            }
+
+            Console.WriteLine();
         }
 
         private static void SearchEvenNumbers(List<int> list)
