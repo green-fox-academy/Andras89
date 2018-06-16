@@ -32,6 +32,8 @@ namespace LINQPractice
             {
                 Console.Write($"{item} ");
             }
+
+            Console.WriteLine();
         }
     }
 }
