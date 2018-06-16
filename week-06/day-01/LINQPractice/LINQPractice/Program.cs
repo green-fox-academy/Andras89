@@ -22,7 +22,14 @@ namespace LINQPractice
 
             ListAggregate(new List<int> { 1, 3, 5 });
 
+            ListAverage(new List<int> { 1, 3, 5 });
+
             Console.ReadLine();
+        }
+
+        private static void ListAverage(List<int> list)
+        {
+
         }
 
         private static void ListAggregate(List<int> list)
