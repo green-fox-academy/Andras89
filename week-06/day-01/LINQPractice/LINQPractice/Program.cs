@@ -26,9 +26,16 @@ namespace LINQPractice
 
             NumberChecker(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
 
-            DistinctNumberPrinter(new List<int> { 1, 2, 3, 3, 3, 1, 2, 3, 4, 4, 5, 7, 1, 2, 10, 8});
+            DistinctNumberPrinter(new List<int> { 1, 2, 3, 3, 3, 1, 2, 3, 4, 4, 5, 7, 1, 2, 10, 8 });
+
+            NumberExceptList(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, new List<int> { 1, 3, 5, 10 });
 
             Console.ReadLine();
+        }
+
+        private static void NumberExceptList(List<int> listOne, List<int> listTwo)
+        {
+            Console.WriteLine(string.Join(", ", listOne.Except(listTwo)));
         }
 
         private static void DistinctNumberPrinter(List<int> list)
