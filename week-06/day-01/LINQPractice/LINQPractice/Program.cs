@@ -12,9 +12,25 @@ namespace LINQPractice
 
             SearchInBetweenNumbers(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 });
 
-
+            FlipListCountPrinter();
 
             Console.ReadLine();
+        }
+
+        private static void FlipListCountPrinter()
+        {
+            List<int> flipList = new List<int>();
+            Random rnd = new Random();
+
+            for (int i = 0; i < 100; i++)
+            {
+                flipList.Add(rnd.Next(1, 3));
+            }
+
+            Console.WriteLine($"Heads: {flipList.Where(x => (x == 1)).ToList().Count}");
+            Console.WriteLine($"Tails: {flipList.Where(x => (x == 2)).ToList().Count}");
+
+            Console.WriteLine();
         }
 
         private static void SearchInBetweenNumbers(List<int> list)
