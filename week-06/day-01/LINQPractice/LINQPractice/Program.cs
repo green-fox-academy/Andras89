@@ -23,14 +23,21 @@ namespace LINQPractice
 
         private static void GetSquares(List<int> list)
         {
+            IEnumerable<int> squares = list.Select(x => x * x);
 
+            foreach (var item in squares)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
         }
 
         private static void NamesStartingWithSPrinter()
         {
             List<string> allTheNames = new List<string> { "Sally", "Doug", "Sarah", "Allan", "Sigourney", "Sasha", "Jeremy" };
 
-            IEnumerable<string> startWithSNames = allTheNames.Where(x => x.StartsWith('S'));
+            IEnumerable<string> startWithSNames = allTheNames.Where(x => x.StartsWith('S')).Select(x => x.Replace('S', 'F'));
 
             foreach (var item in startWithSNames)
             {
