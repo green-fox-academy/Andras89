@@ -33,7 +33,7 @@ namespace LINQPractice
 
         private static void DistinctNumberPrinter(List<int> list)
         {
-
+            Console.WriteLine(string.Join(", ", list.Distinct().OrderBy(x => x).OrderBy(x => x < 7)));
         }
 
         private static void NumberChecker(List<int> list)
