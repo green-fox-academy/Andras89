@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQPractice
 {
@@ -14,7 +15,23 @@ namespace LINQPractice
 
         private static void SearchEvenNumbers(List<int> list)
         {
+            IEnumerable<int> evenNums = from num in list
+                                        where num % 2 == 0
+                                        select num;
 
+            IEnumerable<int> evenNumsMethod = list.Where(x => (x % 2 == 0)).ToList();
+
+            foreach (var item in evenNums)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
+
+            foreach (var item in evenNumsMethod)
+            {
+                Console.Write($"{item} ");
+            }
         }
     }
 }
