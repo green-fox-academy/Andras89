@@ -27,7 +27,7 @@ namespace LINQPractice
 
         private static void ListAggregate(List<int> list)
         {
-
+            Console.WriteLine(list.Aggregate((a, b) => a + b));
         }
 
         private static void ListZipper(List<int> listOne, List<int> listTwo)
