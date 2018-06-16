@@ -16,7 +16,14 @@ namespace LINQPractice
 
             NamesStartingWithSPrinter();
 
+            GetSquares(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+
             Console.ReadLine();
+        }
+
+        private static void GetSquares(List<int> list)
+        {
+
         }
 
         private static void NamesStartingWithSPrinter()
