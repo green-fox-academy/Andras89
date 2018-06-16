@@ -21,7 +21,16 @@ namespace LINQPractice
 
         private static void NamesStartingWithSPrinter()
         {
+            List<string> allTheNames = new List<string> { "Sally", "Doug", "Sarah", "Allan", "Sigourney", "Sasha", "Jeremy" };
 
+            IEnumerable<string> startWithSNames = allTheNames.Where(x => x.StartsWith('S'));
+
+            foreach (var item in startWithSNames)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
         }
 
         private static void FlipListCountPrinter()
