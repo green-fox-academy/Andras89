@@ -14,7 +14,14 @@ namespace LINQPractice
 
             FlipListCountPrinter();
 
+            NamesStartingWithSPrinter();
+
             Console.ReadLine();
+        }
+
+        private static void NamesStartingWithSPrinter()
+        {
+
         }
 
         private static void FlipListCountPrinter()
