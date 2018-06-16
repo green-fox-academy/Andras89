@@ -31,7 +31,8 @@ namespace LINQPractice
 
         private static void NumberChecker(List<int> list)
         {
-
+            Console.WriteLine(list.All(x => x > 7));
+            Console.WriteLine(list.Any(x => x > 7));
         }
 
         private static void ListAverage(List<int> list)
