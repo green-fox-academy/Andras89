@@ -24,15 +24,11 @@ namespace Exercise5
             var queryResult = from num in n
                               orderby num
                               group num by num into sortedGroup
-                              select new
-                              {
-                                  Number = sortedGroup.Key,
-                                  numCount = sortedGroup.Count()
-                              };
+                              select sortedGroup;
 
             foreach (var item in queryResult)
             {
-                Console.Write($"{item.Number}: {item.numCount}  ");
+                Console.Write($"{item.Key}: {item.Count()}  ");
             }
 
             Console.ReadLine();
