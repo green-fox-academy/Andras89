@@ -11,16 +11,26 @@ namespace Refactor
         {
             int[] array = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
 
-            IEnumerable<int> lambdaResult = array.Where(x => x % 2 == 0);
+            IEnumerable<int> lambdaResultEven = array.Where(x => x % 2 == 0);
 
 
-            IEnumerable<int> queryResult = from number in array
+            IEnumerable<int> queryResultEven = from number in array
                                            where number % 2 == 0
                                            select number;
 
-            lambdaResult.ToList().ForEach(xout => Console.Write($"{xout}, "));
+            lambdaResultEven.ToList().ForEach(xout => Console.Write($"{xout}, "));
             Console.WriteLine();
-            queryResult.ToList().ForEach(xout => Console.Write($"{xout}, "));
+            queryResultEven.ToList().ForEach(xout => Console.Write($"{xout}, "));
+            Console.WriteLine();
+
+            double lambdaResultAverage = array.Where(x => x % 2 == 1).Average();
+
+            double queryResultAverage = (from number in array
+                                         where number % 2 == 1
+                                         select number).Average();
+
+            Console.WriteLine(lambdaResultAverage);
+            Console.WriteLine(queryResultAverage);
 
             Console.ReadLine();
         }
