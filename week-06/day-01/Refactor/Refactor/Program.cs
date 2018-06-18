@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,8 +14,8 @@ namespace Refactor
 
 
             IEnumerable<int> queryResultEven = from number in array
-                                           where number % 2 == 0
-                                           select number;
+                                               where number % 2 == 0
+                                               select number;
 
             lambdaResultEven.ToList().ForEach(xout => Console.Write($"{xout}, "));
             Console.WriteLine();
@@ -41,8 +40,20 @@ namespace Refactor
             lambdaResultPosSquare.ToList().ForEach(xout => Console.Write($"{xout}, "));
             Console.WriteLine();
             queryResultPosSquare.ToList().ForEach(xout => Console.Write($"{xout}, "));
+            Console.WriteLine();
 
+            string input = Console.ReadLine();
 
+            var lambdaResultFreqChar = input.Where(x => x != ' ').GroupBy(g => g);
+
+            var queryResultFreqChar = from character in input
+                                      where character != ' '
+                                      group character by character into characterGroup
+                                      select characterGroup;
+
+            lambdaResultFreqChar.ToList().ForEach(x => Console.Write($"{x.Key}: {x.ToList().Count()} , "));
+            Console.WriteLine();
+            queryResultFreqChar.ToList().ForEach(g => Console.Write($"{g.Key}: {g.ToList().Count()} , "));
 
             Console.ReadLine();
         }
