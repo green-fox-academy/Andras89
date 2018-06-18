@@ -54,6 +54,20 @@ namespace Refactor
             lambdaResultFreqChar.ToList().ForEach(x => Console.Write($"{x.Key}: {x.ToList().Count()} , "));
             Console.WriteLine();
             queryResultFreqChar.ToList().ForEach(g => Console.Write($"{g.Key}: {g.ToList().Count()} , "));
+            Console.WriteLine();
+
+            string[] cities = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+
+            IEnumerable<string> lambdaResultStartAEndI = cities.Where(x => x.StartsWith('A') && x.EndsWith('I'));
+
+            IEnumerable<string> queryResultStartAEndI = from city in cities
+                                                        where city[0].Equals('A') && city[city.Length - 1].Equals('I')
+                                                        select city;
+
+            lambdaResultStartAEndI.ToList().ForEach(x => Console.Write($"{x}, "));
+            Console.WriteLine();
+            queryResultStartAEndI.ToList().ForEach(x => Console.WriteLine($"{x}, "));
+            Console.WriteLine();
 
             Console.ReadLine();
         }
