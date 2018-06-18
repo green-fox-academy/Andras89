@@ -32,6 +32,18 @@ namespace Refactor
             Console.WriteLine(lambdaResultAverage);
             Console.WriteLine(queryResultAverage);
 
+            IEnumerable<double> lambdaResultPosSquare = array.Where(x => x > 0).Select(x => Math.Pow(x, 2));
+
+            IEnumerable<double> queryResultPosSquare = from number in array
+                                                       where number > 0
+                                                       select Math.Pow(number, 2);
+
+            lambdaResultPosSquare.ToList().ForEach(xout => Console.Write($"{xout}, "));
+            Console.WriteLine();
+            queryResultPosSquare.ToList().ForEach(xout => Console.Write($"{xout}, "));
+
+
+
             Console.ReadLine();
         }
     }
