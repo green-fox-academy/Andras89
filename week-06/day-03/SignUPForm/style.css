@@ -1,0 +1,88 @@
+body{
+    margin: 0px;
+    background-color: #d3d3d3;
+}
+.sign-up-tab{
+    padding: 60px;
+    margin: 15%;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+.sign-up-tab .sign-up-form-header{
+    margin: 20px;
+    font-size: 30px;
+    color: gray;
+    font-family: monospace;
+    font-weight: normal;
+}
+.sign-up-form{
+    float:left;
+}
+.sign-up-form .input {
+    margin: 20px;
+	border: 0;
+	width: 320px;
+    height: 30px;
+    font-size: 20px;
+    border-bottom: solid 1px;
+    border-bottom-color: gray;
+    background-color: whitesmoke;
+}
+.sign-up-form .input:focus {
+    border-bottom: solid 3px;
+    border-bottom-color:  darkgreen;
+    outline: none;
+}
+.sign-up-form .input-submit{
+    margin:  20px;
+    border: none;
+    border-radius: 6px;
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: green;
+}
+.seperator{
+    margin: 150px 80px;
+    float: left;
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    width:  50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: lightgray;
+}
+.social-box-sign-up{
+    float: left;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.social-box-sign-up .facebook{
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: darkblue;
+    margin: 20px;
+}
+.social-box-sign-up .twitter{
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: blue;
+    margin: 20px;
+}
+.social-box-sign-up .googleplus{
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: red;
+    margin: 20px;
+}
