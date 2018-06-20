@@ -5,6 +5,27 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
+        <div class="login-form-container" id="login-form">
+	       <div class="login-form-content">
+		<div class="login-form-header">
+			<h2>ACCOUNT LOGIN</h2>
+		</div>
+		<form method="post" action="" class="login-form">
+			<div class="input-container">
+				<i class="fa fa-envelope"></i>
+				<input type="email" class="input" name="email" placeholder="Email as UserName" required autofocus/>
+			</div>
+			<div class="input-container">
+				<i class="fa fa-lock"></i>
+				<input type="password"  id="login-password" class="input" name="password" placeholder="Password" required/>
+				<i id="show-password" class="fa fa-eye"></i>
+			</div>
+			<div class="rememberme-container">
+				<a class="forgot-password" href="#">Forgot Password?</a>
+			</div>
+			<input type="submit" name="login" value="Login" class="button"/>
+               </form>
+	       </div>
+        </div>
     </body>
 </html>
