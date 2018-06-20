@@ -5,6 +5,7 @@ td, th {
     text-align: left; 
     width: 300px;
     height: 40px;
+    border-radius: 4px;
 }
 
 th {
