@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="passtest.js"></script>
     </head>
     <body>
         <div class="sign-up-tab">
@@ -11,11 +12,14 @@
             </div>
 
             <div class="sign-up-form">
-                <form type="post" action="" class="sign-up-form-container">
+                <form action="https://newsletter-ws.herokuapp.com/register" method="post" class="sign-up-form-container">
                     <input type="text" class="input" name="name" placeholder="NAME" required><br/>
                     <input type="email" class="input" name="email" placeholder="EMAIL" required><br/>
-                    <input type="password" class="input" name="password" placeholder="PASSWORD"><br/>
-                    <input type="password" class="input" name="passwordConfirmation" placeholder="RETYPE PASSWORD"><br/><br/>
+                    <input type="password" class="input"  id="pass1" name="password" placeholder="PASSWORD" required><br/>
+                    <input type="password" class="input" id="pass2" name="passwordConfirmation" placeholder="RETYPE PASSWORD" onkeyup="checkPass(); return false;" required>
+                    <p id="confirmMessage" class="confirmMessage"></p>
+                    <br/><br/>
+                    
                     <input type="submit" class="input-submit" name="submit" value="SIGN ME UP">
                 </form>
             </div>
