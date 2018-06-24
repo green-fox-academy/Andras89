@@ -29,10 +29,12 @@ namespace MvcTutorialApp
             //app.UseMvcWithDefaultRoute();
 
             app.UseMvc(
-                routes =>
-                {
-                    routes.MapRoute("Default", "{controller=Home}/{action=Index}");
-                }
+                //routes =>
+                //{
+                //    routes
+                //        .MapRoute("Default", "{controller=Home}/{action=Index}/{id?}")
+                //        .MapRoute("Members", "Members/{controller=MemberHome}/{action=Index}/{id?}");
+                //}
                 );
 
             app.Run(async (context) =>

@@ -9,13 +9,19 @@ using MvcTutorialApp.Models;
 
 namespace MvcTutorialApp.Controllers
 {
+    [Route("")]
+    [Route("Home")]
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        [Route("")]
+        [Route("Index")]
+        [Route("Index/{id}")]
+        public IActionResult Index(int id)
         {
             Contact contact = new Contact()
             {
+                id = id,
                 firstName = "Andrew",
                 lastName = "Paulson"
             };
