@@ -15,6 +15,11 @@ namespace MVCTutorial.Controllers
             return View();
         }
 
+        public IActionResult Customers()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
