@@ -26,16 +26,16 @@ namespace MvcTutorialApp
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseMvcWithDefaultRoute();
+            app.UseMvcWithDefaultRoute();
 
-            app.UseMvc(
-                //routes =>
-                //{
-                //    routes
-                //        .MapRoute("Default", "{controller=Home}/{action=Index}/{id?}")
-                //        .MapRoute("Members", "Members/{controller=MemberHome}/{action=Index}/{id?}");
-                //}
-                );
+            //app.UseMvc(
+            //routes =>
+            //{
+            //    routes
+            //        .MapRoute("Default", "{controller=Home}/{action=Index}/{id?}")
+            //        .MapRoute("Members", "Members/{controller=MemberHome}/{action=Index}/{id?}");
+            //}
+            //);
 
             app.Run(async (context) =>
             {

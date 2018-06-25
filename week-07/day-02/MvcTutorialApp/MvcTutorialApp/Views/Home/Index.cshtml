@@ -1,10 +1,12 @@
-﻿@model MvcTutorialApp.Models.Contact
+﻿@model MvcTutorialApp.ViewModels.HomeIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home</title>
 </head>
 <body>
-    Hi there @Model.firstName @Model.lastName! Your Id is: @Model.id
+    Hi there @Model.Contact.FirstName @Model.Contact.LastName! Your Id is: @Model.Contact.Id
+    <br /><br /><br />
+    Customer name is @Model.Customer.customerName!
 </body>
 </html>
