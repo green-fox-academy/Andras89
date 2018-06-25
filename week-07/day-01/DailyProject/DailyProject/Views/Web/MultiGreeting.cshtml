@@ -1,0 +1,18 @@
+﻿@model DailyProject.Models.MultiGreeting
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MultiLangual Greeting</title>
+</head>
+<body>
+    <div>
+    @foreach(string hello in Model.Greetings)
+    {
+        <span style="color: rgb(@Model.GetRGB(), @Model.GetRGB(), @Model.GetRGB()); font-size:@Model.GetFont();">@hello </span>
+
+    }
+
+    <span>@Model.Name</span>
+    </div>
+</body>
+</html>

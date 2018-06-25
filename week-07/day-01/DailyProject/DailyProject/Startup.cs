@@ -30,7 +30,7 @@ namespace DailyProject
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Default async reply");
             });
         }
     }

@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace DailyProject.Controllers
 {
     [Route("Web")]
+    [Route("")]
     public class WebController : Controller
     {
         [Route("Greeting")]
+        [Route("")]
         public IActionResult Greeting()
         {
             Greeting greet = new Greeting()
@@ -19,6 +21,17 @@ namespace DailyProject.Controllers
             };
 
             return View(greet);
+        }
+
+        [Route("MultiGreeting/{name}")]
+        public IActionResult MultiGreeting(string name)
+        {
+            MultiGreeting mGreeting = new MultiGreeting()
+            {
+                Name = name
+            };
+
+            return View(mGreeting);
         }
     }
 }
