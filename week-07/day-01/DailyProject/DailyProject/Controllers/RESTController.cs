@@ -9,15 +9,15 @@ namespace DailyProject.Controllers
 {
     [Route("Api")]
     public class RESTController : Controller
-    {
-
+    {       
         [Route("Greeting/{name}")]
         public IActionResult Greeting([FromRoute] string name)
         {
+
+
             Greeting greet = new Greeting()
-            {
-                Id = 0,
-                Content = "Hello" + name
+            {                
+                Content = "Hello, " + name
             };
 
             return new JsonResult(greet);

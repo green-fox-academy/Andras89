@@ -7,7 +7,14 @@ namespace DailyProject.Models
 {
     public class Greeting
     {
-        public long Id { get; set; }
+        public static long Counter { get; set; }
+        public int Id { get; set; }
         public string Content { get; set; }
+
+        public Greeting()
+        {
+            Counter++;
+            Id += (int)Counter;
+        }
     }
 }
