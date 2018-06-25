@@ -14,18 +14,25 @@ namespace MvcTutorialApp.Controllers
     //[Route("Home")]
     public class HomeController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         // GET: /<controller>/
         //[Route("")]
         //[Route("Index")]
         //[Route("Index/{id}")]
-        public IActionResult Index()
+
+        [HttpPost]
+        public IActionResult Index(Contact contact)
         {
-            Contact contact = new Contact()
-            {
-                Id = 1,
-                FirstName = "Andrew",
-                LastName = "Paulson"
-            };
+            //Contact contact = new Contact()
+            //{
+            //    Id = 1,
+            //    FirstName = "Andrew",
+            //    LastName = "Paulson"
+            //};
 
             Customer customer = new Customer()
             {
