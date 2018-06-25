@@ -14,9 +14,10 @@ namespace MvcTutorialApp.Controllers
     //[Route("Home")]
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View("IndexWithForm");
         }
 
         // GET: /<controller>/
@@ -24,7 +25,7 @@ namespace MvcTutorialApp.Controllers
         //[Route("Index")]
         //[Route("Index/{id}")]
 
-        [HttpPost]
+
         public IActionResult Index(Contact contact)
         {
             //Contact contact = new Contact()
@@ -33,20 +34,23 @@ namespace MvcTutorialApp.Controllers
             //    FirstName = "Andrew",
             //    LastName = "Paulson"
             //};
-
-            Customer customer = new Customer()
+            if (ModelState.IsValid)
             {
-                Id = 2,
-                customerName = "Joe"
-            };
+                Customer customer = new Customer()
+                {
+                    Id = 2,
+                    customerName = "Joe"
+                };
 
-            HomeIndexViewModel vM = new HomeIndexViewModel()
-            {
-                Contact = contact,
-                Customer = customer
-            };
+                HomeIndexViewModel vM = new HomeIndexViewModel()
+                {
+                    Contact = contact,
+                    Customer = customer
+                };
 
-            return View(vM);
+                return View(vM);
+            }
+            return View("IndexWithForm");
         }
     }
 }
