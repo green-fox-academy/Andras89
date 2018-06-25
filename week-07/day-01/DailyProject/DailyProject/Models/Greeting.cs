@@ -14,7 +14,7 @@ namespace DailyProject.Models
         public Greeting()
         {
             Counter++;
-            Id += (int)Counter;
+            Id = (int)Counter;
         }
     }
 }
