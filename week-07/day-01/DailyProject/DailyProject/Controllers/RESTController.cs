@@ -13,8 +13,6 @@ namespace DailyProject.Controllers
         [Route("Greeting/{name}")]
         public IActionResult Greeting([FromRoute] string name)
         {
-
-
             Greeting greet = new Greeting()
             {                
                 Content = "Hello, " + name
