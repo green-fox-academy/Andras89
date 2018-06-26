@@ -13,6 +13,7 @@
       <form action="/Bank/IncrementBalance" method="post">
           <label>Select Animal Type To Increment Their Balance: </label>
           <select name="type" required>
+              <option value="" disabled selected>Select your option</option>
               @foreach (BankAccount animal in tempList)
               {
                   <option value="@animal.AnimalType">@animal.AnimalType</option>
