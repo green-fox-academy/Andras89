@@ -32,7 +32,7 @@ namespace BankOfSimba.Models
                 }
                 else
                 {
-                    Balance += 50;
+                    Balance += 10;
                 }
             }
         }
