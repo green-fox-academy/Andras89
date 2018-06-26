@@ -5,22 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<table style="font-size: 30px;">
-    <thead>
+@{int index = 0; }
+<table style="font-size: 30px; text-align:center;">
+    <thead style="background-color: #3d3d3d; color: white;">
         <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">Index</th>
             <th style="border: 1px solid black">Name</th>
             <th style="border: 1px solid black">Balance</th>
             <th style="border: 1px solid black">Type</th>
+            <th style="border: 1px solid black">Alignment</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(BankAccount acc in Model.BankAccountDatabase)
+        @foreach (BankAccount acc in Model.BankAccountDatabase)
         {
-        <tr style="border: 1px solid black">
-            <td style="border: 1px solid black">@acc.Name</td>
-            <td style="border: 1px solid black">@acc.Balance</td>
-            <td style="border: 1px solid black">@acc.AnimalType</td>
-        </tr>
+            string temp = string.Empty;
+
+            if (acc.IsGoodGuy)
+            {
+                temp += "Good One";
+            }
+            else
+            {
+                temp += "Bad Guy";
+            }
+
+            if (acc.IsKing)
+            {
+                <tr style="border: 1px solid black; background-color: gold">
+                    <td style="border: 1px solid black">@index</td>
+                    <td style="border: 1px solid black">@acc.Name</td>
+                    <td style="border: 1px solid black">@acc.Balance</td>
+                    <td style="border: 1px solid black">@acc.AnimalType</td>
+                    <td style="border: 1px solid black">@temp</td>
+                    <td style="border: 1px solid black">KING</td>
+                </tr>
+            }
+            else
+            {
+                <tr style="border: 1px solid black">
+                    <td style="border: 1px solid black">@index</td>
+                    <td style="border: 1px solid black">@acc.Name</td>
+                    <td style="border: 1px solid black">@acc.Balance</td>
+                    <td style="border: 1px solid black">@acc.AnimalType</td>
+                    <td style="border: 1px solid black">@temp</td>
+                </tr>
+            }
+
+            index++;
         }
     </tbody>
 </table>

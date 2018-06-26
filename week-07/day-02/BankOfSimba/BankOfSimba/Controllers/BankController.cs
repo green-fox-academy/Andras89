@@ -14,7 +14,7 @@ namespace BankOfSimba.Controllers
         [HttpGet("Index")]
         public IActionResult Index()
         {
-            BankAccount account = new BankAccount("Simba", 2000, "Lion");
+            BankAccount account = new BankAccount("Simba", 2000, "Lion", true, true);
 
             return View(account);
         }
@@ -26,11 +26,12 @@ namespace BankOfSimba.Controllers
             {
                 BankAccountDatabase = new List<BankAccount>
                 {
-                    new BankAccount("Simba", 5000, "Lion"),
-                    new BankAccount("Musafa", 32000, "Lion"),
-                    new BankAccount("Zazu", 3000, "Bird"),
-                    new BankAccount("Timon", 20, "Meerkat"),
-                    new BankAccount("Pumba", 0, "Boar")
+                    new BankAccount("Simba", 5000, "Lion", true, true),
+                    new BankAccount("Musafa", 32000, "Lion", true, true),
+                    new BankAccount("Zazu", 3000, "Bird", false, true),
+                    new BankAccount("Timon", 20, "Meerkat", false, true),
+                    new BankAccount("Pumba", 0, "Boar", false, true),
+                    new BankAccount("Scar", 400000, "Lion", true, false)
                 }
             };
 
