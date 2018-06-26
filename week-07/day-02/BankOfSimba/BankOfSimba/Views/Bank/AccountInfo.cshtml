@@ -7,7 +7,7 @@
 
 <br /><br />
 <form action="/Bank/IncrementBalance" method="post">
-    <input type="text" name="type" value="" placeholder="AnimalBalanceToIncrement"/>
+    <input type="text" name="type" value="" placeholder="AnimalBalanceToIncrement" required/>
     <button type="submit">Submit</button>
 </form>
 <br /><br />
@@ -63,4 +63,15 @@
         }
     </tbody>
 </table>
+
+<br /><br />
+
+      <form action="/Bank/AddNewAccount" method="post">
+          <label>Name: </label><input type="text" name="Name" value="" required/><br />
+          <label>Balance: </label><input type="number" name="Balance" value="" required/><br />
+          <label>AnimalType: </label><input type="text" name="AnimalType" value="" required/><br />
+          <label>IsKing: </label><input type="checkbox" name="IsKing" value="TRUE" /><br />
+          <label>IsGoodGuy: </label><input type="checkbox" name="IsGoodGuy" value="TRUE" /><br />
+          <button type="submit">Submit</button>
+      </form>
 

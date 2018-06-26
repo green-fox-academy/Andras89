@@ -12,16 +12,7 @@ namespace BankOfSimba.Models
         public string AnimalType { get; set; }
         public bool IsKing { get; set; }
         public bool IsGoodGuy { get; set; }
-
-        public BankAccount(string name, decimal balance, string animalType, bool isKing, bool isGoodGuy)
-        {
-            Name = name;
-            Balance = balance;
-            AnimalType = animalType;
-            IsKing = isKing;
-            IsGoodGuy = isGoodGuy;
-        }
-
+        
         public void IncrementBalance(string type)
         {
             if (type.ToLower().Equals(AnimalType.ToLower()))
