@@ -1,8 +1,8 @@
-﻿
+﻿@model BankAccount
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<span>@Model.Name has @Model.Balance.ToString(".00 Zebra") . </span>

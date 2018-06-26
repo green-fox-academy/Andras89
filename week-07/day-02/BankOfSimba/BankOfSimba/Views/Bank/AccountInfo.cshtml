@@ -1,0 +1,27 @@
+﻿@model BankOfSimba.ViewModels.BankAccountInfoViewModel
+
+@{
+    ViewData["Title"] = "AccountInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table style="font-size: 30px;">
+    <thead>
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">Name</th>
+            <th style="border: 1px solid black">Balance</th>
+            <th style="border: 1px solid black">Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(BankAccount acc in Model.BankAccountDatabase)
+        {
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">@acc.Name</td>
+            <td style="border: 1px solid black">@acc.Balance</td>
+            <td style="border: 1px solid black">@acc.AnimalType</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
