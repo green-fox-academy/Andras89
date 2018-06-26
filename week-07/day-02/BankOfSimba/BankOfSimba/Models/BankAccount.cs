@@ -21,5 +21,20 @@ namespace BankOfSimba.Models
             IsKing = isKing;
             IsGoodGuy = isGoodGuy;
         }
+
+        public void IncrementBalance(string type)
+        {
+            if (type.ToLower().Equals(AnimalType.ToLower()))
+            {
+                if (IsKing)
+                {
+                    Balance += 100;
+                }
+                else
+                {
+                    Balance += 50;
+                }
+            }
+        }
     }
 }

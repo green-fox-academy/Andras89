@@ -5,7 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br /><br />
+<form action="/Bank/IncrementBalance" method="post">
+    <input type="text" name="type" value="" />
+    <button type="submit">Submit</button>
+</form>
 @{int index = 0; }
+
 <table style="font-size: 30px; text-align:center;">
     <thead style="background-color: #3d3d3d; color: white;">
         <tr style="border: 1px solid black">
