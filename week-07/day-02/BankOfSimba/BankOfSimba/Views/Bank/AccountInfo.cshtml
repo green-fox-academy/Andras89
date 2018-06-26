@@ -6,10 +6,20 @@
 }
 
 <br /><br />
-<form action="/Bank/IncrementBalance" method="post">
-    <input type="text" name="type" value="" placeholder="AnimalBalanceToIncrement" required/>
-    <button type="submit">Submit</button>
-</form>
+@{ var tempList = Model.BankAccountDatabase.GroupBy(x => x.AnimalType)
+                                           .Select(x => x.First())
+                                           .Distinct();}
+
+      <form action="/Bank/IncrementBalance" method="post">
+          <label>Select Animal Type To Increment Their Balance: </label>
+          <select name="type" required>
+              @foreach (BankAccount animal in tempList)
+              {
+                  <option value="@animal.AnimalType">@animal.AnimalType</option>
+              }
+          </select>   
+          <button type="submit">Submit</button>
+      </form>
 <br /><br />
 @{int index = 0; }
 
