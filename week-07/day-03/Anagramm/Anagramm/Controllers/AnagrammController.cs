@@ -22,5 +22,18 @@ namespace Anagramm.Controllers
         {
             return View();
         }
+
+        [HttpPost("/")]
+        public IActionResult AnagrammChecker(string input)
+        {
+            anagramm.CheckAnagramm(input);
+            return RedirectToAction("ShowIsAnagramm");
+        }
+
+        [HttpGet("anagramm")]
+        public IActionResult ShowIsAnagramm()
+        {
+            return View("ShowIsAnagramm", anagramm.GetAnagramm());
+        }
     }
 }

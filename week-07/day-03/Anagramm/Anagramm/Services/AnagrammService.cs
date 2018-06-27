@@ -7,15 +7,21 @@ namespace Anagramm.Services
 {
     public class AnagrammService : IAnagramm
     {
+        private bool isAnagramm;
         private string anagramm;
 
-        public bool CheckAnagramm(string input)
+        public void CheckAnagramm(string input)
         {
-            var temp = input.ToCharArray();
+            char[] temp = input.ToCharArray();
             Array.Reverse(temp);
             anagramm = string.Join("", temp);
 
-            return input.ToLower().Equals(anagramm.ToLower());
+            isAnagramm = input.ToLower().Equals(anagramm.ToLower());
+        }
+
+        public bool GetAnagramm()
+        {
+            return isAnagramm;
         }
     }
 }
