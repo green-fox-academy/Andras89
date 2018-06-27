@@ -7,7 +7,6 @@ namespace Anagramm.Services
 {
     public interface IAnagramm
     {
-        string GetAnagramm();
-        bool CheckAnagramm();
+        bool CheckAnagramm(string input);
     }
 }
