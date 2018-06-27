@@ -10,7 +10,6 @@
 <table class="table table-bordered table-responsive table-hover">
     <thead style="background-color: #3d3d3d; color: white;">
         <tr>
-            <th>DONE</th>
             <th>ID</th>
             <th>CONTENT</th>
         </tr>
@@ -18,12 +17,22 @@
     <tbody>
         @foreach (ToDo todo in Model)
         {
-            if (todo.IsUrgent)
+            if (todo.Complete)
+            {
+                <tr style="background-color: green;">
+
+
+                    <td>@todo.Id</td>
+                    <td>@todo.Content</td>
+                    <td>DONE</td>
+                </tr>
+
+            }
+            else if (todo.IsUrgent)
             {
                 <tr style="background-color: gold;">
-                    <td>
-                        <input type="checkbox" name="" value="" />
-                    </td>
+
+
                     <td>@todo.Id</td>
                     <td>@todo.Content</td>
                     <td>URGENT</td>
@@ -33,9 +42,8 @@
             else
             {
                 <tr>
-                    <td>
-                        <input type="checkbox" name="" value="" />
-                    </td>
+
+
                     <td>@todo.Id</td>
                     <td>@todo.Content</td>
                 </tr>
@@ -65,6 +73,19 @@
 
 <br /><br />
 
+<form action="/complete" method="post">
+    <select name="input">
+        <option value="" selected disabled hidden>Choose here</option>
+        @foreach (ToDo item in Model)
+        {
+            <option value="@item.Id">@item.Content</option>
+        }
+    </select>
+    <button type="submit">CHECK</button>
+</form>
+
+<br /><br />
+
 <form action="/urgent" method="post">
     <select name="input">
         <option value="" selected disabled hidden>Choose here</option>
@@ -82,4 +103,9 @@
     <button type="submit">WriteJSON</button>
 </form>
 
+<br /><br />
+
+<form action="/readjson" method="post">
+    <button type="submit">ReadJSON</button>
+</form>
 

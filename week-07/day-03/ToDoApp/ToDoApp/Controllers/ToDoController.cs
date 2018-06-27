@@ -38,6 +38,13 @@ namespace ToDoApp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost("complete")]
+        public IActionResult MakeComplete(int input)
+        {
+            database.SetCompleteToDo(input);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost("urgent")]
         public IActionResult MakeUrgent(int input)
         {
@@ -49,6 +56,13 @@ namespace ToDoApp.Controllers
         public IActionResult WriteToJson()
         {
             database.SaveToFile();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("readjson")]
+        public IActionResult ReadFromJson()
+        {
+            database.LoadFromFile();
             return RedirectToAction("Index");
         }
     }

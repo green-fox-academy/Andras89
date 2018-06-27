@@ -18,6 +18,12 @@ namespace ToDoApp.Services
             return database;
         }
 
+        public void LoadFromFile()
+        {
+            string json = File.ReadAllText(@"SavedFiles/path.json");
+            database = JsonConvert.DeserializeObject<List<ToDo>>(json);
+        }
+
         public void RemoveToDo(int input)
         {
             List<ToDo> temp = database.Where(x => x.Id != input).ToList();
@@ -29,6 +35,11 @@ namespace ToDoApp.Services
             string json = JsonConvert.SerializeObject(database.ToArray());
 
             File.WriteAllText(@"SavedFiles/path.json", json);
+        }
+
+        public void SetCompleteToDo(int input)
+        {
+            database.Where(x => x.Id == input).ToArray()[0].Complete = true;
         }
 
         public void SetId()

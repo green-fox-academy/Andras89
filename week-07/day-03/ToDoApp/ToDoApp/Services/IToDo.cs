@@ -15,5 +15,7 @@ namespace ToDoApp.Services
         void SetId();
         void SetUrgentToDo(int input);
         void SaveToFile();
+        void LoadFromFile();
+        void SetCompleteToDo(int input);
     }
 }
