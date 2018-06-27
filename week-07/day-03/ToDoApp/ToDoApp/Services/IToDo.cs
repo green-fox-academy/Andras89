@@ -10,5 +10,8 @@ namespace ToDoApp.Services
     {
         void SetToDo(ToDo input);
         List<ToDo> GetToDoDatabase();
+        void RemoveToDo(int input);
+
+        void SetId();
     }
 }

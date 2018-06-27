@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ToDoApp.Models;
 using ToDoApp.Services;
 
 namespace ToDoApp.Controllers
@@ -20,7 +21,21 @@ namespace ToDoApp.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
-            return View();
+            return View(database.GetToDoDatabase());
+        }
+
+        [HttpPost("/")]
+        public IActionResult AddToDo(ToDo todo)
+        {
+            database.SetToDo(todo);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("remove")]
+        public IActionResult RemoveTodo(int input)
+        {
+            database.RemoveToDo(input);
+            return RedirectToAction("Index");
         }
     }
 }

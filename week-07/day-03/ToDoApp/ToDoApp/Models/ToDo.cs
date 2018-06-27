@@ -7,7 +7,7 @@ namespace ToDoApp.Models
 {
     public class ToDo
     {
-        public bool Completed { get; set; }
+        public int Id { get; set; }
         public string Content { get; set; }
     }
 }

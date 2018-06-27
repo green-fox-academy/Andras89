@@ -5,26 +5,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model != null)
-{
-    <table>
+
+<br /><br />
+    <table class="table table-bordered table-responsive table-hover" >
+        <thead style="background-color: #3d3d3d; color: white;">
+            <tr>
+                <th>DONE</th>
+                <th>ID</th>
+                <th>CONTENT</th>
+            </tr>
+        </thead>
+        <tbody>
         @foreach (ToDo todo in Model)
         {
             <tr>
-                <td><input type="checkbox" name="check" value="" /></td>
+                <td>
+                    <input type="checkbox" name="" value="" />
+                </td>
+                <td>@todo.Id</td>
                 <td>@todo.Content</td>
-
             </tr>
-
         }
+        </tbody>
     </table>
-}
 
     <br /><br />
     <form action="/" method="post">
-        <input type="checkbox" name="Completed" value="TRUE" />
         <input type="text" name="Content" value="" placeholder="AddContent" required/>
         <button type="submit">Submit</button>
     </form>
+    <br /><br />
+          <form action="/remove" method="post">
+              <select name="input">
+                  <option value="" selected disabled hidden>Choose here</option>
+                  @foreach (ToDo item in Model)
+                  {
+                      <option value="@item.Id">@item.Content</option>
+                  }
+              </select>
+              <button type="submit">Submit</button>
+          </form>
 
 
