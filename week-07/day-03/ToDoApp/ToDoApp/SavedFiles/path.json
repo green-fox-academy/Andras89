@@ -1,1 +1,1 @@
-[{"Id":1,"Content":"elso","Complete":false,"IsUrgent":false},{"Id":2,"Content":"masodik","Complete":false,"IsUrgent":true},{"Id":3,"Content":"harmadik","Complete":true,"IsUrgent":false}]
+[{"Id":1,"Content":"elso","Complete":false,"IsUrgent":false},{"Id":2,"Content":"masodik","Complete":true,"IsUrgent":false},{"Id":3,"Content":"harmadik","Complete":false,"IsUrgent":true},{"Id":4,"Content":"negyedik","Complete":false,"IsUrgent":false}]

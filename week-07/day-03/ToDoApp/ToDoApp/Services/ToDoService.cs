@@ -22,6 +22,8 @@ namespace ToDoApp.Services
         {
             string json = File.ReadAllText(@"SavedFiles/path.json");
             database = JsonConvert.DeserializeObject<List<ToDo>>(json);
+
+            id = database.Last().Id;
         }
 
         public void RemoveToDo(int input)
