@@ -13,5 +13,7 @@ namespace ToDoApp.Services
         void RemoveToDo(int input);
 
         void SetId();
+        void SetUrgentToDo(int input);
+        void SaveToFile();
     }
 }

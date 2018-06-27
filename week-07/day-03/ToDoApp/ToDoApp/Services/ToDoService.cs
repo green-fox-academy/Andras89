@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDoApp.Models;
@@ -22,6 +24,13 @@ namespace ToDoApp.Services
             database = temp;
         }
 
+        public void SaveToFile()
+        {
+            string json = JsonConvert.SerializeObject(database.ToArray());
+
+            File.WriteAllText(@"SavedFiles/path.json", json);
+        }
+
         public void SetId()
         {
             id++;
@@ -32,6 +41,11 @@ namespace ToDoApp.Services
             SetId();
             input.Id = id;
             database.Add(input);
+        }
+
+        public void SetUrgentToDo(int input)
+        {
+            database.Where(x => x.Id == input).ToArray()[0].IsUrgent = true;
         }
     }
 }

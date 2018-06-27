@@ -37,5 +37,19 @@ namespace ToDoApp.Controllers
             database.RemoveToDo(input);
             return RedirectToAction("Index");
         }
+
+        [HttpPost("urgent")]
+        public IActionResult MakeUrgent(int input)
+        {
+            database.SetUrgentToDo(input);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("writejson")]
+        public IActionResult WriteToJson()
+        {
+            database.SaveToFile();
+            return RedirectToAction("Index");
+        }
     }
 }
