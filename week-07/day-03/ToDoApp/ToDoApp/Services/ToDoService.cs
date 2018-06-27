@@ -8,7 +8,7 @@ namespace ToDoApp.Services
 {
     public class ToDoService : IToDo
     {
-        List<ToDo> database;
+        private List<ToDo> database = new List<ToDo>();
 
         public List<ToDo> GetToDoDatabase()
         {

@@ -1,0 +1,30 @@
+﻿@model List<ToDo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null)
+{
+    <table>
+        @foreach (ToDo todo in Model)
+        {
+            <tr>
+                <td><input type="checkbox" name="check" value="" /></td>
+                <td>@todo.Content</td>
+
+            </tr>
+
+        }
+    </table>
+}
+
+    <br /><br />
+    <form action="/" method="post">
+        <input type="checkbox" name="Completed" value="TRUE" />
+        <input type="text" name="Content" value="" placeholder="AddContent" required/>
+        <button type="submit">Submit</button>
+    </form>
+
+
