@@ -10,7 +10,7 @@ namespace GreetSomeone.Controllers
     [Route("/")]
     public class GreetController : Controller
     {
-        IGreet greet;
+        private IGreet greet;
 
         public GreetController(IGreet greet)
         {
@@ -23,16 +23,17 @@ namespace GreetSomeone.Controllers
             return View();
         }
 
-        [HttpGet("/greet")]
-        public IActionResult Greet()
+        [HttpPost("/")]
+        public IActionResult GetName(string name)
         {
-            return View();
+            greet.SetName(name);
+            return RedirectToAction("greet");
         }
 
-        [HttpPost("/")]
-        public IActionResult GetName()
+        [HttpGet("greet")]
+        public IActionResult Greet()
         {
-            return RedirectToAction("Greet");
+            return View("greet", greet.GetName());
         }
     }
 }
