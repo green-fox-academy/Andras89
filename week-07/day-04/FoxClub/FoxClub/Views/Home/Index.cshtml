@@ -1,4 +1,5 @@
-﻿
+﻿@model string
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +7,7 @@
 
 <img src="~/images/greenfox.png" alt="Fox" />
 
-<p>This is Mr Fox, He Eats, and tricks</p>
+<p>This is Mr @Model, He Eats, and tricks</p>
 
 <h1>Known Tricks</h1>
 

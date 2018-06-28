@@ -5,15 +5,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FoxClub.Models;
+using FoxClub.Services;
 
 namespace FoxClub.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet("/")]
+        IFox foxClub;
+
+        public HomeController(IFox foxClub)
+        {
+            this.foxClub = foxClub;
+        }
+
+        [HttpGet("/Index")]
         public IActionResult Index()
         {
-            return View();
+            return View("Index", foxClub.GetName());
         }
 
         [Route("")]
@@ -23,9 +31,10 @@ namespace FoxClub.Controllers
             return View();
         }
 
-        [HttpPost("login/{name}")]
+        [HttpPost("login")]
         public IActionResult GetFoxName(string name)
         {
+            foxClub.SetName(name);
             return RedirectToAction("Index");
         }
     }
