@@ -10,28 +10,23 @@ namespace FoxClub.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        [Route("")]
+        [HttpGet("login")]
+        public IActionResult Login()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
-        public IActionResult Contact()
+        [HttpPost("login/{name}")]
+        public IActionResult GetFoxName(string name)
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return RedirectToAction("Index");
         }
     }
 }

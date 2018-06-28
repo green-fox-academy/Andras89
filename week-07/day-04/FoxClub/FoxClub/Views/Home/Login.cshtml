@@ -1,0 +1,13 @@
+﻿
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome to FoxLand!</h1><br /><br />
+<p>Please Give the name of your fox:</p><br /><br />
+
+<form action="/login" method="post">
+    <input type="text" name="name" value="" required/>
+    <button type="submit">SUBMIT</button>
+</form>
