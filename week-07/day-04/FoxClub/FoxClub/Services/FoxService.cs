@@ -13,9 +13,10 @@ namespace FoxClub.Services
 
         public void CheckFox(string name)
         {
-            if(foxDatabase.Where(x => x.Name == name).Count() == 0)
+            if(foxDatabase.Where(x => x.Name.Equals(name)).Count() == 0)
             {
                 foxDatabase.Add(new Fox() { Name = name });
+                currentFox = new Fox() { Tricks = new List<string>() };
                 currentFox.Name = name;
             }
             else
@@ -65,6 +66,7 @@ namespace FoxClub.Services
         public void SetTricks(string trick)
         {
             currentFox.Tricks.Add(trick);
+            foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Tricks = new List<string>();
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Tricks.Add(trick);
         }
     }
