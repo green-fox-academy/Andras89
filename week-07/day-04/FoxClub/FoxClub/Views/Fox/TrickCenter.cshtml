@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "TrickCenter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>TrickCenter</h1>
+
+<h2>Add a trick to your Fox:</h2>
+<br /><br />
+<form action="/Fox/TrickCenter" method="post">
+    <input type="text" name="trick" value="" placeholder="ADD TRICK" required/>
+    <button type="submit">Submit</button>
+</form>

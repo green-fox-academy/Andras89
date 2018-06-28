@@ -1,4 +1,4 @@
-﻿@model string
+﻿@model FoxClub.Services.FoxService
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +7,20 @@
 
 <img src="~/images/greenfox.png" alt="Fox" />
 
-<p>This is Mr @Model, He Eats, and tricks</p>
+<p>This is Mr @Model.GetName(), He Eats @Model.GetFood(), Drinks @Model.GetDrink() and knows @Model.GetTricks().Count() tricks</p>
 
 <h1>Known Tricks</h1>
+
+@if(Model.GetTricks() == null || Model.GetTricks().Count() == 0)
+{
+    <p>He doesn't know any tricks yet....yolo!</p>
+}
+else
+{
+    foreach(string trick in Model.GetTricks())
+    {
+        <p>@trick</p>
+
+    }
+}
 

@@ -9,6 +9,7 @@ using FoxClub.Services;
 
 namespace FoxClub.Controllers
 {
+    [Route("")]
     public class HomeController : Controller
     {
         IFox foxClub;
@@ -18,10 +19,10 @@ namespace FoxClub.Controllers
             this.foxClub = foxClub;
         }
 
-        [HttpGet("/Index")]
+        [HttpGet("index")]
         public IActionResult Index()
         {
-            return View("Index", foxClub.GetName());
+            return View(foxClub);
         }
 
         [Route("")]
@@ -34,7 +35,7 @@ namespace FoxClub.Controllers
         [HttpPost("login")]
         public IActionResult GetFoxName(string name)
         {
-            foxClub.SetName(name);
+            foxClub.CheckFox(name);
             return RedirectToAction("Index");
         }
     }
