@@ -1,0 +1,14 @@
+﻿@model FoxClub.Services.FoxService
+
+@{
+    ViewData["Title"] = "ActionHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ActionHistory</h1>
+
+@foreach(string action in Model.GetActionHistory())
+{
+    <p>@action</p>
+
+}

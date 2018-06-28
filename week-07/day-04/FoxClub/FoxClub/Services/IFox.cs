@@ -20,5 +20,8 @@ namespace FoxClub.Services
         string GetDrink();
 
         void CheckFox(string name);
+        List<string> ExcludeTrickList();
+
+        Stack<string> GetActionHistory();
     }
 }

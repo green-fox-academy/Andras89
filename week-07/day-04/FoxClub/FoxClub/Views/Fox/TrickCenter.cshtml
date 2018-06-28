@@ -1,4 +1,5 @@
-﻿
+﻿@model FoxClub.Services.FoxService
+
 @{
     ViewData["Title"] = "TrickCenter";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,9 +7,35 @@
 
 <h1>TrickCenter</h1>
 
+<ul>
+    @foreach (string trick in Model.ExcludeTrickList())
+    {
+        <li>@trick</li>
+    }
+</ul>
+
 <h2>Add a trick to your Fox:</h2>
 <br /><br />
-<form action="/Fox/TrickCenter" method="post">
-    <input type="text" name="trick" value="" placeholder="ADD TRICK" required/>
-    <button type="submit">Submit</button>
-</form>
+
+@if (Model.ExcludeTrickList().Count > 0)
+{
+    <form action="/Fox/TrickCenter" method="post">
+        <select name="trick">
+            @foreach (string trick in Model.ExcludeTrickList())
+            {
+                <option value="@trick">@trick</option>
+            }
+
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+}
+else
+{
+    <h2>Your Fox knows all the preset tricks, but you can add more tricks here: </h2>
+
+    <form action="/Fox/TrickCenter" method="post">
+        <input type="text" name="trick" value="" placeholder="The TRICK" required/>
+        <button type="submit">ADD TRICK</button>
+    </form>
+}

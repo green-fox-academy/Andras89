@@ -35,7 +35,7 @@ namespace FoxClub.Controllers
         [HttpGet("TrickCenter")]
         public IActionResult TrickCenter()
         {
-            return View();
+            return View(foxClub);
         }
 
         [HttpPost("TrickCenter")]
@@ -44,6 +44,12 @@ namespace FoxClub.Controllers
             foxClub.SetTricks(trick);
 
             return RedirectToAction("Index", "Home", new { area = "" });
+        }
+
+        [HttpGet("ActionHistory")]
+        public IActionResult ActionHistory()
+        {
+            return View(foxClub);
         }
     }
 }
