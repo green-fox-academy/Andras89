@@ -10,11 +10,12 @@ namespace FoxClub.Services
     {
         private List<Fox> foxDatabase = new List<Fox>();
         private Fox currentFox = new Fox() { Tricks = new List<string>(),
-                                     Drink = "Water",
-                                     Food = "Chicken"};
+                                             Drink = "Water",
+                                             Food = "Chicken",
+                                             Picture = "Default Fox"};
 
-        private List<string> foxTricks = new List<string>() { "Play Dead", "Play Soccer", "Slight of Hand", "Pick Pocket",
-                                                      "Bake Bread", "Make Goofy face"};
+        private List<string> foxTricks = new List<string>() { "Bounce Walk", "Box", "Fart Stars", "Play Guitar",
+                                                              "Bake Bread", "Smoke"};
 
         private Stack<string> actionStack = new Stack<string>();
 
@@ -27,7 +28,8 @@ namespace FoxClub.Services
                 foxDatabase.Add(new Fox() { Name = name });
                 currentFox = new Fox() { Tricks = new List<string>(),
                                          Drink = "Water",
-                                         Food = "Chicken"
+                                         Food = "Chicken",
+                                         Picture = "Default Fox"
                 };
                 currentFox.Name = name;
             }
@@ -62,6 +64,11 @@ namespace FoxClub.Services
             return currentFox.Name;
         }
 
+        public string GetPicture()
+        {
+            return currentFox.Picture;
+        }
+
         public List<string> GetTricks()
         {
             return currentFox.Tricks;
@@ -86,6 +93,13 @@ namespace FoxClub.Services
             actionStack.Push($"Changed {currentFox.Name} to {name} at {DateTime.Now}");
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Name = name;
             currentFox.Name = name;
+        }
+
+        public void SetPicture(string picture)
+        {
+            actionStack.Push($"Changed {currentFox.Picture} to {picture} at {DateTime.Now}");
+            foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Picture = picture;
+            currentFox.Picture = picture;
         }
 
         public void SetTricks(string trick)

@@ -22,6 +22,9 @@ namespace FoxClub.Services
         void CheckFox(string name);
         List<string> ExcludeTrickList();
 
+        void SetPicture(string picture);
+        string GetPicture();
+
         Stack<string> GetActionHistory();
     }
 }

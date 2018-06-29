@@ -43,5 +43,12 @@ namespace FoxClub.Controllers
             foxClub.CheckFox(name);
             return RedirectToAction("Index");
         }
+
+        [HttpPost("picture")]
+        public IActionResult SetPicture(string picture)
+        {
+            foxClub.SetPicture(picture);
+            return RedirectToAction("Index");
+        }
     }
 }

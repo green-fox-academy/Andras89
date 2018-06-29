@@ -1,21 +1,28 @@
 ﻿@model FoxClub.Services.FoxService
 
-<img src="~/images/greenfox.png" alt="Fox" />
-
+<br /><br />
+<img src="~/images/@(Model.GetPicture() + ".gif")" alt="Fox" style="border-radius: 40px" />
+<br /><br />
 <p>This is Mr @Model.GetName(), He Eats @Model.GetFood(), Drinks @Model.GetDrink() and knows @Model.GetTricks().Count() tricks</p>
 
 <h1>Known Tricks</h1>
 
-@if(Model.GetTricks() == null || Model.GetTricks().Count() == 0)
+@if (Model.GetTricks() == null || Model.GetTricks().Count() == 0)
 {
     <h3>He doesn't know any tricks yet....</h3>
 }
 else
 {
-    foreach(string trick in Model.GetTricks())
+    <h4>Default Fox</h4>
+    <form action="/picture" method="post">
+        <input type="submit" name="picture" value="Default Fox" />
+    </form>
+    foreach (string trick in Model.GetTricks())
     {
         <h4>@trick</h4>
-
+        <form action="/picture" method="post">
+            <input type="submit" name="picture" value="@trick" />
+        </form>
     }
 }
 
