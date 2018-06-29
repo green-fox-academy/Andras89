@@ -3,7 +3,9 @@
 <br /><br />
 <img src="~/images/@(Model.GetPicture() + ".gif")" alt="Fox" style="border-radius: 40px" />
 <br /><br />
-<p>This is Mr @Model.GetName(), He Eats @Model.GetFood(), Drinks @Model.GetDrink() and knows @Model.GetTricks().Count() tricks</p>
+<h3>This is Mr @Model.GetName()</h3>
+<h3>He Eats @Model.GetFood(), Drinks @Model.GetDrink() and knows @Model.GetTricks().Count() tricks</h3>
+<h3>Food Amount: @Model.GetFoodAmount(), Drink Amount: @Model.GetDrinkAmount()</h3>
 
 <h1>Known Tricks</h1>
 
@@ -13,13 +15,11 @@
 }
 else
 {
-    <h4>Default Fox</h4>
     <form action="/picture" method="post">
         <input type="submit" name="picture" value="Default Fox" />
     </form>
     foreach (string trick in Model.GetTricks())
     {
-        <h4>@trick</h4>
         <form action="/picture" method="post">
             <input type="submit" name="picture" value="@trick" />
         </form>

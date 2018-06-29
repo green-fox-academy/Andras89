@@ -9,10 +9,7 @@ namespace FoxClub.Services
     public class FoxService : IFox
     {
         private List<Fox> foxDatabase = new List<Fox>();
-        private Fox currentFox = new Fox() { Tricks = new List<string>(),
-                                             Drink = "Water",
-                                             Food = "Chicken",
-                                             Picture = "Default Fox"};
+        private Fox currentFox;
 
         private List<string> foxTricks = new List<string>() { "Bounce Walk", "Box", "Fart Stars", "Play Guitar",
                                                               "Bake Bread", "Smoke"};
@@ -29,7 +26,11 @@ namespace FoxClub.Services
                 currentFox = new Fox() { Tricks = new List<string>(),
                                          Drink = "Water",
                                          Food = "Chicken",
-                                         Picture = "Default Fox"
+                                         Picture = "Default Fox",
+                                         FoodAmount = 10,
+                                         DrinkAmount = 12,
+                                         LastFeed = DateTime.Now,
+                                         LastDrink = DateTime.Now
                 };
                 currentFox.Name = name;
             }
@@ -37,6 +38,15 @@ namespace FoxClub.Services
             {
                 currentFox = foxDatabase.Where(x => x.Name == name).ToList()[0];
             }
+        }
+
+        public void CheckNutritionTimer()
+        {
+            double drink = currentFox.LastDrink.Subtract(DateTime.Now).TotalMinutes;
+            double food = currentFox.LastFeed.Subtract(DateTime.Now).TotalMinutes;
+
+            SetDrinkAmount((int)drink);
+            SetFoodAmount((int)food);
         }
 
         public List<string> ExcludeTrickList()
@@ -54,9 +64,19 @@ namespace FoxClub.Services
             return currentFox.Drink;
         }
 
+        public int GetDrinkAmount()
+        {
+            return currentFox.DrinkAmount;
+        }
+
         public string GetFood()
         {
             return currentFox.Food;
+        }
+
+        public int GetFoodAmount()
+        {
+            return currentFox.FoodAmount;
         }
 
         public string GetName()
@@ -81,11 +101,27 @@ namespace FoxClub.Services
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Drink = drink;
         }
 
+        public void SetDrinkAmount(int drink)
+        {
+            currentFox.LastDrink = DateTime.Now;
+
+            currentFox.DrinkAmount += drink;
+            foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].DrinkAmount += drink;
+        }
+
         public void SetFood(string food)
         {
             actionStack.Push($"Changed {currentFox.Food} to {food} at {DateTime.Now}");
             currentFox.Food = food;
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].Food = food;
+        }
+
+        public void SetFoodAmount(int food)
+        {
+            currentFox.LastFeed = DateTime.Now;
+
+            currentFox.FoodAmount += food;
+            foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].FoodAmount += food;
         }
 
         public void SetName(string name)

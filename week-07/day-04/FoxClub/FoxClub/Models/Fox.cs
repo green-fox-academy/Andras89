@@ -9,8 +9,15 @@ namespace FoxClub.Models
     {
         public string Name { get; set; }
         public List<string> Tricks { get; set; }
+
         public string Drink { get; set; }
         public string Food { get; set; }
+
         public string Picture { get; set; }
+        public int FoodAmount { get; set; }
+        public int DrinkAmount { get; set; }
+
+        public DateTime LastFeed { get; set; }
+        public DateTime LastDrink { get; set; }
     }
 }

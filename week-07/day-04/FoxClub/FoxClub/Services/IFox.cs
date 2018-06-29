@@ -25,6 +25,13 @@ namespace FoxClub.Services
         void SetPicture(string picture);
         string GetPicture();
 
+        void SetFoodAmount(int food);
+        int GetFoodAmount();
+
+        void SetDrinkAmount(int drink);
+        int GetDrinkAmount();
+
+        void CheckNutritionTimer();
         Stack<string> GetActionHistory();
     }
 }

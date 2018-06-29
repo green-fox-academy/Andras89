@@ -27,6 +27,7 @@ namespace FoxClub.Controllers
                 return RedirectToAction("login");
             }
 
+            foxClub.CheckNutritionTimer();
             return View(foxClub);
         }
 
