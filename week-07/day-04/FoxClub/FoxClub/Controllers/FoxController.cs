@@ -20,6 +20,11 @@ namespace FoxClub.Controllers
         [HttpGet("NutritionStore")]
         public IActionResult NutritionStore()
         {
+            if (foxClub.GetName() == null)
+            {
+                return RedirectToAction("login", "Home", new { area = "" });
+            }
+
             return View();
         }
 
@@ -35,6 +40,11 @@ namespace FoxClub.Controllers
         [HttpGet("TrickCenter")]
         public IActionResult TrickCenter()
         {
+            if (foxClub.GetName() == null)
+            {
+                return RedirectToAction("login", "Home", new { area = "" });
+            }
+
             return View(foxClub);
         }
 
@@ -49,6 +59,11 @@ namespace FoxClub.Controllers
         [HttpGet("ActionHistory")]
         public IActionResult ActionHistory()
         {
+            if (foxClub.GetName() == null)
+            {
+                return RedirectToAction("login", "Home", new { area = "" });
+            }
+
             return View(foxClub);
         }
     }

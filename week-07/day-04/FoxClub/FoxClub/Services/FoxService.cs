@@ -8,15 +8,15 @@ namespace FoxClub.Services
 {
     public class FoxService : IFox
     {
-        List<Fox> foxDatabase = new List<Fox>();
-        Fox currentFox = new Fox() { Tricks = new List<string>(),
+        private List<Fox> foxDatabase = new List<Fox>();
+        private Fox currentFox = new Fox() { Tricks = new List<string>(),
                                      Drink = "Water",
                                      Food = "Chicken"};
 
-        List<string> foxTricks = new List<string>() { "Play Dead", "Play Soccer", "Slight of Hand", "Pick Pocket",
+        private List<string> foxTricks = new List<string>() { "Play Dead", "Play Soccer", "Slight of Hand", "Pick Pocket",
                                                       "Bake Bread", "Make Goofy face"};
 
-        Stack<string> actionStack = new Stack<string>();
+        private Stack<string> actionStack = new Stack<string>();
 
         public void CheckFox(string name)
         {

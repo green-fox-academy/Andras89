@@ -1,10 +1,5 @@
 ﻿@model FoxClub.Services.FoxService
 
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 <img src="~/images/greenfox.png" alt="Fox" />
 
 <p>This is Mr @Model.GetName(), He Eats @Model.GetFood(), Drinks @Model.GetDrink() and knows @Model.GetTricks().Count() tricks</p>
@@ -13,13 +8,13 @@
 
 @if(Model.GetTricks() == null || Model.GetTricks().Count() == 0)
 {
-    <p>He doesn't know any tricks yet....yolo!</p>
+    <h3>He doesn't know any tricks yet....</h3>
 }
 else
 {
     foreach(string trick in Model.GetTricks())
     {
-        <p>@trick</p>
+        <h4>@trick</h4>
 
     }
 }

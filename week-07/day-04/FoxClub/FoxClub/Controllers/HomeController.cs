@@ -22,6 +22,11 @@ namespace FoxClub.Controllers
         [HttpGet("index")]
         public IActionResult Index()
         {
+            if(foxClub.GetName() == null)
+            {
+                return RedirectToAction("login");
+            }
+
             return View(foxClub);
         }
 
