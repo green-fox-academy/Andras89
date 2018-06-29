@@ -107,6 +107,11 @@ namespace FoxClub.Services
 
             currentFox.DrinkAmount += drink;
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].DrinkAmount += drink;
+
+            if(currentFox.DrinkAmount < 1)
+            {
+                currentFox.Picture = "Dead Fox";
+            }
         }
 
         public void SetFood(string food)
@@ -122,6 +127,11 @@ namespace FoxClub.Services
 
             currentFox.FoodAmount += food;
             foxDatabase.Where(x => x.Name == currentFox.Name).ToList()[0].FoodAmount += food;
+
+            if(currentFox.FoodAmount < 1)
+            {
+                currentFox.Picture = "Dead Fox";
+            }
         }
 
         public void SetName(string name)
