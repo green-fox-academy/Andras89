@@ -24,6 +24,8 @@ namespace LINQPractice
             Console.WriteLine("WithinRange:");
             lambda.WithinRange(6, 17).ForEach(x => Console.Write($"{x}; "));
             Console.WriteLine();
+            query.WithinRange(6, 17).ForEach(x => Console.Write($"{x}; "));
+            Console.WriteLine();
 
             Console.ReadLine();
         }
