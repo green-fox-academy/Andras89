@@ -15,7 +15,10 @@ namespace LINQPractice
             MethodSyntax lambda = new MethodSyntax() { InternalIntStructure = practiceRange };
             QuerySyntax query = new QuerySyntax() { InternalIntStructure = practiceRange };
 
+            lambda.Even().ForEach(x => Console.Write($"{x}; "));
+            Console.WriteLine();
 
+            Console.ReadLine();
         }
     }
 }
