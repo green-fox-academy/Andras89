@@ -21,6 +21,10 @@ namespace LINQPractice
             query.Even().ForEach(x => Console.Write($"{x}; "));
             Console.WriteLine();
 
+            Console.WriteLine("WithinRange:");
+            lambda.WithinRange(6, 17).ForEach(x => Console.Write($"{x}; "));
+            Console.WriteLine();
+
             Console.ReadLine();
         }
     }
