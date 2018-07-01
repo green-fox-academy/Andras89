@@ -13,13 +13,10 @@ namespace LINQPractice
         public Dictionary<int,int> NumFrequency()
         {
             Dictionary<int, int> freq = (from current in InternalIntStructure
-                                        group current by current into diffnumber
-                                        select new
-                                        {
-                                            HeadNumber = diffnumber.Key,
-                                            HeadCount = diffnumber.Count()
-                                        })
-                                        .ToDictionary(x => x.HeadCount, x => x.HeadCount);
+                                         orderby current ascending
+                                         group current by current into diffnumber
+                                         select diffnumber)
+                                         .ToDictionary(x => x.Key, x => x.Count());
 
             return freq;
         }
