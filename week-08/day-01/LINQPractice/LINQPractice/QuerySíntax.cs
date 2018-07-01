@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQPractice
 {
-    public class MethodSyntax
+     public class QuerySíntax
     {
         public List<int> InternalIntStructure { get; set; }
     }
