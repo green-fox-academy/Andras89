@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQPractice
 {
-    class Program
+    public class MethodSyntax
     {
-        static void Main(string[] args)
-        {
-            List<int> practiceRange = Enumerable.Range(1, 30).ToList();
-
-
-        }
     }
 }
