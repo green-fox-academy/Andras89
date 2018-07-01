@@ -10,6 +10,13 @@ namespace LINQPractice
     {
         public List<int> InternalIntStructure { get; set; }
 
+        public object NumFrequency()
+        {
+            var freq = InternalIntStructure.GroupBy(g => g).Select(g => new { HeadNumber = g.Key, HeadCount = g.Count()} );
+
+            return freq;
+        }
+
         public List<int> Square()
         {
             List<int> square = InternalIntStructure.Select(x => (int)Math.Pow(x, 2)).ToList();
