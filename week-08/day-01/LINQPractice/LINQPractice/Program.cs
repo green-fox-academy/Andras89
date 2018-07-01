@@ -27,6 +27,11 @@ namespace LINQPractice
             query.WithinRange(6, 17).ForEach(x => Console.Write($"{x}; "));
             Console.WriteLine();
 
+            lambda.InternalIntStructure = lambda.WithinRange(6, 17);
+            Console.WriteLine("Square:");
+            lambda.Square().ForEach(x => Console.Write($"{x}; "));
+            Console.WriteLine();
+
             Console.ReadLine();
         }
     }

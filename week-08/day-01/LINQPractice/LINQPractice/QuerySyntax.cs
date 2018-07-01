@@ -10,6 +10,14 @@ namespace LINQPractice
     {
         public List<int> InternalIntStructure { get; set; }
 
+        public List<int> Square()
+        {
+            List<int> square = (from current in InternalIntStructure
+                                select (int)Math.Pow(current, 2)).ToList();
+
+            return square;
+        }
+
         public List<int> WithinRange(int low, int high)
         {
             List<int> withinRange = (from current in InternalIntStructure
