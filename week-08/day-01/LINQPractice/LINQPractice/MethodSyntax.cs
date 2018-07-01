@@ -10,6 +10,13 @@ namespace LINQPractice
     {
         public List<int> InternalIntStructure { get; set; }
 
+        public List<int> WithinRange(int low, int high)
+        {
+            List<int> withinrange = InternalIntStructure.Where(x => x >= low && x <= high).ToList();
+
+            return withinrange;
+        }
+
         public List<int> Even()
         {
             List<int> even = InternalIntStructure.Where(x => x % 2 == 0).ToList();
