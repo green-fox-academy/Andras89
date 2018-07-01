@@ -12,7 +12,8 @@ namespace LINQPractice
 
         public Dictionary<int, int> NumFrequency()
         {
-            Dictionary<int, int> freq = InternalIntStructure.GroupBy(g => g)
+            Dictionary<int, int> freq = InternalIntStructure.OrderBy(x => x)
+                                                            .GroupBy(g => g)                                                     
                                                             .Select(g => new { HeadNumber = g.Key, HeadCount = g.Count()} )
                                                             .ToDictionary(x => x.HeadNumber, x => x.HeadCount);
 
