@@ -12,6 +12,9 @@ namespace LINQPractice
         {
             List<int> practiceRange = Enumerable.Range(1, 30).ToList();
 
+            MethodSyntax lambda = new MethodSyntax() { InternalIntStructure = practiceRange };
+            QuerySyntax query = new QuerySyntax() { InternalIntStructure = practiceRange };
+
 
         }
     }
