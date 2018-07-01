@@ -36,6 +36,9 @@ namespace LINQPractice
             Console.WriteLine();
 
             lambda.InternalIntStructure = new List<int> { 2, 5, 7, 2, 2, 5, 9, 9, 5, 2, 2, 3, 1, 1, 1, 2};
+            Console.WriteLine("NumberFreq:");
+            lambda.NumFrequency().ToList().ForEach(x => Console.Write($"{x.Key}: {x.Value}; "));
+            Console.WriteLine();
 
             Console.ReadLine();
         }

@@ -10,9 +10,11 @@ namespace LINQPractice
     {
         public List<int> InternalIntStructure { get; set; }
 
-        public object NumFrequency()
+        public Dictionary<int, int> NumFrequency()
         {
-            var freq = InternalIntStructure.GroupBy(g => g).Select(g => new { HeadNumber = g.Key, HeadCount = g.Count()} );
+            Dictionary<int, int> freq = InternalIntStructure.GroupBy(g => g)
+                                                            .Select(g => new { HeadNumber = g.Key, HeadCount = g.Count()} )
+                                                            .ToDictionary(x => x.HeadNumber, x => x.HeadCount);
 
             return freq;
         }
