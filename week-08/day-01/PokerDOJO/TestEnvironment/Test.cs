@@ -146,10 +146,10 @@ namespace Test
             Assert.IsTrue(pokerTesting.IsPair(input));
         }
 
-        [TestCase(new object[] { new string[] { "AC", "AH", "10C", "2C", "4C" } })]
+        [TestCase(new object[] { new string[] { "AC", "AH", "AD", "2C", "4C" } })]
         public void GivenHandIsThreeOfAKind(string[] input)
         {
-            Assert.IsTrue(false);
+            Assert.IsTrue(pokerTesting.IsThreeOfAKind(input));
         }
     }
 }

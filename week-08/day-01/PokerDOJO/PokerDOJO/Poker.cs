@@ -8,6 +8,11 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        public bool IsThreeOfAKind(string[] input)
+        {
+            return input.GroupBy(g => FigureValue(g)).Where(x => x.Count() == 3) != null;
+        }
+
         public bool IsPair(string[] input)
         {
             return input.GroupBy(g => FigureValue(g)).Where(x => x.Count() == 2) != null;
