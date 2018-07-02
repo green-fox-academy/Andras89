@@ -94,5 +94,14 @@ namespace Test
 
             Assert.AreEqual(new int[] { 12, 12, 12, 12 }, output.ToArray());
         }
+
+        [TestCase(new object[] { new string[] { "10C", "10D", "10S", "10H" } })]
+        public void IfCardTenColorReturn10Array(string[] input)
+        {
+            List<int> output = new List<int>();
+            input.ToList().ForEach(x => output.Add(pokerTesting.CardValue(x)));
+
+            Assert.AreEqual(new int[] { 10, 10, 10, 10 }, output.ToArray());
+        }
     }
 }

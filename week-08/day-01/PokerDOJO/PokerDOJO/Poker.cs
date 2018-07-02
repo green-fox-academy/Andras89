@@ -8,9 +8,21 @@ namespace PokerDOJO
 {
     public class Poker
     {
-        public int CardValue(string input)
+        public string[] SortHand(string[] input)
         {
-            return FigureValue(input[0].ToString());
+            return input;
+        }
+
+        public int CardValue(string input)
+        {            
+            if (input.Length < 3)
+            {
+                return FigureValue(input[0].ToString());
+            }
+            else
+            {
+                return 10;
+            }
         }
 
         public int FigureValue(string input)
