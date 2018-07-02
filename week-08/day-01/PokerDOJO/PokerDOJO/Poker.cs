@@ -8,6 +8,8 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        
+
         public string GetColor(string input)
         {
             if(input.Length < 3)

@@ -127,5 +127,11 @@ namespace Test
 
             Assert.AreEqual("H", output);
         }
+
+        [TestCase(new object[] { new string[] { "AC", "AD", "AS", "AH", "2S"} })]
+        public void GivenHandIsFourOfAKind(string[] input)
+        {
+            Assert.IsTrue(false);
+        }
     }
 }
