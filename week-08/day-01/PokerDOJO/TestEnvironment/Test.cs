@@ -139,5 +139,11 @@ namespace Test
         {
             Assert.IsTrue(pokerTesting.IsFlush(input));
         }
+
+        [TestCase(new object[] { new string[] { "AC", "AH", "10C", "2C", "4C" } })]
+        public void GivenHandIsPair(string[] input)
+        {
+            Assert.IsTrue(false);
+        }
     }
 }
