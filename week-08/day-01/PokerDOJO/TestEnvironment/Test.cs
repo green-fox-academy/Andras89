@@ -137,7 +137,7 @@ namespace Test
         [TestCase(new object[] { new string[] { "AC", "QC", "10C", "2C", "4C" } })]
         public void GivenHandIsFlush(string[] input)
         {
-            Assert.IsTrue(false);
+            Assert.IsTrue(pokerTesting.IsFlush(input));
         }
     }
 }

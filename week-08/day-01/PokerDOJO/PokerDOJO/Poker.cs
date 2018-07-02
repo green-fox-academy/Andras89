@@ -8,6 +8,11 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        public bool IsFlush(string[] input)
+        {
+            return input.GroupBy(g => GetColor(g)).Where(x => x.Count() == 5) != null;
+        }
+
         public bool IsFourOfAKind(string[] input)
         {
             return input.GroupBy(g => FigureValue(g)).Where(x => x.Count() == 4) != null;
