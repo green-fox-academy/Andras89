@@ -8,6 +8,11 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        public int CardValue(string input)
+        {
+            return FigureValue(input[0].ToString());
+        }
+
         public int FigureValue(string input)
         {
             try

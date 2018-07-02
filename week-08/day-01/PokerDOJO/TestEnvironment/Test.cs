@@ -60,5 +60,12 @@ namespace Test
             int output = pokerTesting.FigureValue(input);
             Assert.AreEqual(14, output);
         }
+
+        [TestCase("2C")]
+        public void IfCardIs2CReturn2(string input)
+        {
+            int output = pokerTesting.CardValue(input);
+            Assert.AreEqual(2, output);
+        }
     }
 }
