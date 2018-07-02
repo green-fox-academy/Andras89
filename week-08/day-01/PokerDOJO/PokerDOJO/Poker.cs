@@ -8,7 +8,10 @@ namespace PokerDOJO
 {
     public class Poker
     {
-
+        public int HandValue(string[] input)
+        {
+            return input.Sum(x => CardValue(x));
+        }
 
         public string[] SortHand(string[] input)
         {
