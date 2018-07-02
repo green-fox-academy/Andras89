@@ -119,5 +119,13 @@ namespace Test
 
             Assert.AreEqual(29, output);
         }
+
+        [TestCase("2H")]
+        public void HeartsCardColorEqualsToHearts(string input)
+        {
+            string output = pokerTesting.GetColor(input);
+
+            Assert.AreEqual("H", output);
+        }
     }
 }

@@ -8,6 +8,18 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        public string GetColor(string input)
+        {
+            if(input.Length < 3)
+            {
+                return input[1].ToString();
+            }
+            else
+            {
+                return input[2].ToString();
+            }
+        } 
+
         public int HandValue(string[] input)
         {
             return input.Sum(x => CardValue(x));
