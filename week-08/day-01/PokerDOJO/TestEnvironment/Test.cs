@@ -76,5 +76,14 @@ namespace Test
 
             Assert.AreEqual(new int[] { 2, 2, 2, 2}, output.ToArray());
         }
+
+        [TestCase(new object[] { new string[] { "3C", "3D", "3S", "3H" } })]
+        public void IfCardIs3ColorReturn3Array(string[] input)
+        {
+            List<int> output = new List<int>();
+            input.ToList().ForEach(x => output.Add(pokerTesting.CardValue(x)));
+
+            Assert.AreEqual(new int[] { 3, 3, 3, 3 }, output.ToArray());
+        }
     }
 }
