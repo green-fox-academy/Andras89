@@ -67,5 +67,14 @@ namespace Test
             int output = pokerTesting.CardValue(input);
             Assert.AreEqual(2, output);
         }
+
+        [TestCase(new object[]{ new string[] { "2C", "2D", "2S", "2H" } })]
+        public void IfCardIs2ColorReturn2Array(string[] input)
+        {
+            List<int> output = new List<int>();
+            input.ToList().ForEach(x => output.Add(pokerTesting.CardValue(x)));
+
+            Assert.AreEqual(new int[] { 2, 2, 2, 2}, output.ToArray());
+        }
     }
 }
