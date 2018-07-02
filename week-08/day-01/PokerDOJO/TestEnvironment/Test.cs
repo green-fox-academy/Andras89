@@ -22,8 +22,29 @@ namespace Test
         [TestCase("2")]
         public void IfCardIsTwoReturnTwo(string input)
         {
-            int output = pokerTesting.CardValue(input);
+            int output = pokerTesting.FigureValue(input);
             Assert.AreEqual(2, output);
+        }
+
+        [TestCase("3")]
+        public void IfCardIsThreeReturnThree(string input)
+        {
+            int output = pokerTesting.FigureValue(input);
+            Assert.AreEqual(3, output);
+        }
+
+        [TestCase("J")]
+        public void IfCardIsJackReturnEleven(string input)
+        {
+            int output = pokerTesting.FigureValue(input);
+            Assert.AreEqual(11, output);
+        }
+
+        [TestCase("Q")]
+        public void IfCardIsQueenReturnQueen(string input)
+        {
+            int output = pokerTesting.FigureValue(input);
+            Assert.AreEqual(12, output);
         }
     }
 }
