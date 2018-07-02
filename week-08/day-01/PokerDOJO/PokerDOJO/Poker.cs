@@ -21,9 +21,14 @@ namespace PokerDOJO
                 if (input.Equals("J"))
                 {
                     return 11;
-                }else if (input.Equals("Q"))
+                }
+                else if (input.Equals("Q"))
                 {
                     return 12;
+                }
+                else if (input.Equals("K"))
+                {
+                    return 13;
                 }
                 return 0;
             }

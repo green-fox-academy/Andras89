@@ -46,5 +46,12 @@ namespace Test
             int output = pokerTesting.FigureValue(input);
             Assert.AreEqual(12, output);
         }
+
+        [TestCase("K")]
+        public void IfCardIsKingReturnKing(string input)
+        {
+            int output = pokerTesting.FigureValue(input);
+            Assert.AreEqual(13, output);
+        }
     }
 }
