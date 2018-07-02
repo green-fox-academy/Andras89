@@ -8,7 +8,10 @@ namespace PokerDOJO
 {
     public class Poker
     {
-        
+        public bool IsFourOfAKind(string[] input)
+        {
+            return input.GroupBy(g => FigureValue(g)).Where(x => x.Count() == 4) != null;
+        }
 
         public string GetColor(string input)
         {

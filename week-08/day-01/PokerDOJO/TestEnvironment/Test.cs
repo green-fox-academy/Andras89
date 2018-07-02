@@ -131,7 +131,7 @@ namespace Test
         [TestCase(new object[] { new string[] { "AC", "AD", "AS", "AH", "2S"} })]
         public void GivenHandIsFourOfAKind(string[] input)
         {
-            Assert.IsTrue(false);
+            Assert.IsTrue(pokerTesting.IsFourOfAKind(input));
         }
     }
 }
