@@ -8,5 +8,11 @@ namespace PokerDOJO
 {
     public class Poker
     {
+        public int CardValue(string input)
+        {
+            int output = Int32.Parse(input);
+
+            return output;
+        }
     }
 }

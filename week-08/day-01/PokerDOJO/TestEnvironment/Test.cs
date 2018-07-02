@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using PokerDOJO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,19 @@ namespace Test
     [TestFixture]
     public class Test
     {
-        [Test]
-        public void Tester()
-        {
+        Poker pokerTesting;
 
+        [SetUp]
+        public void SetUp()
+        {
+            pokerTesting = new Poker();
+        }
+
+        [TestCase("2")]
+        public void IfCardIsTwoReturnTwo(string input)
+        {
+            int output = pokerTesting.CardValue(input);
+            Assert.AreEqual(2, output);
         }
     }
 }
