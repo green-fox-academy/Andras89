@@ -10,7 +10,7 @@ namespace PokerDOJO
     {
         public string[] SortHand(string[] input)
         {
-            return input;
+            return input.ToList().OrderBy(x => CardValue(x)).ToArray();
         }
 
         public int CardValue(string input)

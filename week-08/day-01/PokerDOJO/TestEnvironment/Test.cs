@@ -105,12 +105,11 @@ namespace Test
         }
 
         [TestCase(new object[] { new string[] { "QC", "10D", "2S", "3H", "2D" } })]
-        public void SortedHand(string[] input)
+        public void SortedHandEqualsSorted(string[] input)
         {
-            List<int> output = new List<int>();
-            input.ToList().ForEach(x => output.Add(pokerTesting.CardValue(x)));
+            string[] output = pokerTesting.SortHand(input);
 
-            Assert.AreEqual(new string[] { "2S", "2D", "3H", "10D", "QC" }, output.ToArray());
+            Assert.AreEqual(new string[] { "2S", "2D", "3H", "10D", "QC" }, output);
         }
     }
 }
