@@ -30,6 +30,10 @@ namespace PokerDOJO
                 {
                     return 13;
                 }
+                else if (input.Equals("A"))
+                {
+                    return 14;
+                }
                 return 0;
             }
         }
