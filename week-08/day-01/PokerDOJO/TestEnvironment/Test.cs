@@ -111,5 +111,13 @@ namespace Test
 
             Assert.AreEqual(new string[] { "2S", "2D", "3H", "10D", "QC" }, output);
         }
+
+        [TestCase(new object[] { new string[] { "QC", "10D", "2S", "3H", "2D" } })]
+        public void HandValueEqualsGiven(string[] input)
+        {
+            string[] output = pokerTesting.SortHand(input);
+
+            Assert.AreEqual(29, output);
+        }
     }
 }

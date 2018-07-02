@@ -8,6 +8,8 @@ namespace PokerDOJO
 {
     public class Poker
     {
+
+
         public string[] SortHand(string[] input)
         {
             return input.ToList().OrderBy(x => CardValue(x)).ToArray();
