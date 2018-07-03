@@ -1,4 +1,5 @@
 ﻿using FoxClub.Models;
+using FoxClub.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,13 @@ namespace FoxClub.Services
 {
     public class FoxService : IFox
     {
+        IFoxRepository foxes;
+
+        public FoxService(IFoxRepository foxes)
+        {
+            this.foxes = foxes;
+        }
+
         private List<Fox> foxDatabase = new List<Fox>();
         private Fox currentFox;
 

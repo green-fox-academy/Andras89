@@ -19,5 +19,19 @@ namespace FoxClub.Models
 
         public DateTime LastFeed { get; set; }
         public DateTime LastDrink { get; set; }
+
+        public Fox()
+        {
+            Drink = "Water";
+            Food = "Chicken";
+
+            Picture = "Default Fox";
+
+            FoodAmount = 20;
+            DrinkAmount = 30;
+
+            LastDrink = DateTime.Now;
+            LastFeed = DateTime.Now;
+        }
     }
 }

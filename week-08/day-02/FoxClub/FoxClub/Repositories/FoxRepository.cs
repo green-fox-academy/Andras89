@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoxClub.Repositories
 {
-    public class FoxRepository
+    public class FoxRepository : IFoxRepository
     {
         DbContext foxes;
 

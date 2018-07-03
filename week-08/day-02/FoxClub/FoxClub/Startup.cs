@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FoxClub.Models;
+using FoxClub.Repositories;
 using FoxClub.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,7 @@ namespace FoxClub
 
             services.AddMvc();
             services.AddTransient<IFox, FoxService>();
+            services.AddTransient<IFoxRepository, FoxRepository>();
             services.AddDbContext<FoxDbContext>(options => options.UseSqlServer(connection));
             services.AddTransient<FoxDbContext>();
         }
