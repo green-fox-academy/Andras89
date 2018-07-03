@@ -1,14 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ToDoAppX.Models;
 
 namespace ToDoAppX.Repositories
 {
     public class ToDoRepository : ICRUD
     {
-        ToDoContext todos;
+        private ToDoContext todos;
 
-        public ToDoRepository(DbContextOptions<ToDoContext> options)
+        public ToDoRepository(ToDoContext todos)
         {
-            todos = new ToDoContext(options);
+            this.todos = todos;
+        }
+
+        public void Create(ToDo todo)
+        {
+            todos.Add(todo);
+            todos.SaveChanges();
         }
     }
 }
