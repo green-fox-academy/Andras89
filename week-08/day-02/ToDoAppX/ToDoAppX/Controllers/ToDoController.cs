@@ -8,7 +8,8 @@ using ToDoAppX.Repositories;
 
 namespace ToDoAppX.Controllers
 {
-    [Route("/todo")]
+    [Route("")]
+    [Route("todo")]
     public class ToDoController : Controller
     {
         ICRUD database;
@@ -25,7 +26,13 @@ namespace ToDoAppX.Controllers
             return View(database.Read());
         }
 
-        [HttpPost("list")]
+        [HttpGet("add")]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost("add")]
         public IActionResult AddTodoToDatabase(ToDo todo)
         {
             database.Create(todo);
