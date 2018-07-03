@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ToDoAppX.Models;
 using ToDoAppX.Repositories;
 
 namespace ToDoAppX.Controllers
@@ -22,6 +23,13 @@ namespace ToDoAppX.Controllers
         public IActionResult List()
         {
             return View(database.Read());
+        }
+
+        [HttpPost("list")]
+        public IActionResult AddTodoToDatabase(ToDo todo)
+        {
+            database.Create(todo);
+            return RedirectToAction("Index");
         }
     }
 }

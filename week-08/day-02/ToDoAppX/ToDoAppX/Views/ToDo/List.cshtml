@@ -29,3 +29,17 @@
         </tbody>
     </table>
 
+<form action="/todo/list" method="post">
+    <label>Content:</label><input type="text" name="title" value="" />
+
+    <label>IsUrgent:</label>
+    <input type="checkbox" name="IsUrgent" value="TRUE" />
+    <input type="hidden" name="IsUrgent" value="FALSE" />
+
+    <label>IsDone:</label>
+    <input type="checkbox" name="IsDone" value="TRUE" />
+    <input type="hidden" name="IsDone" value="FALSE" />
+
+    <button type="submit">Submit</button>
+</form>
+
