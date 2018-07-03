@@ -1,0 +1,16 @@
+﻿@model FoxClub.Services.FoxService
+
+@{
+    ViewData["Title"] = "NutritionStore";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>NutritionStore</h1>
+
+<h2>Choose nutrients for your fox</h2>
+
+<form action="/Fox/NutritionStore" method="post">
+    <input type="text" name="drink" value="Water" placeholder="DRINK" autocomplete="on" required/>
+    <input type="text" name="food" value="Chicken" placeholder="FOOD" autocomplete="on" required/>
+    <button type="submit">Submit</button>
+</form>
