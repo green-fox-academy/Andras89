@@ -4,14 +4,16 @@ using FoxClub.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FoxClub.Migrations
 {
     [DbContext(typeof(FoxDbContext))]
-    partial class FoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180703213845_TrickListAdd")]
+    partial class TrickListAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

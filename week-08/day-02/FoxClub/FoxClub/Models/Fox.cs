@@ -28,6 +28,5 @@ namespace FoxClub.Models
 
         public DateTime LastFeed { get; set; }
         public DateTime LastDrink { get; set; }
-        }
     }
 }
