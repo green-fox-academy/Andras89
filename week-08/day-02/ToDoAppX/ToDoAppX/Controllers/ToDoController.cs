@@ -9,9 +9,11 @@ namespace ToDoAppX.Controllers
     [Route("/todo")]
     public class ToDoController : Controller
     {
+        [Route("")]
+        [Route("list")]
         public IActionResult List()
         {
-            return View();
+            return Content("This is my first todo");
         }
     }
 }
