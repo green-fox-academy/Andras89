@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoxClub.Models;
 using FoxClub.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,8 +24,12 @@ namespace FoxClub
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=foxes;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
             services.AddMvc();
-            services.AddSingleton<IFox, FoxService>();
+            services.AddTransient<IFox, FoxService>();
+            services.AddDbContext<FoxDbContext>(options => options.UseSqlServer(connection));
+            services.AddTransient<FoxDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
