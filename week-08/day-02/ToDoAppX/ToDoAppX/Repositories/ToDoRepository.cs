@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ToDoAppX.Models;
 
 namespace ToDoAppX.Repositories
@@ -16,6 +18,11 @@ namespace ToDoAppX.Repositories
         {
             todos.Add(todo);
             todos.SaveChanges();
+        }
+
+        public List<ToDo> Read()
+        {
+            return todos.Todos.ToList();
         }
     }
 }

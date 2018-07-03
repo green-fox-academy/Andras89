@@ -9,5 +9,6 @@ namespace ToDoAppX.Repositories
     public interface ICRUD
     {
         void Create(ToDo todo);
+        List<ToDo> Read();
     }
 }
