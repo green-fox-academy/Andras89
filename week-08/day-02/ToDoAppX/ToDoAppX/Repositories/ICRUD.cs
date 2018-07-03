@@ -10,5 +10,6 @@ namespace ToDoAppX.Repositories
     {
         void Create(ToDo todo);
         List<ToDo> Read();
+        void Delete(int id);
     }
 }

@@ -20,6 +20,14 @@ namespace ToDoAppX.Repositories
             todos.SaveChanges();
         }
 
+        public void Delete(int id)
+        {
+            var removable = todos.Todos.ToList().FirstOrDefault(x => x.Id == id);
+
+            todos.Remove(removable);
+            todos.SaveChanges();
+        }
+
         public List<ToDo> Read()
         {
             return todos.Todos.ToList();

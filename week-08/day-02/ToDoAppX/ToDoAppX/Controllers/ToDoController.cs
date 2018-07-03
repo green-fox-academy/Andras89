@@ -29,7 +29,15 @@ namespace ToDoAppX.Controllers
         public IActionResult AddTodoToDatabase(ToDo todo)
         {
             database.Create(todo);
-            return RedirectToAction("Index");
+            return RedirectToAction("list");
+        }
+
+        [HttpGet("/{id}/delete")]
+        public IActionResult RemoveToDoWithIdFromDatabase(int id)
+        {
+            database.Delete(id);
+
+            return RedirectToAction("list");
         }
     }
 }
