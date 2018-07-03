@@ -10,8 +10,14 @@ namespace FoxClub.Models
     {
         public long Id { get; set; }
         public string Name { get; set; }
+
         [NotMapped]
         public List<string> Tricks { get; set; }
+        public string TrickList
+        {
+            get { return string.Join(",", Tricks); }
+            set { Tricks = value.Split(",").ToList(); }
+        }
 
         public string Drink { get; set; }
         public string Food { get; set; }
@@ -22,19 +28,6 @@ namespace FoxClub.Models
 
         public DateTime LastFeed { get; set; }
         public DateTime LastDrink { get; set; }
-
-        public Fox()
-        {
-            Drink = "Water";
-            Food = "Chicken";
-
-            Picture = "Default Fox";
-
-            FoodAmount = 20;
-            DrinkAmount = 30;
-
-            LastDrink = DateTime.Now;
-            LastFeed = DateTime.Now;
         }
     }
 }
