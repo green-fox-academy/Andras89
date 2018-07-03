@@ -11,12 +11,29 @@
     <label>Content:</label><input type="text" name="title" value="@Model.Title" />
 
     <label>IsUrgent:</label>
-    <input type="checkbox" name="IsUrgent" value="TRUE" />
-    <input type="hidden" name="IsUrgent" value="FALSE" />
+    @if (Model.IsUrgent)
+    {
+        <input type="checkbox" name="IsUrgent" value="TRUE" checked />
+        <input type="hidden" name="IsUrgent" value="FALSE" />
+    }
+    else
+    {
+        <input type="checkbox" name="IsUrgent" value="TRUE" />
+        <input type="hidden" name="IsUrgent" value="FALSE" />
+    }
+
 
     <label>IsDone:</label>
-    <input type="checkbox" name="IsDone" value="TRUE" />
-    <input type="hidden" name="IsDone" value="FALSE" />
+    @if (Model.IsDone)
+    {
+        <input type="checkbox" name="IsDone" value="TRUE" checked />
+        <input type="hidden" name="IsDone" value="FALSE" />
+    }
+    else
+    {
+        <input type="checkbox" name="IsDone" value="TRUE" />
+        <input type="hidden" name="IsDone" value="FALSE" />
+    }
 
     <button type="submit">Submit</button>
 </form>
