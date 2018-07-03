@@ -31,7 +31,7 @@ namespace FoxClub
             services.AddTransient<IFox, FoxService>();
             services.AddTransient<IFoxRepository, FoxRepository>();
             services.AddDbContext<FoxDbContext>(options => options.UseSqlServer(connection));
-            services.AddTransient<FoxDbContext>();
+            services.AddTransient<DbContext, FoxDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

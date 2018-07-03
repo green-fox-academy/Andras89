@@ -8,14 +8,7 @@ using System.Threading.Tasks;
 namespace FoxClub.Services
 {
     public class FoxService : IFox
-    {
-        IFoxRepository foxes;
-
-        public FoxService(IFoxRepository foxes)
-        {
-            this.foxes = foxes;
-        }
-
+    {   
         private List<Fox> foxDatabase = new List<Fox>();
         private Fox currentFox;
 
@@ -23,6 +16,13 @@ namespace FoxClub.Services
                                                               "Bake Bread", "Smoke"};
 
         private Stack<string> actionStack = new Stack<string>();
+
+        private IFoxRepository foxes;
+
+        public FoxService(IFoxRepository foxes)
+        {
+            this.foxes = foxes;
+        }
 
         public void CheckFox(string name)
         {

@@ -8,11 +8,11 @@ namespace FoxClub.Repositories
 {
     public class FoxRepository : IFoxRepository
     {
-        DbContext foxes;
+        DbContext database;
 
-        public FoxRepository(DbContext foxes)
+        public FoxRepository(DbContext database)
         {
-            this.foxes = foxes;
+            this.database = database;
         }
     }
 }
