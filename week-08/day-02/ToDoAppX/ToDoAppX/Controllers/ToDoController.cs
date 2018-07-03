@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ToDoAppX.Controllers
 {
+    [Route("/todo")]
     public class ToDoController : Controller
     {
-        public IActionResult Index()
+        public IActionResult List()
         {
             return View();
         }
