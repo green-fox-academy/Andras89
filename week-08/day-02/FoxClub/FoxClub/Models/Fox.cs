@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +8,9 @@ namespace FoxClub.Models
 {
     public class Fox
     {
+        public long Id { get; set; }
         public string Name { get; set; }
+        [NotMapped]
         public List<string> Tricks { get; set; }
 
         public string Drink { get; set; }
