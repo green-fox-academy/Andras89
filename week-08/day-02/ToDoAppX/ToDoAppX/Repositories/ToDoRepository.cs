@@ -28,6 +28,17 @@ namespace ToDoAppX.Repositories
             todos.SaveChanges();
         }
 
+        public void Edit(ToDo todo)
+        {
+            todos.Update(todo);
+            todos.SaveChanges();
+        }
+
+        public ToDo GetTodoById(long id)
+        {
+            return todos.Todos.ToList().FirstOrDefault(x => x.Id == id);
+        }
+
         public List<ToDo> Read()
         {
             return todos.Todos.ToList();

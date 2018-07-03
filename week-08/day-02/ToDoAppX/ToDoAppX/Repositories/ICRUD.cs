@@ -11,5 +11,8 @@ namespace ToDoAppX.Repositories
         void Create(ToDo todo);
         List<ToDo> Read();
         void Delete(int id);
+        void Edit(ToDo todo);
+
+        ToDo GetTodoById(long id);
     }
 }

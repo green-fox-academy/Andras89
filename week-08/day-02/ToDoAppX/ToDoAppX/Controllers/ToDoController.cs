@@ -39,5 +39,18 @@ namespace ToDoAppX.Controllers
 
             return RedirectToAction("list");
         }
+
+        [HttpGet("/{id}/edit")]
+        public IActionResult Edit(long id)
+        {
+            return View("Edit", database.GetTodoById(id));
+        }
+
+        [HttpPost("/{id}/edit")]
+        public IActionResult EditTheDatabase(ToDo todo)
+        {
+            database.Edit(todo);
+            return RedirectToAction("list");
+        }
     }
 }
