@@ -11,5 +11,7 @@ namespace ToDoAppX.Models
         public string Title { get; set; }
         public bool IsUrgent { get; set; }
         public bool IsDone { get; set; }
+
+        public virtual Assignee Assignee { get; set; }
     }
 }
