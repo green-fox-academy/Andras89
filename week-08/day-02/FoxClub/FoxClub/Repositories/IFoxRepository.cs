@@ -9,7 +9,7 @@ namespace FoxClub.Repositories
     public interface IFoxRepository
     {
         void Create(Fox fox);
-        Fox Read(long id);
+        Fox Read(string name);
         void Update(Fox fox);
         void Delete(Fox fox);
     }

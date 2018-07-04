@@ -28,9 +28,9 @@ namespace FoxClub.Repositories
             database.SaveChanges();
         }
 
-        public Fox Read(long id)
+        public Fox Read(string name)
         {
-            var output = database.Foxes.ToList().FirstOrDefault(f => f.Id == id);
+            var output = database.Foxes.ToList().FirstOrDefault(f => f.Name == name);
             return output;
         }
 

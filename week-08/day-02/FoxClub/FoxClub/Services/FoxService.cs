@@ -9,8 +9,8 @@ namespace FoxClub.Services
 {
     public class FoxService : IFox
     {   
-        private List<Fox> foxDatabase = new List<Fox>();
-        private Fox currentFox;
+        private static List<Fox> foxDatabase = new List<Fox>();
+        private static Fox currentFox;
 
         private List<string> foxTricks = new List<string>() { "Bounce Walk", "Box", "Fart Stars", "Play Guitar",
                                                               "Bake Bread", "Smoke"};
@@ -28,9 +28,11 @@ namespace FoxClub.Services
         {
             actionStack.Push($"Changed to {name} at {DateTime.Now}");
 
-            if (foxDatabase.Where(x => x.Name.Equals(name)).Count() == 0)
+            if (foxes.Read(name).Name == null)
             {
-                foxDatabase.Add(new Fox() { Name = name });
+                foxes.Create(new Fox { Name = name });
+
+                foxDatabase.Add(new Fox() { Name = name });                
                 currentFox = new Fox() { Tricks = new List<string>(),
                                          Drink = "Water",
                                          Food = "Chicken",
@@ -40,11 +42,12 @@ namespace FoxClub.Services
                                          LastFeed = DateTime.Now,
                                          LastDrink = DateTime.Now
                 };
-                currentFox.Name = name;
+                currentFox = foxes.Read(name);
             }
             else
             {
                 currentFox = foxDatabase.Where(x => x.Name == name).ToList()[0];
+                currentFox = foxes.Read(name);
             }
         }
 
