@@ -13,6 +13,7 @@ namespace FoxClub.Models
 
         [NotMapped]
         public List<string> Tricks { get; set; }
+
         public string TrickList
         {
             get { return string.Join(",", Tricks); }
