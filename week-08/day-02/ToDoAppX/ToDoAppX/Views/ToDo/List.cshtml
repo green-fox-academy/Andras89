@@ -1,4 +1,4 @@
-﻿@model List<ToDo>
+﻿@model ToDoAppX.Repositories.ToDoRepository
 
 @{
     ViewData["Title"] = "List";
@@ -13,16 +13,18 @@
         <tr>
             <th>Id</th>
             <th>Content</th>
+            <th>Assignee</th>
             <th>IsUrgent</th>
             <th>IsDone</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (ToDo current in Model)
+        @foreach (ToDo current in Model.Read())
         {
         <tr>
             <td>@current.Id</td>
             <td>@current.Title</td>
+            <td>@current.Assignee.Name</td>
             <td>@current.IsUrgent</td>
             <td>@current.IsDone</td>
             <td><a href="/@current.Id/edit">EDIT</a></td>

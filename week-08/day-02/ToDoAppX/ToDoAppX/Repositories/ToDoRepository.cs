@@ -41,7 +41,8 @@ namespace ToDoAppX.Repositories
 
         public List<ToDo> Read()
         {
-            return todos.Todos.ToList();
+            var output = todos.Todos.Include(a => a.Assignee);
+            return output.ToList();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ToDoAppX.Controllers
         [Route("list")]
         public IActionResult List()
         {
-            return View(database.Read());
+            return View(database);
         }
 
         [HttpGet("add")]

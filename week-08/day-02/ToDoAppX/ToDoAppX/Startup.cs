@@ -28,7 +28,7 @@ namespace ToDoAppX
             services.AddMvc();
             services.AddTransient<ICRUD, ToDoRepository>();
             services.AddDbContext<ToDoContext>(options => options.UseSqlServer(connection));
-            services.AddTransient<ToDoContext>();
+            services.AddTransient<DbContext, ToDoContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
