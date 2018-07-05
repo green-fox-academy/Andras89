@@ -13,5 +13,8 @@ namespace ToDoAppX.Services
         void DeleteToDoByID(int id);
         ToDo GetTodoById(long id);
         void EditToDo(ToDo todo);
+
+        List<Assignee> ReadAssignees();
+        List<ToDo> SearchToDos(string input);
     }
 }

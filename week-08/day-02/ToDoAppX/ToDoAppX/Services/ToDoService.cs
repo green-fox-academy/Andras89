@@ -39,9 +39,19 @@ namespace ToDoAppX.Services
             return todoRepo.GetRecordById(id);
         }
 
+        public List<Assignee> ReadAssignees()
+        {
+            return assigneeRepo.Read();
+        }
+
         public List<ToDo> ReadToDos()
         {
             return todoRepo.Read();
+        }
+
+        public List<ToDo> SearchToDos(string input)
+        {
+            return todoRepo.Read().Where(x => x.Title.ToLower().Contains(input.ToLower())).ToList();
         }
     }
 }

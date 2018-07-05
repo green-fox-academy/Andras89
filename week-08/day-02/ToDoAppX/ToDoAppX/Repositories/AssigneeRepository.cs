@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ToDoAppX.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToDoAppX.Repositories
 {
@@ -40,7 +41,8 @@ namespace ToDoAppX.Repositories
 
         public List<Assignee> Read()
         {
-            return toDoDbContext.Assignees.ToList();
+            var output = toDoDbContext.Assignees.Include(ass => ass.ToDos);
+            return output.ToList();
         }
     }
 }

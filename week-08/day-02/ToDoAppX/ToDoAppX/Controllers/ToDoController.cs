@@ -27,6 +27,18 @@ namespace ToDoAppX.Controllers
             return View(database.ReadToDos());
         }
 
+        [HttpPost("list")]
+        public IActionResult Search(string input)
+        {
+            return View("~/Views/ToDo/List.cshtml", database.SearchToDos(input));
+        }
+
+        [HttpGet("listass")]
+        public IActionResult ListAssignees()
+        {
+            return View(database);
+        }
+
         [HttpGet("add")]
         public IActionResult Add()
         {

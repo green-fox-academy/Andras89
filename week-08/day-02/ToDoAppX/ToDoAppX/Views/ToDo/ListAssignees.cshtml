@@ -1,0 +1,21 @@
+﻿@model ToDoAppX.Services.ToDoService
+
+@{
+    ViewData["Title"] = "ListAssignees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Assignee ToDos</h2>
+
+@foreach(Assignee current in Model.ReadAssignees())
+{
+    <h3>Id: @current.Id, Name: @current.Name
+    @foreach(ToDo todo in current.ToDos)
+    {
+        <span>@todo.Title, </span>
+
+    }
+
+    </h3>
+
+}
