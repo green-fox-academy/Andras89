@@ -1,4 +1,4 @@
-﻿@model ToDo
+﻿@model ToDoAppX.ViewModels.ToDoAssignee
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,11 +7,11 @@
 
 <h2>Edit</h2>
 
-<form action="/@Model.Id/edit" method="post">
-    <label>Content:</label><input type="text" name="title" value="@Model.Title" />
+<form action="/@Model.SelectedToDo.Id/edit" method="post">
+    <label>Content:</label><input type="text" name="title" value="@Model.SelectedToDo.Title" />
 
     <label>IsUrgent:</label>
-    @if (Model.IsUrgent)
+    @if (Model.SelectedToDo.IsUrgent)
     {
         <input type="checkbox" name="IsUrgent" value="TRUE" checked />
         <input type="hidden" name="IsUrgent" value="FALSE" />
@@ -24,7 +24,7 @@
 
 
     <label>IsDone:</label>
-    @if (Model.IsDone)
+    @if (Model.SelectedToDo.IsDone)
     {
         <input type="checkbox" name="IsDone" value="TRUE" checked />
         <input type="hidden" name="IsDone" value="FALSE" />
@@ -34,7 +34,15 @@
         <input type="checkbox" name="IsDone" value="TRUE" />
         <input type="hidden" name="IsDone" value="FALSE" />
     }
+        <select name="Assignee">
+            <option value="" selected disabled hidden>Choose here</option>
 
+            @foreach (Assignee current in Model.Assignees)
+            {
+                <option value="@current.Id">@current.Name</option>
+            }
+
+        </select>
     <button type="submit">Submit</button>
 </form>
 

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ToDoAppX.Models;
 using ToDoAppX.Repositories;
 using ToDoAppX.Services;
+using ToDoAppX.ViewModels;
 
 namespace ToDoAppX.Controllers
 {
@@ -63,7 +64,7 @@ namespace ToDoAppX.Controllers
         [HttpGet("/{id}/edit")]
         public IActionResult Edit(long id)
         {
-            return View("Edit", database.GetTodoById(id));
+            return View("Edit",new ToDoAssignee { Assignees = database.ReadAssignees(), SelectedToDo = database.GetTodoById(id) });
         }
 
         [HttpPost("/{id}/edit")]
