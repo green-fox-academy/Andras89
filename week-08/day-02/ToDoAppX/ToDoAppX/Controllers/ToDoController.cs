@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoAppX.Models;
 using ToDoAppX.Repositories;
+using ToDoAppX.Services;
 
 namespace ToDoAppX.Controllers
 {
@@ -12,9 +13,9 @@ namespace ToDoAppX.Controllers
     [Route("todo")]
     public class ToDoController : Controller
     {
-        ICRUD database;
+        IService database;
 
-        public ToDoController(ICRUD database)
+        public ToDoController(IService database)
         {
             this.database = database;
         }
@@ -23,7 +24,7 @@ namespace ToDoAppX.Controllers
         [Route("list")]
         public IActionResult List()
         {
-            return View(database);
+            return View(database.ReadToDos());
         }
 
         [HttpGet("add")]
@@ -35,14 +36,14 @@ namespace ToDoAppX.Controllers
         [HttpPost("add")]
         public IActionResult AddTodoToDatabase(ToDo todo)
         {
-            database.Create(todo);
+            database.CreateToDo(todo);
             return RedirectToAction("list");
         }
 
         [HttpGet("/{id}/delete")]
         public IActionResult RemoveToDoWithIdFromDatabase(int id)
         {
-            database.Delete(id);
+            database.DeleteToDoByID(id);
 
             return RedirectToAction("list");
         }
@@ -56,7 +57,7 @@ namespace ToDoAppX.Controllers
         [HttpPost("/{id}/edit")]
         public IActionResult EditTheDatabase(ToDo todo)
         {
-            database.Edit(todo);
+            database.EditToDo(todo);
             return RedirectToAction("list");
         }
     }

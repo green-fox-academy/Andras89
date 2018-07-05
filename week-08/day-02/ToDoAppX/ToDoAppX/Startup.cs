@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ToDoAppX.Repositories;
+using ToDoAppX.Services;
 
 namespace ToDoAppX
 {
@@ -26,9 +27,11 @@ namespace ToDoAppX
             string connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=todos;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             services.AddMvc();
-            services.AddTransient<ICRUD, ToDoRepository>();
-            services.AddDbContext<ToDoContext>(options => options.UseSqlServer(connection));
-            services.AddTransient<DbContext, ToDoContext>();
+            services.AddTransient<IService, ToDoService>();
+            services.AddTransient<ToDoRepository>();
+            services.AddTransient<AssigneeRepository>();
+            services.AddDbContext<ToDoDbContext>(options => options.UseSqlServer(connection));
+            services.AddTransient<DbContext, ToDoDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

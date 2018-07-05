@@ -5,43 +5,41 @@ using ToDoAppX.Models;
 
 namespace ToDoAppX.Repositories
 {
-    public class ToDoRepository : ICRUD
+    public class ToDoRepository : IGeneralRepository<ToDo>
     {
-        private ToDoContext todos;
+        private ToDoDbContext todoDbContext;
 
-        public ToDoRepository(ToDoContext todos)
+        public ToDoRepository(ToDoDbContext todoDbContext)
         {
-            this.todos = todos;
+            this.todoDbContext = todoDbContext;
         }
 
-        public void Create(ToDo todo)
+        public void Create(ToDo element)
         {
-            todos.Add(todo);
-            todos.SaveChanges();
+            todoDbContext.Todos.Add(element);
+            todoDbContext.SaveChanges();
         }
 
-        public void Delete(int id)
-        {
-            var removable = todos.Todos.ToList().FirstOrDefault(x => x.Id == id);
-
-            todos.Remove(removable);
-            todos.SaveChanges();
+        public void Delete(ToDo element)
+        {   
+            todoDbContext.Todos.Remove(element);
+            todoDbContext.SaveChanges();
         }
 
-        public void Edit(ToDo todo)
+        public void Edit(ToDo element)
         {
-            todos.Update(todo);
-            todos.SaveChanges();
+            todoDbContext.Todos.Update(element);
+            todoDbContext.SaveChanges();
         }
 
-        public ToDo GetTodoById(long id)
+        public ToDo GetRecordById(long id)
         {
-            return todos.Todos.ToList().FirstOrDefault(x => x.Id == id);
+            return todoDbContext.Todos.ToList().FirstOrDefault(x => x.Id == id);
         }
 
         public List<ToDo> Read()
         {
-            var output = todos.Todos.Include(a => a.Assignee);
+            var output = todoDbContext.Todos.Include(a => a.Assignee);
             return output.ToList();
         }
     }

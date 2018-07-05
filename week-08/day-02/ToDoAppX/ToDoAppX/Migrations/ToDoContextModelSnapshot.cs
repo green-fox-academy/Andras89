@@ -8,7 +8,7 @@ using ToDoAppX.Repositories;
 
 namespace ToDoAppX.Migrations
 {
-    [DbContext(typeof(ToDoContext))]
+    [DbContext(typeof(ToDoDbContext))]
     partial class ToDoContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

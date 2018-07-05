@@ -9,7 +9,7 @@ using ToDoAppX.Repositories;
 
 namespace ToDoAppX.Migrations
 {
-    [DbContext(typeof(ToDoContext))]
+    [DbContext(typeof(ToDoDbContext))]
     [Migration("20180704193940_AssigneeCreate")]
     partial class AssigneeCreate
     {

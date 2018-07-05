@@ -7,12 +7,12 @@ using ToDoAppX.Models;
 
 namespace ToDoAppX.Repositories
 {
-    public class ToDoContext : DbContext
+    public class ToDoDbContext : DbContext
     {
         public DbSet<ToDo> Todos { get; set; }
         public DbSet<Assignee> Assignees { get; set; }
 
-        public ToDoContext(DbContextOptions<ToDoContext> options) : base(options)
+        public ToDoDbContext(DbContextOptions<ToDoDbContext> options) : base(options)
         {
         }
     }

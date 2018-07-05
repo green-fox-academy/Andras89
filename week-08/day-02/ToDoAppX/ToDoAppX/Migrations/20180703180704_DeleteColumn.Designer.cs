@@ -8,7 +8,7 @@ using ToDoAppX.Repositories;
 
 namespace ToDoAppX.Migrations
 {
-    [DbContext(typeof(ToDoContext))]
+    [DbContext(typeof(ToDoDbContext))]
     [Migration("20180703180704_DeleteColumn")]
     partial class DeleteColumn
     {
