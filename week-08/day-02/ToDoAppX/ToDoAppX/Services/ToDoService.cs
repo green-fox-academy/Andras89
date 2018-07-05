@@ -51,6 +51,11 @@ namespace ToDoAppX.Services
 
         public List<ToDo> SearchToDos(string input)
         {
+            if(input is null)
+            {
+                return todoRepo.Read();
+            }
+
             return todoRepo.Read().Where(x => x.Title.ToLower().Contains(input.ToLower())).ToList();
         }
     }
