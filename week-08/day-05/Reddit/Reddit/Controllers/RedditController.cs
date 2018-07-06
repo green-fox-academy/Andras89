@@ -24,10 +24,17 @@ namespace Reddit.Controllers
             return View(database.GetAllPosts());
         }
 
-        [HttpPost("/{id}/add")]
+        [HttpGet("/{id}/add")]
         public IActionResult AddVote(int id)
         {
             database.AddVote(id);
+            return RedirectToAction("list");
+        }
+
+        [HttpGet("/{id}/substract")]
+        public IActionResult SubstractVote(int id)
+        {
+            database.SubstractVote(id);
             return RedirectToAction("list");
         }
     }

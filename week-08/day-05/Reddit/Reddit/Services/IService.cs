@@ -9,5 +9,6 @@ namespace Reddit.Services
     public interface IService
     {
         List<Post> GetAllPosts();
+        void AddVote(int id);
     }
 }

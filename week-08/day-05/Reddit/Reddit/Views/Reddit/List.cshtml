@@ -14,7 +14,7 @@
 <body>
     @foreach(Post current in Model)
     {
-        <h2>@current.Vote <a href="/@current.Id/add">+</a> <a href="">-</a> <a href="@current.Url">@current.Title</a></h2>
+        <h2>@current.Vote <a href="/@current.Id/add">+</a> <a href="@current.Id/substract">-</a> <a href="@current.Url">@current.Title</a></h2>
 
     }
 

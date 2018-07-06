@@ -19,6 +19,8 @@ namespace Reddit.Services
         public void AddVote(int id)
         {
             Post updatable = postRepo.Read().FirstOrDefault(x => x.Id == id);
+            updatable.Vote++;
+
             postRepo.Update(updatable);
         }
 
