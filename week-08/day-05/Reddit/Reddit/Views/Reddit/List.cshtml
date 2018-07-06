@@ -16,11 +16,17 @@
 
     <h1 style="text-align:center;">Trending Posts</h1>
 
-    @foreach(Post current in Model)
-    {
-        <h2>@current.Vote <a href="/@current.Id/add">+</a> <a href="@current.Id/substract">-</a> <a href="@current.Url">@current.Title</a></h2>
-
-    }
-
+    <table cellspacing:60px; style="font-size:28px;">
+        @foreach (Post current in Model)
+        {
+            <tr>
+                <td style="width:70px">@current.Vote</td>
+                <td style="width:20px"><a href="/@current.Id/add">+</a></td>
+                <td style="width:40px"><a href="@current.Id/substract">-</a></td>
+                <td><a href="@current.Url">@current.Title</a></td>
+                <td>@current.CreatedAt</td>
+            </tr>
+        }
+    </table>
 </body>
 </html>

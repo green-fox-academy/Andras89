@@ -13,7 +13,6 @@ namespace Reddit.Models
         public string Url { get; set; }
         [DefaultValue(0)]
         public int Vote { get; set; }
-        [DefaultValue(typeof(DateTime), "")]
-        public DateTime CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
     }
 }

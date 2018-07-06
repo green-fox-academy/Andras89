@@ -18,6 +18,7 @@ namespace Reddit.Services
 
         public void AddPost(Post post)
         {
+            post.CreatedAt = DateTime.Now.ToString("yyyy/MM/dd H:mm");
             postRepo.Add(post);
         }
 
