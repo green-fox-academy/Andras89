@@ -16,6 +16,11 @@ namespace Reddit.Services
             this.postRepo = postRepo;
         }
 
+        public void AddPost(Post post)
+        {
+            postRepo.Add(post);
+        }
+
         public void AddVote(int id)
         {
             Post updatable = postRepo.Read().FirstOrDefault(x => x.Id == id);

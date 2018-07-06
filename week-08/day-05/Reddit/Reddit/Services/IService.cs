@@ -11,5 +11,6 @@ namespace Reddit.Services
         List<Post> GetAllPosts();
         void AddVote(int id);
         void SubstractVote(int id);
+        void AddPost(Post post);
     }
 }
