@@ -28,5 +28,13 @@ namespace Reddit.Services
         {
             return postRepo.Read();
         }
+
+        public void SubstractVote(int id)
+        {
+            Post updatable = postRepo.Read().FirstOrDefault(x => x.Id == id);
+            updatable.Vote--;
+
+            postRepo.Update(updatable);
+        }
     }
 }
