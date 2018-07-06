@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Reddit.Models;
 using Reddit.Repositories;
+using Reddit.Services;
 
 namespace Reddit
 {
@@ -30,7 +31,7 @@ namespace Reddit
             services.AddDbContext<RedditDbContext>(options => options.UseSqlServer(connection));
             services.AddTransient<DbContext, RedditDbContext>();
             services.AddTransient<PostRepository>();
-
+            services.AddTransient<IService, RedditService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
