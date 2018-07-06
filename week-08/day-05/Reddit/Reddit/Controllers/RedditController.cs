@@ -37,5 +37,11 @@ namespace Reddit.Controllers
             database.SubstractVote(id);
             return RedirectToAction("list");
         }
+
+        [HttpGet("addpost")]
+        public IActionResult AddPost()
+        {
+            return View();
+        }
     }
 }

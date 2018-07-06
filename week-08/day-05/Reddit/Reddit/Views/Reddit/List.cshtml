@@ -12,6 +12,10 @@
     <title>RedditClone</title>
 </head>
 <body>
+    <a href="/addpost"><h2>Add New Post</h2></a>
+
+    <h1 style="text-align:center;">Trending Posts</h1>
+
     @foreach(Post current in Model)
     {
         <h2>@current.Vote <a href="/@current.Id/add">+</a> <a href="@current.Id/substract">-</a> <a href="@current.Url">@current.Title</a></h2>
