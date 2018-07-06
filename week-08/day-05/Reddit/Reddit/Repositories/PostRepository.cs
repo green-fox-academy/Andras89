@@ -17,22 +17,25 @@ namespace Reddit.Repositories
 
         public void Add(Post element)
         {
-            
+            dbContext.Posts.Add(element);
+            dbContext.SaveChanges();
         }
 
         public void Delete(Post element)
         {
-            throw new NotImplementedException();
+            dbContext.Posts.Remove(element);
+            dbContext.SaveChanges();
         }
 
         public List<Post> Read()
         {
-            throw new NotImplementedException();
+            return dbContext.Posts.ToList();
         }
 
         public void Update(Post element)
         {
-            throw new NotImplementedException();
+            dbContext.Posts.Update(element);
+            dbContext.SaveChanges();
         }
     }
 }
