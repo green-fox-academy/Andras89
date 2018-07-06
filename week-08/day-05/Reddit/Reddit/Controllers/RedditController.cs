@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Reddit.Models;
 using Reddit.Services;
 
 namespace Reddit.Controllers
@@ -42,6 +43,13 @@ namespace Reddit.Controllers
         public IActionResult AddPost()
         {
             return View();
+        }
+
+        [HttpPost("addpost")]
+        public IActionResult AddPostToDb(Post post)
+        {
+            database.AddPost(post);
+            return RedirectToAction("list");
         }
     }
 }
