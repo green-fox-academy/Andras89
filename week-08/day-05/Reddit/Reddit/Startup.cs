@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Reddit.Models;
+using Reddit.Repositories;
 
 namespace Reddit
 {
@@ -28,6 +29,7 @@ namespace Reddit
             services.AddMvc();
             services.AddDbContext<RedditDbContext>(options => options.UseSqlServer(connection));
             services.AddTransient<DbContext, RedditDbContext>();
+            services.AddTransient<PostRepository>();
 
         }
 
