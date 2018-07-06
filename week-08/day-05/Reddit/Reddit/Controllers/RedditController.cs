@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Reddit.Controllers
 {
+    [Route("")]
     public class RedditController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("")]
+        [Route("list")]
+        public IActionResult List()
         {
             return View();
         }
