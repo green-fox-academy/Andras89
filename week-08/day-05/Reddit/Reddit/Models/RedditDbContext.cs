@@ -8,7 +8,7 @@ namespace Reddit.Models
 {
     public class RedditDbContext : DbContext
     {
-        private DbSet<Post> Posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
         public RedditDbContext(DbContextOptions<RedditDbContext> options) : base(options)
         {
