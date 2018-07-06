@@ -21,7 +21,14 @@ namespace Reddit.Controllers
         [Route("list")]
         public IActionResult List()
         {
-            return View();
+            return View(database.GetAllPosts());
+        }
+
+        [HttpPost("/{id}/add")]
+        public IActionResult AddVote(int id)
+        {
+            database.AddVote(id);
+            return RedirectToAction("list");
         }
     }
 }
