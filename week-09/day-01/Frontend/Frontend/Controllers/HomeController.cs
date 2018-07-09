@@ -48,5 +48,11 @@ namespace Frontend.Controllers
                 return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!"});
             }
         }
+
+        [HttpGet("appenda/{appendable}")]
+        public IActionResult AppendA(string appendable)
+        {
+            return Json(new { appended = $"{appendable}a" });
+        }
     }
 }
