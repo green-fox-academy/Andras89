@@ -35,13 +35,17 @@ namespace Frontend.Controllers
         [HttpGet("greeter")]
         public IActionResult Greeter([FromQuery] string name, [FromQuery] string title)
         {
-            if(name is null || title is null)
+            if(name is null)
             {
                 return Json(new { error = "Please provide a name!" });
             }
+            else if (title is null)
+            {
+                return Json(new { error = "Please provide a title!" });
+            }
             else
             {
-                return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}"});
+                return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!"});
             }
         }
     }
