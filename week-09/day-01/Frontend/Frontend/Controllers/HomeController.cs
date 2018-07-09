@@ -192,5 +192,12 @@ namespace Frontend.Controllers
 
             return Json(new { error = "Please provide what to do with the numbers!" });
         }
+
+        [HttpGet("log")]
+        public IActionResult Logger()
+        {
+            return Json(new { entries = database.Read(),
+                              entry_count = database.Read().Count});
+        }
     }
 }
