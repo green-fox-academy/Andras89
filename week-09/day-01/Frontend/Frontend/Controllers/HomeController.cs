@@ -93,7 +93,45 @@ namespace Frontend.Controllers
         [HttpPost("arrays")]
         public IActionResult Arrays(string what, [FromBody]ArrayJsonObject json)
         {
+            int output;
+            List<int> outputNumbers;
 
+            if(json.what is "sum")
+            {
+                output = 0;
+                foreach (int item in json.numbers)
+                {
+                    output += item;
+                }
+
+                return Json(new { result = output });
+            }
+
+            if(json.what is "multiply")
+            {
+                output = 1;
+                foreach (int item in json.numbers)
+                {
+                    output *= item;
+                }
+
+                return Json(new { result = output });
+            }
+
+            if(json.what is "double")
+            {
+                outputNumbers = new List<int>();
+                foreach (int item in json.numbers)
+                {
+                    outputNumbers.Add(item * 2);
+                }
+
+                return Json(new { result = outputNumbers.ToArray() });
+            }
+
+            return Json(new { error = "Please provide what to do with the numbers!" });
         }
+
+
     }
 }
