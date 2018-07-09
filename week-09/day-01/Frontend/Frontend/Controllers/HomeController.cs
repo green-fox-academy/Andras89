@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Frontend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -53,6 +54,40 @@ namespace Frontend.Controllers
         public IActionResult AppendA(string appendable)
         {
             return Json(new { appended = $"{appendable}a" });
+        }
+
+        [HttpPost("/dountil/{what}")]
+        public IActionResult DoUntil(string what, [FromBody]Until until)
+        {
+            int output;
+
+            if(until.until is null)
+            {
+                return Json(new { error = "Please provide a number!" });
+            }
+
+            if (what == "sum")
+            {
+                output = 0;
+                for (int i = 1; i <= until.until; i++)
+                {
+                    output += i;
+                }
+                return Json(new { until = until.until,
+                                  result = output });
+            }else if(what == "factor")
+            {
+                output = 1;
+                for (int i = 1; i <= until.until; i++)
+                {
+                    output *= i;
+                }
+
+                return Json(new { until = until.until,
+                                  result = output });
+            }
+
+            return Json(new { error = "Please provide a working function!" });
         }
     }
 }
