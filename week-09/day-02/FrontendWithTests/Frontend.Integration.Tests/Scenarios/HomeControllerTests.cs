@@ -23,12 +23,17 @@ namespace Frontend.Integration.Tests.Scenarios
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
-        [Fact]
-        public async Task DoublingReturnJsonResponse()
+        [Theory]
+        [InlineData(2)]
+        [InlineData(5)]
+        [InlineData(12)]
+        [InlineData(1)]
+        [InlineData(45)]
+        public async Task DoublingReturnJsonResponse(int input)
         {
-            var response = await testFixture.Client.GetAsync("doubling?input=3");
+            var response = await testFixture.Client.GetAsync($"doubling?input={input}");
 
-            Assert.Equal(JsonConvert.SerializeObject(new { received = 3, result = 6 }).ToLower(),
+            Assert.Equal(JsonConvert.SerializeObject(new { received = input, result = input * 2 }).ToLower(),
                          response.Content.ReadAsStringAsync().Result.ToLower());
         }
     }
