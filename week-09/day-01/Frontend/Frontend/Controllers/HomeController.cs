@@ -21,22 +21,22 @@ namespace Frontend.Controllers
         [HttpGet("doubling")]
         public IActionResult Doubling([FromQuery] int? input)
         {
-            if(input is null)
+            if (input is null)
             {
                 return Json(new { error = "Please provide an input!" });
             }
             else
             {
                 return Json(new {
-                                    received = input,
-                                    result = input * 2});
+                    received = input,
+                    result = input * 2 });
             }
         }
 
         [HttpGet("greeter")]
         public IActionResult Greeter([FromQuery] string name, [FromQuery] string title)
         {
-            if(name is null)
+            if (name is null)
             {
                 return Json(new { error = "Please provide a name!" });
             }
@@ -46,7 +46,7 @@ namespace Frontend.Controllers
             }
             else
             {
-                return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!"});
+                return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" });
             }
         }
 
@@ -61,7 +61,7 @@ namespace Frontend.Controllers
         {
             int output;
 
-            if(until.until is null)
+            if (until.until is null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
@@ -74,8 +74,8 @@ namespace Frontend.Controllers
                     output += i;
                 }
                 return Json(new { until = until.until,
-                                  result = output });
-            }else if(what == "factor")
+                    result = output });
+            } else if (what == "factor")
             {
                 output = 1;
                 for (int i = 1; i <= until.until; i++)
@@ -84,10 +84,16 @@ namespace Frontend.Controllers
                 }
 
                 return Json(new { until = until.until,
-                                  result = output });
+                    result = output });
             }
 
             return Json(new { error = "Please provide a working function!" });
+        }
+
+        [HttpPost("arrays")]
+        public IActionResult Arrays(string what, [FromBody]ArrayJsonObject json)
+        {
+
         }
     }
 }
