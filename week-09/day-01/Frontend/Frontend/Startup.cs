@@ -29,6 +29,8 @@ namespace Frontend
 
             services.AddMvc();
             services.AddDbContext<FrontendDbContext>(options => options.UseSqlServer(connection));
+            services.AddTransient<FrontendDbContext>();
+            services.AddTransient<LoggerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

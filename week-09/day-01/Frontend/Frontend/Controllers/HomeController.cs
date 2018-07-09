@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Frontend.Models;
+using Frontend.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,13 @@ namespace Frontend.Controllers
     [Route("")]
     public class HomeController : Controller
     {
+        private LoggerRepository database;
+
+        public HomeController(LoggerRepository database)
+        {
+            this.database = database;
+        }
+
         [HttpGet("")]
         public IActionResult Index()
         {
@@ -27,6 +35,10 @@ namespace Frontend.Controllers
             }
             else
             {
+                database.Create(new Logger { CreatedAt = DateTime.Now,
+                                             Endpoint = "doubling",
+                                             Data = $"input={input}"});
+
                 return Json(new {
                     received = input,
                     result = input * 2 });
@@ -46,6 +58,13 @@ namespace Frontend.Controllers
             }
             else
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "greeter",
+                    Data = $"name={name}, title={title}"
+                });
+
                 return Json(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" });
             }
         }
@@ -53,6 +72,13 @@ namespace Frontend.Controllers
         [HttpGet("appenda/{appendable}")]
         public IActionResult AppendA(string appendable)
         {
+            database.Create(new Logger
+            {
+                CreatedAt = DateTime.Now,
+                Endpoint = "appenda",
+                Data = $"appendable={appendable}"
+            });
+
             return Json(new { appended = $"{appendable}a" });
         }
 
@@ -68,6 +94,13 @@ namespace Frontend.Controllers
 
             if (what == "sum")
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "dountil",
+                    Data = $"sum={until.until}"
+                });
+
                 output = 0;
                 for (int i = 1; i <= until.until; i++)
                 {
@@ -77,6 +110,13 @@ namespace Frontend.Controllers
                     result = output });
             } else if (what == "factor")
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "dountil",
+                    Data = $"factor={until.until}"
+                });
+
                 output = 1;
                 for (int i = 1; i <= until.until; i++)
                 {
@@ -98,6 +138,13 @@ namespace Frontend.Controllers
 
             if(json.what is "sum")
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "arrays",
+                    Data = $"sum={json.numbers}"
+                });
+
                 output = 0;
                 foreach (int item in json.numbers)
                 {
@@ -109,6 +156,13 @@ namespace Frontend.Controllers
 
             if(json.what is "multiply")
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "arrays",
+                    Data = $"multiply={json.numbers}"
+                });
+
                 output = 1;
                 foreach (int item in json.numbers)
                 {
@@ -120,6 +174,13 @@ namespace Frontend.Controllers
 
             if(json.what is "double")
             {
+                database.Create(new Logger
+                {
+                    CreatedAt = DateTime.Now,
+                    Endpoint = "arrays",
+                    Data = $"double={json.numbers}"
+                });
+
                 outputNumbers = new List<int>();
                 foreach (int item in json.numbers)
                 {
@@ -131,7 +192,5 @@ namespace Frontend.Controllers
 
             return Json(new { error = "Please provide what to do with the numbers!" });
         }
-
-
     }
 }
