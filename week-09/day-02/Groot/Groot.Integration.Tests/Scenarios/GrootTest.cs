@@ -45,6 +45,21 @@ namespace Groot.Integration.Tests
                          response.Content.ReadAsStringAsync().Result);
         }
 
+        [Fact]
+        public async Task ShouldReturnNotOKStatusWithoutParameter()
+        {
+            var response = await testFixture.Client.GetAsync("api/Guardian/groot");
 
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ShouldReturnErrorMessageOnNoParameter()
+        {
+            var response = await testFixture.Client.GetAsync("api/Guardian/groot");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { error = "I am Groot!" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
     }
 }
