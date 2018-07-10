@@ -30,7 +30,7 @@ namespace Groot.Controllers
             return Json(new {
                                 distance = distance,
                                 time = time,
-                                spped = distance / time
+                                speed = distance / time
                             });
         }
     }

@@ -61,5 +61,22 @@ namespace Groot.Integration.Tests
             Assert.Equal(JsonConvert.SerializeObject(new { error = "I am Groot!" }),
                          response.Content.ReadAsStringAsync().Result);
         }
+
+        [Fact]
+        public async Task ArrowWithParameterReturnsStatusOK()
+        {
+            var response = await testFixture.Client.GetAsync("api/Guardian/yondu?distance=100.0&time=0.0");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task ArrowWithParameterReturnsAsExpected()
+        {
+            var response = await testFixture.Client.GetAsync("api/Guardian/yondu?distance=100.0&time=0.0");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
     }
 }
