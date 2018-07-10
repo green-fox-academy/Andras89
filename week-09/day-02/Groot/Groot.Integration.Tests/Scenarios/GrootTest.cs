@@ -1,14 +1,26 @@
+using Groot.Integration.Tests.TestFixtures;
 using System;
+using System.Net;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Groot.Integration.Tests
 {
     public class GrootTest
     {
-        [Fact]
-        public void Test1()
+        private TestContext textFixture;
+
+        public GrootTest()
         {
-            Assert.Equal(1, 1);
+            textFixture = new TestContext();
+        }
+
+        [Fact]
+        public async Task IndexShouldReturnOkStatus()
+        {
+            var response = await textFixture.Client.GetAsync("api/Guardian/groot");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
     }
 }
