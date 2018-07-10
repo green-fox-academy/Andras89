@@ -36,5 +36,27 @@ namespace Frontend.Integration.Tests.Scenarios
             Assert.Equal(JsonConvert.SerializeObject(new { received = input, result = input * 2 }).ToLower(),
                          response.Content.ReadAsStringAsync().Result.ToLower());
         }
+
+        [Fact]
+        public async Task GreetingReturnIfNameIsNull()
+        {
+            var response = await testFixture.Client.GetAsync("greeter?title=student");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { error = "Please provide a name!" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
+
+        [Fact]
+        public async Task GreetingReturnIfTitleIsNull()
+        {
+            var response = await testFixture.Client.GetAsync("greeter?name=pete");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { error = "Please provide a title!" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
+
+        [Theory]
+        [InlineData("Pete", "Student")]
+
     }
 }
