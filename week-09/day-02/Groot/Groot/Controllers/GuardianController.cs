@@ -23,5 +23,15 @@ namespace Groot.Controllers
                 return Json(new { received = message, translated = "I am Groot!" });
             }
         }
+
+        [HttpGet("yondu")]
+        public IActionResult Arrow([FromQuery]double distance, [FromQuery] double time)
+        {
+            return Json(new {
+                                distance = distance,
+                                time = time,
+                                spped = distance / time
+                            });
+        }
     }
 }
