@@ -22,5 +22,13 @@ namespace Groot.Integration.Tests
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Fact]
+        public async Task GrootReturnOKWithParameter()
+        {
+            var response = await textFixture.Client.GetAsync("api/Guardian/groot?message=yolo");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
     }
 }
