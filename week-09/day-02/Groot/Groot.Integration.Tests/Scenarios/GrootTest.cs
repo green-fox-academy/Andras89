@@ -1,4 +1,5 @@
 using Groot.Integration.Tests.TestFixtures;
+using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -8,17 +9,17 @@ namespace Groot.Integration.Tests
 {
     public class GrootTest
     {
-        private TestContext textFixture;
+        private TestContext testFixture;
 
         public GrootTest()
         {
-            textFixture = new TestContext();
+            testFixture = new TestContext();
         }
 
         [Fact]
         public async Task IndexShouldReturnOkStatus()
         {
-            var response = await textFixture.Client.GetAsync("api/Guardian/groot");
+            var response = await testFixture.Client.GetAsync("api/Guardian/groot");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
@@ -26,9 +27,24 @@ namespace Groot.Integration.Tests
         [Fact]
         public async Task GrootReturnOKWithParameter()
         {
-            var response = await textFixture.Client.GetAsync("api/Guardian/groot?message=yolo");
+            var response = await testFixture.Client.GetAsync("api/Guardian/groot?message=yolo");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Theory]
+        [InlineData("yolo")]
+        [InlineData("treeman")]
+        [InlineData("space saga")]
+        [InlineData("tree like entity")]
+        public async Task GrootReturnsCorrectAnswerOnGivenParameter(string message)
+        {
+            var response = await testFixture.Client.GetAsync($"api/Guardian/groot?message={message}");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { received = message, translated = "I am Groot!" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
+
+
     }
 }
