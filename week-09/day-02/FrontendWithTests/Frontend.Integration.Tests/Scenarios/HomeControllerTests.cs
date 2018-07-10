@@ -57,6 +57,15 @@ namespace Frontend.Integration.Tests.Scenarios
 
         [Theory]
         [InlineData("Pete", "Student")]
+        [InlineData("Cheesus", "OurLordAndSaviour")]
+        [InlineData("Mark", "Mentor")]
+        [InlineData("Niki", "Sajt")]
+        public async Task GreeterDynamicInputTesting(string name, string title)
+        {
+            var response = await testFixture.Client.GetAsync($"greeter?name={name}&title={title}");
 
+            Assert.Equal(JsonConvert.SerializeObject(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" }),
+                        response.Content.ReadAsStringAsync().Result);
+        }
     }
 }
