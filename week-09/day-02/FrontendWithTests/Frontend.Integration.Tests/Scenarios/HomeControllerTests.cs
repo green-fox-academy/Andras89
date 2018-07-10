@@ -67,5 +67,15 @@ namespace Frontend.Integration.Tests.Scenarios
             Assert.Equal(JsonConvert.SerializeObject(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" }),
                         response.Content.ReadAsStringAsync().Result);
         }
+
+        [Theory]
+        [InlineData("kuty")]
+        public async Task AppendAInputGetsAppendAedRight(string appendable)
+        {
+            var response = await testFixture.Client.GetAsync($"appenda/{appendable}");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { appended = $"{appendable}a" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
     }
 }
