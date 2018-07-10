@@ -1,6 +1,9 @@
 ﻿using Frontend.Integration.Tests.Fixtures;
+using Frontend.Models;
 using Newtonsoft.Json;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -70,11 +73,25 @@ namespace Frontend.Integration.Tests.Scenarios
 
         [Theory]
         [InlineData("kuty")]
+        [InlineData("alm")]
+        [InlineData("andre")]
         public async Task AppendAInputGetsAppendAedRight(string appendable)
         {
             var response = await testFixture.Client.GetAsync($"appenda/{appendable}");
 
             Assert.Equal(JsonConvert.SerializeObject(new { appended = $"{appendable}a" }),
+                         response.Content.ReadAsStringAsync().Result);
+        }
+
+        [Theory]
+        [InlineData("sum")]
+        public async Task DoUntilSumChecker(string what)
+        {
+            var body = JsonConvert.SerializeObject(new Until { until = 3 });
+
+            var response = await testFixture.Client.PostAsync($"dountil/{what}", new StringContent(body, Encoding.UTF8, "application/json"));
+
+            Assert.Equal(JsonConvert.SerializeObject(new { until = 3, result = 6 }),
                          response.Content.ReadAsStringAsync().Result);
         }
     }
