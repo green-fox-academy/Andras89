@@ -73,9 +73,14 @@ namespace Groot.Integration.Tests
         [Fact]
         public async Task ArrowWithParameterReturnsAsExpected()
         {
-            var response = await testFixture.Client.GetAsync("api/Guardian/yondu?distance=100.0&time=0.0");
+            var response = await testFixture.Client.GetAsync("api/Guardian/yondu?distance=100.0&time=1.0");
 
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(JsonConvert.SerializeObject(new {
+                                                            distance = 100.0,
+                                                            time = 1.0,
+                                                            speed = 100.0
+                                                         }),
+                         response.Content.ReadAsStringAsync().Result);
         }
 
     }
