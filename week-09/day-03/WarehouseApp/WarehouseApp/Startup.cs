@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WarehouseApp.Models;
+using WarehouseApp.Repositories;
 
 namespace WarehouseApp
 {
@@ -24,6 +25,7 @@ namespace WarehouseApp
         {
             services.AddMvc();
             services.AddTransient<GreenFoxWarehouseContext>();
+            services.AddTransient<WarehouseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
