@@ -22,6 +22,41 @@ namespace WarehouseApp.Services
             return warehouseRepo.Read();
         }
 
+        public QueryDTO GetQueryResult(double price, string type)
+        {
+            if (type.ToLower().Equals("lower"))
+            {
+                return new QueryDTO
+                {
+                    Result = "ok",
+                    Clothes = warehouseRepo.Read().Where(w => w.UnitPrice < price).ToList()
+                };
+            }
+            else if (type.ToLower().Equals("higher"))
+            {
+                return new QueryDTO
+                {
+                    Result = "ok",
+                    Clothes = warehouseRepo.Read().Where(w => w.UnitPrice > price).ToList()
+                };
+            }
+            else if (type.ToLower().Equals("equal"))
+            {
+                return new QueryDTO
+                {
+                    Result = "ok",
+                    Clothes = warehouseRepo.Read().Where(w => w.UnitPrice == price).ToList()
+                };
+            }
+            else
+            {
+                return new QueryDTO
+                {
+                    Result = "fail",
+                };
+            }
+        }
+
         public TotalPriceDTO GetTotalPriceOfWare(Warehouse ware, int amount)
         {
             Warehouse selected = warehouseRepo.Read().FirstOrDefault(w => w.ItemName.Equals(ware.ItemName) &&
