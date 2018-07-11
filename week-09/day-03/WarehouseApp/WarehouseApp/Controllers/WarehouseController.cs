@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WarehouseApp.Models;
 using WarehouseApp.Services;
+using WarehouseApp.ViewModels;
 
 namespace WarehouseApp.Controllers
 {
@@ -24,5 +26,11 @@ namespace WarehouseApp.Controllers
         }
 
         [HttpPost("warehouse/summary")]
+        public IActionResult TotalResult(Warehouse ware, int amount)
+        {
+            TotalPriceDTO summary = database.GetTotalPriceOfWare(ware, amount);
+
+            return View();
+        }
     }
 }

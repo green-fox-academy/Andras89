@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WarehouseApp.Models;
 using WarehouseApp.Repositories;
+using WarehouseApp.ViewModels;
 
 namespace WarehouseApp.Services
 {
@@ -21,12 +22,19 @@ namespace WarehouseApp.Services
             return warehouseRepo.Read();
         }
 
-        public void GetTotalPriceOfWare(Warehouse ware, int amount)
+        public TotalPriceDTO GetTotalPriceOfWare(Warehouse ware, int amount)
         {
             Warehouse selected = warehouseRepo.Read().FirstOrDefault(w => w.ItemName.Equals(ware.ItemName) &&
                                                                           w.Size.Equals(ware.Size));
 
+            int totalPrice = (int)selected.UnitPrice * amount;
 
+            return new TotalPriceDTO
+            {
+                Amount = amount,
+                TotalPrice = totalPrice,
+                Ware = selected
+            };
         }
     }
 }
