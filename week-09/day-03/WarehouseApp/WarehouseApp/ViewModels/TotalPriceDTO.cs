@@ -10,6 +10,6 @@ namespace WarehouseApp.ViewModels
     {
         public Warehouse Ware { get; set; }
         public int Amount { get; set; }
-        public int TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
     }
 }

@@ -8,11 +8,32 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="~/css/style.css">
     <meta name="viewport" content="width=device-width" />
     <title>Summary</title>
 </head>
 <body>
     <h1>Green Fox Fashion Webstore</h1>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Sub-total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Ware.ItemName</td>
+                <td>@Model.Ware.Manufacturer</td>
+                <td>@Model.Ware.Category</td>
+                <td>@Model.Amount</td>
+                <td>@Model.TotalPrice</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

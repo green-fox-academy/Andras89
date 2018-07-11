@@ -30,7 +30,7 @@ namespace WarehouseApp.Controllers
         {
             TotalPriceDTO summary = database.GetTotalPriceOfWare(ware, amount);
 
-            return View();
+            return View("Summary", summary);
         }
     }
 }

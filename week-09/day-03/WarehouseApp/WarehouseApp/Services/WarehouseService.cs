@@ -27,7 +27,7 @@ namespace WarehouseApp.Services
             Warehouse selected = warehouseRepo.Read().FirstOrDefault(w => w.ItemName.Equals(ware.ItemName) &&
                                                                           w.Size.Equals(ware.Size));
 
-            int totalPrice = (int)selected.UnitPrice * amount;
+            double totalPrice = (double)selected.UnitPrice * amount;
 
             return new TotalPriceDTO
             {
