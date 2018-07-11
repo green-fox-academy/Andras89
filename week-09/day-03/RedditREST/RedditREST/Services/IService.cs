@@ -12,5 +12,6 @@ namespace RedditREST.Services
         void AddPost(Post post);
         void UpVotePostById(int id);
         void DownVotePostById(int id);
+        void DeletePost(int id);
     }
 }

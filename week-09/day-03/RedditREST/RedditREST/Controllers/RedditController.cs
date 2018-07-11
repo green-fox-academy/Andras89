@@ -49,5 +49,19 @@ namespace RedditREST.Controllers
 
             return RedirectToAction("ListPosts");
         }
+
+        [HttpDelete("/posts/{id}")]
+        public IActionResult DeletePost(int id)
+        {
+            database.DeletePost(id);
+
+            return RedirectToAction("ListPosts");
+        }
+
+        [HttpPut("/posts/{id}")]
+        public IActionResult EditPost(int id)
+        {
+            database.EditPost(id);
+        }
     }
 }
