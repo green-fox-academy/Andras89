@@ -9,6 +9,7 @@ using WarehouseApp.ViewModels;
 
 namespace WarehouseApp.Controllers
 {
+    [Produces("application/json")]
     [Route("shoppingplanner")]
     public class WarehouseController : Controller
     {
