@@ -59,9 +59,11 @@ namespace RedditREST.Controllers
         }
 
         [HttpPut("/posts/{id}")]
-        public IActionResult EditPost(int id)
+        public IActionResult EditPost([FromQuery]int id, [FromBody] Post post)
         {
-            database.EditPost(id);
+            database.EditPost(id, post);
+
+            return RedirectToAction("ListPosts");
         }
     }
 }
