@@ -53,5 +53,12 @@ namespace RedditREST.Services
 
             postRepo.Update(selected);
         }
+
+        public void DeletePost(int id)
+        {
+            Post selected = postRepo.Read().FirstOrDefault(p => p.Id == id);
+
+            postRepo.Delete(selected);
+        }
     }
 }
