@@ -24,6 +24,14 @@ namespace WarehouseApp.Services
 
         public QueryDTO GetQueryResult(double price, string type)
         {
+            if(type is null)
+            {
+                return new QueryDTO
+                {
+                    Result = "fail",
+                };
+            }
+
             if (type.ToLower().Equals("lower"))
             {
                 return new QueryDTO

@@ -36,9 +36,9 @@ namespace WarehouseApp.Controllers
         [HttpGet("warehouse/summary/query")]
         public IActionResult QueryResult([FromQuery]double price, [FromQuery] string type)
         {
-            database.GetQueryResult(price, type);
+            QueryDTO query = database.GetQueryResult(price, type);
 
-            return Json();
+            return Json(query);
         }
     }
 }
