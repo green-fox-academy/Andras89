@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RedditREST.Models;
+using RedditREST.Repositories;
+using RedditREST.Services;
 
 namespace RedditREST
 {
@@ -25,6 +27,9 @@ namespace RedditREST
         {
             services.AddMvc();
             services.AddDbContext<RedditRestDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RedditREST")));
+            services.AddTransient<RedditRestDbContext>();
+            services.AddTransient<PostRepository>();
+            services.AddTransient<IService, RedditService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
