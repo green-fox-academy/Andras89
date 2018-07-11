@@ -32,5 +32,10 @@ namespace WarehouseApp.Controllers
 
             return View("Summary", summary);
         }
+
+        [HttpGet("warehouse/summary/query")]
+        public IActionResult QueryResult(Warehouse ware, int amount)
+        {
+        }
     }
 }
