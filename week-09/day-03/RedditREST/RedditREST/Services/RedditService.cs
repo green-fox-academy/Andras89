@@ -35,5 +35,23 @@ namespace RedditREST.Services
         {
             return postRepo.Read();
         }
+
+        public void UpVotePostById(int id)
+        {
+            Post selected = postRepo.Read().FirstOrDefault(p => p.Id == id);
+
+            selected.Score++;
+
+            postRepo.Update(selected);
+        }
+
+        public void DownVotePostById(int id)
+        {
+            Post selected = postRepo.Read().FirstOrDefault(p => p.Id == id);
+
+            selected.Score--;
+
+            postRepo.Update(selected);
+        }
     }
 }

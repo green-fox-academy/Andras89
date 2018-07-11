@@ -39,7 +39,15 @@ namespace RedditREST.Controllers
         {
             database.UpVotePostById(id);
 
-            return RedirectToAction("ListPosts);
+            return RedirectToAction("ListPosts");
+        }
+
+        [HttpPut("/posts/{id}/downvote")]
+        public IActionResult DownVote(int id)
+        {
+            database.DownVotePostById(id);
+
+            return RedirectToAction("ListPosts");
         }
     }
 }

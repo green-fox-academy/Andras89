@@ -11,5 +11,6 @@ namespace RedditREST.Services
         List<Post> GetPosts();
         void AddPost(Post post);
         void UpVotePostById(int id);
+        void DownVotePostById(int id);
     }
 }
