@@ -7,7 +7,7 @@ using WarehouseApp.Services;
 
 namespace WarehouseApp.Controllers
 {
-    [Route("")]
+    [Route("shoppingplanner")]
     public class WarehouseController : Controller
     {
         IService database;
@@ -16,5 +16,13 @@ namespace WarehouseApp.Controllers
         {
             this.database = database;
         }
+
+        [HttpGet("warehouse")]
+        public IActionResult List()
+        {
+            return View(database.GetAllCloths());
+        }
+
+        [HttpPost("warehouse/summary")]
     }
 }

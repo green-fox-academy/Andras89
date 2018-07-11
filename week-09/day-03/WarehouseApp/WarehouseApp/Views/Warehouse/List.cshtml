@@ -1,0 +1,61 @@
+﻿@model List<Warehouse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Green Fox Fashion Webstore</title>
+</head>
+<body>
+    <h1>Green Fox Fashion Webstore</h1>
+
+    <form action="/warehouse/summary" method="post">
+        <select name="ItemName">
+            <option value="" disabled selected>Select Item Name</option>
+            @foreach (Warehouse cloth in Model)
+            {
+                <option value="@cloth.ItemName">@cloth.ItemName</option>
+            }
+        </select>
+        <select name="Size">
+            <option value="" disabled selected>Select Item Size</option>
+            @foreach (Warehouse cloth in Model)
+            {
+                <option value="@cloth.Size">@cloth.Size</option>
+            }
+        </select>
+        <input type="text" name="amount" value="" />
+        <button type="submit">Get Total</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Warehouse cloth in Model)
+            {
+                <tr>
+                    <td>@cloth.ItemName</td>
+                    <td>@cloth.Manufacturer</td>
+                    <td>@cloth.Category</td>
+                    <td>@cloth.Size</td>
+                    <td>@cloth.UnitPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
