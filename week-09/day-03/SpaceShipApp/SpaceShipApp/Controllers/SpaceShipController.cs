@@ -38,5 +38,13 @@ namespace SpaceShipApp.Controllers
 
             return RedirectToAction("SpaceTable");
         }
+
+        [HttpGet("/toplanet/{id}")]
+        public IActionResult PeopleToPlanet(int id)
+        {
+            spaceService.MovePeopleToPlanet(id);
+
+            return RedirectToAction("SpaceTable");
+        }
     }
 }
