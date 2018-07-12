@@ -7,6 +7,7 @@ using SpaceShipApp.Services;
 
 namespace SpaceShipApp.Controllers
 {
+    [Route("")]
     public class SpaceShipController : Controller
     {
         private IService spaceService;
@@ -16,7 +17,8 @@ namespace SpaceShipApp.Controllers
             this.spaceService = spaceService;
         }
 
-        public IActionResult Index()
+        [HttpGet("")]
+        public IActionResult SpaceTable()
         {
             return View();
         }

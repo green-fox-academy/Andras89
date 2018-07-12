@@ -1,4 +1,5 @@
 ﻿using SpaceShipApp.Repositories;
+using SpaceShipApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,13 @@ namespace SpaceShipApp.Services
             this.planetRepo = planetRepo;
         }
 
-
+        public SpaceEntityDto GetAllSpaceEntities()
+        {
+            return new SpaceEntityDto
+            {
+                Planets = planetRepo.Read(),
+                Spaceship = spaceShipRepo.Read()[0]
+            };
+        }
     }
 }
