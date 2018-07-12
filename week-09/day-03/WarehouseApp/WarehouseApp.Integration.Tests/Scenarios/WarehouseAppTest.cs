@@ -23,6 +23,12 @@ namespace WarehouseApp.Integration.Tests
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
+        [Fact]
+        public async Task DoesNotFail()
+        {
+            var response = await testFixture.Client.GetAsync("/shoppingplanner/warehouse/summary/query");
 
+            Assert.NotNull(response);
+        }
     }
 }
