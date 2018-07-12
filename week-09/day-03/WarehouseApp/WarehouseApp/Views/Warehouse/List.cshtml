@@ -1,4 +1,4 @@
-﻿@model List<Warehouse>
+﻿@model WarehouseApp.ViewModels.ListViewDTO
 
 @{
     Layout = null;
@@ -15,19 +15,17 @@
 <body>
     <h1>Green Fox Fashion Webstore</h1>
 
-    @{ List<string> sizes = Model.GroupBy(w => w.Size).Select(g => g.Key).ToList();}
-
     <form action="/shoppingplanner/warehouse/summary" method="post">
         <select name="ItemName">
             <option value="" disabled selected>Select Item Name</option>
-            @foreach (Warehouse cloth in Model)
+            @foreach (string cloth in Model.ItemNameGroup)
             {
-                <option value="@cloth.ItemName">@cloth.ItemName</option>
+                <option value="@cloth">@cloth</option>
             }
         </select>
         <select name="Size">
             <option value="" disabled selected>Select Item Size</option>
-            @foreach (string size in sizes)
+            @foreach (string size in Model.ItemSizeGroup)
             {
                 <option value="@size">@size</option>
             }
@@ -47,7 +45,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Warehouse cloth in Model)
+            @foreach (Warehouse cloth in Model.Wares)
             {
                 <tr>
                     <td>@cloth.ItemName</td>

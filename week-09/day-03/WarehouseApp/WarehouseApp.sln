@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseApp", "WarehouseApp\WarehouseApp.csproj", "{A875F4C6-D144-49EA-A65B-8EF4CD498007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarehouseApp", "WarehouseApp\WarehouseApp.csproj", "{A875F4C6-D144-49EA-A65B-8EF4CD498007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseApp.Integration.Tests", "WarehouseApp.Integration.Tests\WarehouseApp.Integration.Tests.csproj", "{6F82048A-4BDD-4760-9485-3BE57AABFECA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseApp.Integration.Tests", "WarehouseApp.Integration.Tests\WarehouseApp.Integration.Tests.csproj", "{C430888C-7C03-4A88-B22E-28346D2F2DAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A875F4C6-D144-49EA-A65B-8EF4CD498007}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A875F4C6-D144-49EA-A65B-8EF4CD498007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A875F4C6-D144-49EA-A65B-8EF4CD498007}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F82048A-4BDD-4760-9485-3BE57AABFECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F82048A-4BDD-4760-9485-3BE57AABFECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F82048A-4BDD-4760-9485-3BE57AABFECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F82048A-4BDD-4760-9485-3BE57AABFECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C430888C-7C03-4A88-B22E-28346D2F2DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C430888C-7C03-4A88-B22E-28346D2F2DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C430888C-7C03-4A88-B22E-28346D2F2DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C430888C-7C03-4A88-B22E-28346D2F2DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

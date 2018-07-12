@@ -12,5 +12,6 @@ namespace WarehouseApp.Services
         List<Warehouse> GetAllCloths();
         TotalPriceDTO GetTotalPriceOfWare(Warehouse ware, int amount);
         QueryDTO GetQueryResult(double price, string type);
+        ListViewDTO GetListViewElements();
     }
 }

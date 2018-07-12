@@ -22,6 +22,16 @@ namespace WarehouseApp.Services
             return warehouseRepo.Read();
         }
 
+        public ListViewDTO GetListViewElements()
+        {
+            return new ListViewDTO
+            {
+                Wares = GetAllCloths(),
+                ItemNameGroup = GetAllCloths().GroupBy(w => w.ItemName).Select(g => g.Key).ToList(),
+                ItemSizeGroup = GetAllCloths().GroupBy(w => w.Size).Select(g => g.Key).ToList()
+            };
+        }
+
         public QueryDTO GetQueryResult(double price, string type)
         {
             if(type is null)

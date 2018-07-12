@@ -23,7 +23,7 @@ namespace WarehouseApp.Controllers
         [HttpGet("warehouse")]
         public IActionResult List()
         {
-            return View(database.GetAllCloths());
+            return View(database.GetListViewElements());
         }
 
         [HttpPost("warehouse/summary")]

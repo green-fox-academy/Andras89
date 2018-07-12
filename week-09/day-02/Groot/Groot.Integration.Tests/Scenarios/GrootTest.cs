@@ -50,7 +50,7 @@ namespace Groot.Integration.Tests
         {
             var response = await testFixture.Client.GetAsync("api/Guardian/groot");
 
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
 
         [Fact]
