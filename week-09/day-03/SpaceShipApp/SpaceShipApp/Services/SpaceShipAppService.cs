@@ -28,6 +28,36 @@ namespace SpaceShipApp.Services
             };
         }
 
+        public void MovePeopleToPlanet(int id)
+        {
+            
+        }
+
+        public void MovePeopleToShip(int id)
+        {
+            Planet currentPlanet = planetRepo.Read().FirstOrDefault(p => p.Id.Equals(id));
+            Spaceship loadShip = spaceShipRepo.Read().First();
+
+            int placesLeft = loadShip.MaxCapacity - loadShip.Utilization;
+
+            if (placesLeft > 0)
+            {
+                if (currentPlanet.Population == placesLeft)
+                {
+                    loadShip.Utilization += placesLeft;
+                    currentPlanet.Population = 0;
+                }
+                else if (currentPlanet.Population > placesLeft)
+                {
+                    loadShip.Utilization += placesLeft;
+                    currentPlanet.Population -= placesLeft;
+                }
+            }
+
+            spaceShipRepo.Update(loadShip);
+            planetRepo.Update(currentPlanet);
+        }
+
         public void MoveSpaceShipToPlanetById(int id)
         {
             string planetName = planetRepo.Read().FirstOrDefault(p => p.Id == id).Name;

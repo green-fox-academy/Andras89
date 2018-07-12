@@ -10,5 +10,6 @@ namespace SpaceShipApp.Services
     {
         SpaceEntityDto GetAllSpaceEntities();
         void MoveSpaceShipToPlanetById(int id);
+        void MovePeopleToShip(int id);
     }
 }

@@ -34,7 +34,7 @@ namespace SpaceShipApp.Controllers
         [HttpGet("/toship/{id}")]
         public IActionResult PeopleToShip(int id)
         {
-
+            spaceService.MovePeopleToShip(id);
 
             return RedirectToAction("SpaceTable");
         }
