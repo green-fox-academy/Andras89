@@ -49,12 +49,8 @@ namespace SpaceShipApp.Services
 
             if (placesLeft > 0 || currentPlanet.Population < 1)
             {
-                if (currentPlanet.Population == placesLeft)
-                {
-                    loadShip.Utilization += placesLeft;
-                    currentPlanet.Population = 0;
-                }
-                else if (currentPlanet.Population > placesLeft)
+                
+                if (currentPlanet.Population >= placesLeft)
                 {
                     loadShip.Utilization += placesLeft;
                     currentPlanet.Population -= placesLeft;
