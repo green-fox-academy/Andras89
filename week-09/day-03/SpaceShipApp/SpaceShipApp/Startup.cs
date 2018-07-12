@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SpaceShipApp.Models;
 
 namespace SpaceShipApp
 {
@@ -22,6 +23,7 @@ namespace SpaceShipApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<SpaceShipDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
