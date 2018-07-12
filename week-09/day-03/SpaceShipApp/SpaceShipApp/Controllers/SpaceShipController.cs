@@ -30,5 +30,13 @@ namespace SpaceShipApp.Controllers
 
             return RedirectToAction("SpaceTable");
         }
+
+        [HttpGet("/toship/{id}")]
+        public IActionResult PeopleToShip(int id)
+        {
+
+
+            return RedirectToAction("SpaceTable");
+        }
     }
 }
