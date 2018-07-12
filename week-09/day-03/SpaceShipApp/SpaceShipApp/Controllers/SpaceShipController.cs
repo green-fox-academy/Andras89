@@ -26,6 +26,7 @@ namespace SpaceShipApp.Controllers
         [HttpPost("movehere/{id}")]
         public IActionResult Movehere(int id)
         {
+            spaceService.MoveSpaceShipToPlanetById(id);
 
             return RedirectToAction("SpaceTable");
         }

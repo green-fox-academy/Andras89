@@ -42,7 +42,11 @@
                     <tr>
                         <td>@current.Name</td>
                         <td>@current.Population</td>
-                        <td>Move here</td>
+                        <td>
+                            <form action="/movehere/@current.Id" method="post">
+                                <button type="submit">Move Here</button>
+                            </form>
+                        </td>
                         <td>-</td>
                     </tr>
                 }

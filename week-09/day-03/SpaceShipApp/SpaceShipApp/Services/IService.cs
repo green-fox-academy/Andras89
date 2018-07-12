@@ -9,5 +9,6 @@ namespace SpaceShipApp.Services
     public interface IService
     {
         SpaceEntityDto GetAllSpaceEntities();
+        void MoveSpaceShipToPlanetById(int id);
     }
 }

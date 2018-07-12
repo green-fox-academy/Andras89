@@ -1,4 +1,5 @@
-﻿using SpaceShipApp.Repositories;
+﻿using SpaceShipApp.Models;
+using SpaceShipApp.Repositories;
 using SpaceShipApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,17 @@ namespace SpaceShipApp.Services
                 Planets = planetRepo.Read(),
                 Spaceship = spaceShipRepo.Read()[0]
             };
+        }
+
+        public void MoveSpaceShipToPlanetById(int id)
+        {
+            string planetName = planetRepo.Read().FirstOrDefault(p => p.Id == id).Name;
+
+            Spaceship shipAtNewLoc = spaceShipRepo.Read().First();
+
+            shipAtNewLoc.Planet = planetName;
+
+            spaceShipRepo.Update(shipAtNewLoc);
         }
     }
 }
