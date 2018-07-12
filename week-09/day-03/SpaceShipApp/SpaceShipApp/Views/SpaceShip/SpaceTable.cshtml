@@ -1,4 +1,5 @@
-﻿
+﻿@model SpaceShipApp.ViewModels.SpaceEntityDto
+
 @{
     Layout = null;
 }
@@ -7,9 +8,46 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="~/css/style.css">
     <meta name="viewport" content="width=device-width" />
-    <title>SpaceTable</title>
+    <title>Space Transporter</title>
 </head>
 <body>
+    <h1>Space Transporter</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Planet</th>
+                <th>Population</th>
+                <th>Spaceship local</th>
+                <th>People on Ship</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Planet current in Model.Planets)
+            {
+                if (current.Name.Equals(Model.Spaceship.Planet))
+                {
+                    <tr>
+                        <td>@current.Name</td>
+                        <td>@current.Population</td>
+                        <td>to planet to ship</td>
+                        <td>@Model.Spaceship.Utilization</td>
+                    </tr>
+
+                }
+                else
+                {
+                    <tr>
+                        <td>@current.Name</td>
+                        <td>@current.Population</td>
+                        <td>Move here</td>
+                        <td>-</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 </body>
 </html>

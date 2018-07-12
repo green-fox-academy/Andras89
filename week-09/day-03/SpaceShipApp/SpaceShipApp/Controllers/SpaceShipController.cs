@@ -20,7 +20,7 @@ namespace SpaceShipApp.Controllers
         [HttpGet("")]
         public IActionResult SpaceTable()
         {
-            return View();
+            return View(spaceService.GetAllSpaceEntities());
         }
     }
 }
