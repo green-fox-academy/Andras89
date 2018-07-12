@@ -22,5 +22,12 @@ namespace SpaceShipApp.Controllers
         {
             return View(spaceService.GetAllSpaceEntities());
         }
+
+        [HttpPost("movehere/{id}")]
+        public IActionResult Movehere(int id)
+        {
+
+            return RedirectToAction("SpaceTable");
+        }
     }
 }

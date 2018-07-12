@@ -1,77 +1,18 @@
-.background, 
-.backdrop {
-	background-color: #3f689c;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    vertical-align: middle; 
+    text-align: left; 
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
 }
-.backdrop {
-	filter: alpha(opacity=90);
-	opacity: .9;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+
+th {
+    background: #454343;
+    font-size: 18px;
+    color: #fff;
 }
-.background {
-	filter: blur(15px);
-	-webkit-filter: blur(10px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=5); */
-}
-.login-form-container {
-    max-width: 400px;
-    width: 100%;
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -200px;
-    margin-top: -286px;
-}
-.login-form .input-container {
-	border-bottom: 1px solid #CCCCCC;
-    margin-top: 15px;
-    font-size: 20px;
-    color: #9e9e9e;
-	padding-bottom: 5px;
-}
-.login-form .input {
-	border: 0;
-	width: 200px;
-    height: 30px;
-    font-size: 20px;
-}
-.login-form .input:focus {
-    outline-color: darkgreen;
-    outline-width: 300px;
-    outline-offset: 10px;
-}
-#show-password {
-	float: right;
-    vertical-align: bottom;
-    text-align: center;
-    margin-top: 7px;
-	cursor: pointer;
-}
-.login-form .forgot-password {
-	float: right;
-}
-.login-form .button {
-	margin-top: 15px;
-    width: 100%;
-    background: #2e7ec7;
-    border: 0;
-    color: #FFFFFF;
-    padding: 10px;
-    font-size: 15px;
-	cursor: pointer;
-	transition: background .3s;
-}
-.login-form .button:hover {
-	background: #1f6eb7;
-}
-.login-form .button:focus {
-	outline: none;
-}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
