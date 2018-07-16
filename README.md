@@ -14,4 +14,4 @@
 
 <h2>ORIENTATION PHASE:</h2>
 
-<a href="https://github.com/Andras89/macrotis-orientation-exam">MACROTIS ORIENTATION EXAM</a><span> | </span><a href="https://github.com/Andras89/fulvipes-orientation-exam/blob/master/javacs.md">FULVIPES ORIENTATION EXAM</a>
+<a href="https://github.com/Andras89/macrotis-orientation-exam">MACROTIS ORIENTATION EXAM</a><span> | </span><a href="https://github.com/Andras89/fulvipes-orientation-exam">FULVIPES ORIENTATION EXAM</a>
