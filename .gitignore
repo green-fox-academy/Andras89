@@ -343,4 +343,4 @@ crashlytics-build.properties
 staticfiles
 .env
 
-venv/
+Python/FlaskApplication/venv/
