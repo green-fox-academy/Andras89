@@ -8,5 +8,10 @@ def index():
     return render_template('Home.html')
 
 
+@application.route('/about')
+def about():
+    return render_template('About.html')
+
+
 if __name__ == '__main__':
     application.run(host='localhost', port=5000, debug=True)
