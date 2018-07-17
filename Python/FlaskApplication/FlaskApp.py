@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from data import all_articles
 
 application = Flask(__name__)
 
@@ -11,6 +12,11 @@ def index():
 @application.route('/about')
 def about():
     return render_template('About.html')
+
+
+@application.route('/articles')
+def articles():
+    return render_template('Articles.html', articles=all_articles())
 
 
 if __name__ == '__main__':
