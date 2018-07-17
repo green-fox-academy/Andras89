@@ -19,5 +19,10 @@ def articles():
     return render_template('Articles.html', articles=all_articles())
 
 
+@application.route('/article/<string:id>/')
+def article(id):
+    return render_template('Articles.html', id=id)
+
+
 if __name__ == '__main__':
     application.run(host='localhost', port=5000, debug=True)
