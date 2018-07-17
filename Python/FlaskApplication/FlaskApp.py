@@ -21,7 +21,7 @@ def articles():
 
 @application.route('/article/<string:id>/')
 def article(id):
-    return render_template('Articles.html', id=id)
+    return render_template('Article.html', id=id)
 
 
 if __name__ == '__main__':
