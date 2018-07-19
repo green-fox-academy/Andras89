@@ -11,6 +11,5 @@ public class Draw extends JPanel
         graphics.fillRect(200,200,200,200);
         graphics.setColor(new Color(200,200,0,150));
         graphics.fillRect(210,210,200,200);
-
     }
 }
