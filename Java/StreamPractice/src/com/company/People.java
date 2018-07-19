@@ -12,4 +12,9 @@ public class People
         this.lastName = lastName;
         this.age = age;
     }
+
+    @Override
+    public String toString(){
+        return String.format("%s %s is %d year old", firstName, lastName, age);
+    }
 }
