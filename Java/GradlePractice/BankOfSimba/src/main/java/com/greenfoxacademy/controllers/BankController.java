@@ -33,6 +33,6 @@ public class BankController {
 
     @GetMapping("/list")
     public String listOfBankAccounts(Model model){
-        
+        return "list";
     }
 }
