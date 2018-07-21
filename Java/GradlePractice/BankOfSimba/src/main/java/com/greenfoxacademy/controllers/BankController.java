@@ -33,6 +33,7 @@ public class BankController {
 
     @GetMapping("/list")
     public String listOfBankAccounts(Model model){
+        model.addAttribute("accounts", bankAccService.getAccounts());
         return "list";
     }
 }
