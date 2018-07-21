@@ -10,6 +10,6 @@ public class HelloRESTController {
 
     @RequestMapping
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World")String content){
-        return new Greeting(1, "Hello " + content);
+        return new Greeting("Hello " + content);
     }
 }

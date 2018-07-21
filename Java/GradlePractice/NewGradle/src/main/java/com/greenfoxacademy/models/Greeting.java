@@ -2,11 +2,13 @@ package com.greenfoxacademy.models;
 
 public class Greeting {
 
+    private static long adder = 0;
     private long id;
     private String content;
 
-    public Greeting(long id, String content) {
-        this.id = id;
+    public Greeting(String content) {
+        adder++;
+        this.id = adder;
         this.content = content;
     }
 
