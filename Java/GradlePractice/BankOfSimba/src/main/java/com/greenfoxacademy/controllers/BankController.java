@@ -5,6 +5,7 @@ import com.greenfoxacademy.services.BankServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -28,5 +29,10 @@ public class BankController {
     public String htmlCeption(Model model){
         model.addAttribute("text", bankAccService.getHtmlContent());
         return "html_ception";
+    }
+
+    @GetMapping("/list")
+    public String listOfBankAccounts(Model model){
+        
     }
 }
