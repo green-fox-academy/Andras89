@@ -27,6 +27,6 @@ public class BankController {
     @RequestMapping("/htmlception")
     public String htmlCeption(Model model){
         model.addAttribute("text", bankAccService.getHtmlContent());
-        return "redirect:/show";
+        return "html_ception";
     }
 }
