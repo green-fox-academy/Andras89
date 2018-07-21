@@ -6,6 +6,8 @@
     <title>Multi Lang Greeter</title>
 </head>
 <body>
-
+    <div th:style="'font-size : ' + ${font} + 'px;'">
+        <p th:style="'color : rgb(' + ${red} + ',' + ${green} + ',' + ${blue}')'" th:text = "${hello}"/>
+    </div>
 </body>
 </html>
