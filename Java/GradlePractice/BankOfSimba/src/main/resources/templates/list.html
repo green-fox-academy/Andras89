@@ -6,6 +6,21 @@
     <title>Show Simba Account</title>
 </head>
 <body>
-
+    <table th:object = ${accounts}>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Animal Type</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each = "account : *{bankAccounts}">
+                <td th:text="${account.name}"></td>
+                <td th:text="${account.balance}"></td>
+                <td th:text="${account.animalType}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
