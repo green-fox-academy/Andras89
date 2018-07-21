@@ -23,4 +23,10 @@ public class BankController {
 
         return "show_simba";
     }
+
+    @RequestMapping("/htmlception")
+    public String htmlCeption(Model model){
+        model.addAttribute("text", bankAccService.getHtmlContent());
+        return "redirect:/show";
+    }
 }
