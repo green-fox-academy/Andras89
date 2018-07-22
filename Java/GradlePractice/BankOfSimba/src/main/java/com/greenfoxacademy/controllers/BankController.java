@@ -22,7 +22,7 @@ public class BankController {
 
     @RequestMapping("/show")
     public String showSimbaAccount(Model model){
-        model.addAttribute("account", bankAccService.getGenerateAccount("Simba", 2000, "lion", true));
+        model.addAttribute("account", bankAccService.getGenerateAccount("Simba", 2000, "lion", true, true));
 
         return "show_simba";
     }

@@ -14,6 +14,7 @@
             <th>Balance</th>
             <th>Animal Type</th>
             <th>KING</th>
+            <th>Alignment</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +25,8 @@
                 <td th:text="${account.animalType}"></td>
                 <td th:if="${account.isKing}" style="background : goldenrod; font-size : 24px;" th:text = "'KING'"></td>
                 <td th:unless="${account.isKing}"></td>
+                <td th:if="${account.alignment}" style="background : blue; font-size : 24px;" th:text = "'GoodGuy'"></td>
+                <td th:unless="${account.alignment}" style="background : red; font-size : 24px;" th:text = "'BadGuy'"></td>
             </tr>
         </tbody>
     </table>

@@ -12,11 +12,11 @@ public class AllBankAccounts {
     }
 
     private void preFillWithAccounts() {
-        bankAccounts.add(new BankAccount("Simba", 5000, "Lion", true));
-        bankAccounts.add(new BankAccount("Mufasa", 9000, "Lion", true));
-        bankAccounts.add(new BankAccount("Zazu", 500, "Hornbill", false));
-        bankAccounts.add(new BankAccount("Timon", 50, "Meerkat", false));
-        bankAccounts.add(new BankAccount("Pumbaa", 0, "Warthog", false));
-        bankAccounts.add(new BankAccount("Scar", 56000, "Lion", true));
+        bankAccounts.add(new BankAccount("Simba", 5000, "Lion", true, true));
+        bankAccounts.add(new BankAccount("Mufasa", 9000, "Lion", true, true));
+        bankAccounts.add(new BankAccount("Zazu", 500, "Hornbill", false, true));
+        bankAccounts.add(new BankAccount("Timon", 50, "Meerkat", false, true));
+        bankAccounts.add(new BankAccount("Pumbaa", 0, "Warthog", false, true));
+        bankAccounts.add(new BankAccount("Scar", 56000, "Lion", true, false));
     }
 }

@@ -9,8 +9,8 @@ import java.util.List;
 @Service
 public class BankServiceImpl implements BankService {
 
-    public BankAccount getGenerateAccount(String name, double balance, String animalType, boolean isKing) {
-        return new BankAccount(name, balance, animalType, isKing);
+    public BankAccount getGenerateAccount(String name, double balance, String animalType, boolean isKing, boolean alignment) {
+        return new BankAccount(name, balance, animalType, isKing, alignment);
     }
 
     public String getHtmlContent() {
