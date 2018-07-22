@@ -10,4 +10,6 @@ public interface BankService {
     List<BankAccount> getAccounts(List<BankAccount> allAccounts);
 
     List<BankAccount> AddBalanceToAccount(List<BankAccount> allAccounts, String name);
+
+    List<BankAccount> addNewAccount(List<BankAccount> allAccounts, BankAccount account);
 }

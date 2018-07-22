@@ -40,4 +40,9 @@ public class BankServiceImpl implements BankService {
 
         return allAccounts;
     }
+
+    public List<BankAccount> addNewAccount(List<BankAccount> allAccounts, BankAccount account) {
+        allAccounts.add(account);
+        return allAccounts;
+    }
 }

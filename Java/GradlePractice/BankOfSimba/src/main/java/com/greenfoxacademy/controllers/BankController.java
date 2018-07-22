@@ -41,12 +41,19 @@ public class BankController {
     public String listOfBankAccounts(Model model){
         allAccounts = bankAccService.getAccounts(allAccounts);
         model.addAttribute("accounts", allAccounts);
+        model.addAttribute("account", new BankAccount());
         return "list";
     }
 
     @PostMapping("/addtoaccount")
     public String addToSelectedAccount(@ModelAttribute(value="name") String name){
         allAccounts = bankAccService.AddBalanceToAccount(allAccounts, name);
+        return "redirect:/list";
+    }
+
+    @PostMapping("/createaccount")
+    public String createNewAccount(@ModelAttribute BankAccount account){
+        allAccounts = bankAccService.addNewAccount(allAccounts, account);
         return "redirect:/list";
     }
 }
