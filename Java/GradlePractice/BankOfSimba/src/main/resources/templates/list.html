@@ -32,9 +32,10 @@
     </table>
 
     <form action="/addtoaccount" method="post">
-        <select>
+        <select name="name">
             <option th:each = "account : ${accounts}" th:value="${account.name}" th:text="${account.name}"/>
         </select>
+        <button type="submit">Add Money</button>
     </form>
 </body>
 </html>

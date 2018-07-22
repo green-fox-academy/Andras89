@@ -1,11 +1,14 @@
 package com.greenfoxacademy.controllers;
 
+import com.greenfoxacademy.models.BankAccount;
 import com.greenfoxacademy.services.BankService;
 import com.greenfoxacademy.services.BankServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -14,6 +17,7 @@ import java.util.List;
 public class BankController {
 
     private BankService bankAccService;
+    public static List<BankAccount> allAccounts;
 
     @Autowired
     public BankController(BankServiceImpl bankAccService) {
@@ -35,7 +39,14 @@ public class BankController {
 
     @GetMapping("/list")
     public String listOfBankAccounts(Model model){
-        model.addAttribute("accounts", bankAccService.getAccounts());
+        allAccounts = bankAccService.getAccounts(allAccounts);
+        model.addAttribute("accounts", allAccounts);
         return "list";
+    }
+
+    @PostMapping("/addtoaccount")
+    public String addToSelectedAccount(@ModelAttribute(value="name") String name){
+        bankAccService.AddBalanceToAccount(allAccounts, name);
+        return "redirect:/list";
     }
 }

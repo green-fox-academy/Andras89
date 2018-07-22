@@ -17,7 +17,12 @@ public class BankServiceImpl implements BankService {
         return "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
     }
 
-    public List<BankAccount> getAccounts() {
-        return new AllBankAccounts().bankAccounts;
+    public List<BankAccount> getAccounts(List<BankAccount> allAccounts) {
+        if (allAccounts == null || allAccounts.size() < 1){
+            return new AllBankAccounts().bankAccounts;
+        }
+        else {
+            return allAccounts;
+        }
     }
 }
