@@ -8,4 +8,6 @@ public interface BankService {
     BankAccount getGenerateAccount(String name, double balance, String animalType, boolean isKing, boolean alignment);
     String getHtmlContent();
     List<BankAccount> getAccounts(List<BankAccount> allAccounts);
+
+    List<BankAccount> AddBalanceToAccount(List<BankAccount> allAccounts, String name);
 }

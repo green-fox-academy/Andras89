@@ -46,7 +46,7 @@ public class BankController {
 
     @PostMapping("/addtoaccount")
     public String addToSelectedAccount(@ModelAttribute(value="name") String name){
-        bankAccService.AddBalanceToAccount(allAccounts, name);
+        allAccounts = bankAccService.AddBalanceToAccount(allAccounts, name);
         return "redirect:/list";
     }
 }

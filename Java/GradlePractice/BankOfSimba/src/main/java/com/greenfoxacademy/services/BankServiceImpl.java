@@ -25,4 +25,19 @@ public class BankServiceImpl implements BankService {
             return allAccounts;
         }
     }
+
+    public List<BankAccount> AddBalanceToAccount(List<BankAccount> allAccounts, String name) {
+        for (BankAccount account: allAccounts) {
+            if (account.getName().equals(name)){
+                if (account.getIsKing()){
+                    account.setBalance(account.getBalance() + 100);
+                }
+                else{
+                    account.setBalance(account.getBalance() + 10);
+                }
+            }
+        }
+
+        return allAccounts;
+    }
 }
