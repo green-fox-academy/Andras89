@@ -30,5 +30,11 @@
             </tr>
         </tbody>
     </table>
+
+    <form action="/addtoaccount" method="post">
+        <select>
+            <option th:each = "account : ${accounts}" th:value="${account.name}" th:text="${account.name}"/>
+        </select>
+    </form>
 </body>
 </html>
