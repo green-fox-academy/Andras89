@@ -9,6 +9,7 @@
     <table th:object = ${accounts}>
         <thead>
         <tr>
+            <th>Index</th>
             <th>Name</th>
             <th>Balance</th>
             <th>Animal Type</th>
@@ -16,6 +17,7 @@
         </thead>
         <tbody>
             <tr th:each = "account : ${accounts}">
+                <td th:text="${accountStat.index}"></td>
                 <td th:text="${account.name}"></td>
                 <td th:text="${account.balance}"></td>
                 <td th:text="${account.animalType}"></td>
