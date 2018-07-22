@@ -30,12 +30,21 @@
             </tr>
         </tbody>
     </table>
-
+    <br/><br/>
     <form action="/addtoaccount" method="post">
         <select name="name">
             <option th:each = "account : ${accounts}" th:value="${account.name}" th:text="${account.name}"/>
         </select>
         <button type="submit">Add Money</button>
+    </form>
+    <br/><br/>
+    <form action="/createaccount" method="post">
+        <label>Name: </label><input type="text" name="Name" value="" required/><br />
+        <label>Balance: </label><input type="number" name="Balance" value="" required/><br />
+        <label>AnimalType: </label><input type="text" name="AnimalType" value="" required/><br />
+        <label>IsKing: </label><input type="checkbox" name="IsKing" value="TRUE" /><br />
+        <label>IsGoodGuy: </label><input type="checkbox" name="IsGoodGuy" value="TRUE" /><br />
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
