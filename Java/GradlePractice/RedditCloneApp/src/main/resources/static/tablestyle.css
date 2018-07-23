@@ -1,0 +1,19 @@
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    vertical-align: middle;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+th {
+    background: #454343;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
