@@ -22,7 +22,9 @@
             <tr th:each="post : ${posts}">
                 <td th:text="${post.id}">
                 <td th:text="${post.votes}">
-                <td>+</td>
+                <td><form action="/upvote" method="post">
+                    <button type="submit" value="${post.id}">+</button>
+                </form> </td>
                 <td>-</td>
                 <td th:text="${post.content}">
             </tr>

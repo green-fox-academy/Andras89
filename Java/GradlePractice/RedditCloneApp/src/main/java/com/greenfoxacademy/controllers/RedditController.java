@@ -32,4 +32,10 @@ public class RedditController {
         service.addNewPostToDb(post);
         return "redirect:/";
     }
+
+    @PostMapping("/upvote")
+    public String upVotePost(@ModelAttribute Integer id){
+
+        return"redirect:/";
+    }
 }
