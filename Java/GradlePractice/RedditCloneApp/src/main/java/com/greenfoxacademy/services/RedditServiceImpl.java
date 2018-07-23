@@ -5,6 +5,9 @@ import com.greenfoxacademy.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class RedditServiceImpl implements RedditService {
 
@@ -13,5 +16,11 @@ public class RedditServiceImpl implements RedditService {
 
     public void addNewPostToDb(Post post) {
         postRepo.save(post);
+    }
+
+    public List<Post> getAllPostFromDb() {
+        List<Post> posts = new ArrayList<>();
+        postRepo.findAll().forEach(posts::add);
+        return posts;
     }
 }
