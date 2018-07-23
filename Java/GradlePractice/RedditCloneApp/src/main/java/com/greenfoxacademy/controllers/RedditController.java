@@ -21,8 +21,14 @@ public class RedditController {
         return "main";
     }
 
+    @GetMapping("/newpost")
+    public String showAddPostPage(Model model){
+        model.addAttribute("post", new Post());
+        return "addpost";
+    }
+
     @PostMapping("/newpost")
-    public String addMainPage(@ModelAttribute Post post){
+    public String addPostPage(@ModelAttribute Post post){
         service.addNewPostToDb(post);
         return "redirect:/";
     }
