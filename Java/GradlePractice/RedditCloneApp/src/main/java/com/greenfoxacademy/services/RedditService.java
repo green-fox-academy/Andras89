@@ -7,4 +7,5 @@ public interface RedditService {
     void addNewPostToDb(Post post);
     List<Post> getAllPostFromDb();
     void increaseSelectedPostVote(Integer id);
+    void decreaseSelectedPostVote(Integer id);
 }

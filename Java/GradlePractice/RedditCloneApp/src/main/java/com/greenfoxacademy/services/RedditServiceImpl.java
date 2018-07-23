@@ -29,4 +29,10 @@ public class RedditServiceImpl implements RedditService {
         selected.setVotes(selected.getVotes() + 1);
         postRepo.save(selected);
     }
+
+    public void decreaseSelectedPostVote(Integer id) {
+        Post selected = postRepo.findById(id).get();
+        selected.setVotes(selected.getVotes() - 1);
+        postRepo.save(selected);
+    }
 }

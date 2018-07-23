@@ -38,4 +38,10 @@ public class RedditController {
         service.increaseSelectedPostVote(id);
         return "redirect:/";
     }
+
+    @PostMapping("/downvote")
+    public String downVotePost(@ModelAttribute(value = "id") Integer id){
+        service.decreaseSelectedPostVote(id);
+        return "redirect:/";
+    }
 }
