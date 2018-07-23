@@ -23,4 +23,10 @@ public class RedditServiceImpl implements RedditService {
         postRepo.findAll().forEach(posts::add);
         return posts;
     }
+
+    public void increaseSelectedPostVote(Integer id) {
+        Post selected = postRepo.findById(id).get();
+        selected.setVotes(selected.getVotes() + 1);
+        postRepo.save(selected);
+    }
 }

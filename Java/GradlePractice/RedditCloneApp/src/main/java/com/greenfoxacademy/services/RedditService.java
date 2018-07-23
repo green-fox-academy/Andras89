@@ -6,4 +6,5 @@ import java.util.List;
 public interface RedditService {
     void addNewPostToDb(Post post);
     List<Post> getAllPostFromDb();
+    void increaseSelectedPostVote(Integer id);
 }

@@ -34,8 +34,8 @@ public class RedditController {
     }
 
     @PostMapping("/upvote")
-    public String upVotePost(@ModelAttribute Integer id){
-
-        return"redirect:/";
+    public String upVotePost(@ModelAttribute(value = "id") Integer id){
+        service.increaseSelectedPostVote(id);
+        return "redirect:/";
     }
 }
