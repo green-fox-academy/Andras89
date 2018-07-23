@@ -5,9 +5,9 @@ import com.greenfoxacademy.services.RedditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class RedditController {
@@ -43,5 +43,11 @@ public class RedditController {
     public String downVotePost(@ModelAttribute(value = "id") Integer id){
         service.decreaseSelectedPostVote(id);
         return "redirect:/";
+    }
+
+    @GetMapping("/rest")
+    @ResponseBody
+    public List<Post> jsonPosts(){
+        return service.getAllPostFromDb();
     }
 }
