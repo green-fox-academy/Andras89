@@ -7,5 +7,26 @@
 </head>
 <body>
     <h1>List Of All The Posts</h1>
+    <br/><br/>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CURRENT VOTE</th>
+                <th>UP VOTE</th>
+                <th>DOWN VOTE</th>
+                <th>CONTENT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}">
+                <td th:text="${post.votes}">
+                <td>+</td>
+                <td>-</td>
+                <td th:text="${post.content}">
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
