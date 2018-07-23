@@ -25,7 +25,9 @@
                 <td><form action="/upvote" method="post">
                     <button type="submit" name="id" th:value="${post.id}">+</button>
                 </form> </td>
-                <td>-</td>
+                <td><form action="/downvote" method="post">
+                    <button type="submit" name="id" th:value="${post.id}">-</button>
+                </form> </td>
                 <td th:text="${post.content}">
             </tr>
         </tbody>
