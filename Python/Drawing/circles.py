@@ -7,8 +7,8 @@ draw.pencolor("blue")
 draw.speed(0)
 
 outer = 4
-pos = 8
-cicle = 16
+middle = 8
+inner = 16
 
 
 def starting():
@@ -27,14 +27,14 @@ def ending(amount):
 for u in range(outer):
     starting()
 
-    for j in range(pos):
+    for j in range(middle):
         starting()
 
-        for i in range(cicle):
+        for i in range(inner):
             draw.circle(120)
-            draw.right(360 / cicle)
+            draw.right(360 / inner)
 
-        ending(pos)
+        ending(middle)
 
     ending(outer)
 
