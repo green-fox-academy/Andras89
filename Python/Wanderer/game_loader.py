@@ -6,6 +6,7 @@ canvasHeight = 600
 mapWidth = 500
 mapHeight = 500
 
+pygame.init()
 gM = entities.GameMap(canvasWidth, canvasHeight, mapWidth, mapHeight)
 
 black = (0, 0, 0)
