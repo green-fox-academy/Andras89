@@ -5,6 +5,21 @@ class GameLogic:
     def __init__(self, canvasWidth, canvasHeight, mapWidth, mapHeight):
         self.gameMap = GameMap(canvasWidth, canvasHeight, mapWidth, mapHeight)
 
+    def get_map_tiles_len(self):
+        return len(list(x for x in self.game_all_entities() if type(x) is Entity))
+
+    def get_hero(self):
+        return self.game_all_entities()[self.get_hero_index()]
+
+    def game_all_entities(self):
+        return self.gameMap.entityContainer
+
+    def game_ent_width(self):
+        return int(self.gameMap.entityWidth)
+
+    def game_ent_height(self):
+        return int(self.gameMap.entityHeight)
+
     def populate_entities(self, inputHero):
         self.gameMap.entityContainer = []
         self.populate_tiles()
@@ -30,7 +45,6 @@ class GameLogic:
         hero.positionWidth = self.gameMap.mapOffSetWidth
         hero.positionHeight = self.gameMap.mapOffSetHeight
         self.gameMap.entityContainer.append(hero)
-
 
     def get_hero_index(self):
         hero = next(x for x in self.gameMap.entityContainer if type(x) is Hero)
@@ -71,8 +85,3 @@ class GameLogic:
 
         if type(descisor) is Entity:
             self.gameMap.entityContainer[self.get_hero_index()].positionHeight += heroMoveHeight
-
-
-log = GameLogic(600, 600, 500, 500)
-log.populate_entities(Hero())
-log.move_hero_vertical(log.gameMap.entityHeight)

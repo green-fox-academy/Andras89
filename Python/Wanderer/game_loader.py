@@ -1,5 +1,7 @@
 import pygame
-import entities
+
+from entities import Hero
+from game_logic import GameLogic
 
 canvasWidth = 600
 canvasHeight = 600
@@ -7,7 +9,8 @@ mapWidth = 500
 mapHeight = 500
 
 pygame.init()
-gM = entities.GameMap(canvasWidth, canvasHeight, mapWidth, mapHeight)
+logic = GameLogic(canvasWidth, canvasHeight, mapWidth, mapHeight)
+logic.populate_entities(Hero())
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -17,17 +20,17 @@ pygame.display.set_caption('Wanderer the RPG Game')
 clock = pygame.time.Clock()
 
 heroImgDown = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'),
-                                     (int(gM.entityWidth), int(gM.entityHeight)))
+                                     (logic.game_ent_width(), logic.game_ent_height()))
 heroImgUp = pygame.transform.scale(pygame.image.load('src/images/hero-up.gif'),
-                                   (int(gM.entityWidth), int(gM.entityHeight)))
+                                   (logic.game_ent_width(), logic.game_ent_height()))
 heroImgLeft = pygame.transform.scale(pygame.image.load('src/images/hero-left.gif'),
-                                     (int(gM.entityWidth), int(gM.entityHeight)))
+                                     (logic.game_ent_width(), logic.game_ent_height()))
 heroImgRight = pygame.transform.scale(pygame.image.load('src/images/hero-right.gif'),
-                                      (int(gM.entityWidth), int(gM.entityHeight)))
+                                      (logic.game_ent_width(), logic.game_ent_height()))
 floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'),
-                                  (int(gM.entityWidth), int(gM.entityHeight)))
+                                  (logic.game_ent_width(), logic.game_ent_height()))
 wallImg = pygame.transform.scale(pygame.image.load('src/images/wall.gif'),
-                                 (int(gM.entityWidth), int(gM.entityHeight)))
+                                 (logic.game_ent_width(), logic.game_ent_height()))
 
 
 def floor(x, y):
@@ -39,23 +42,23 @@ def wall(x, y):
 
 
 def hero(x, y):
-    if gM.entityContainer[gM.get_hero_index()].facing == 'L':
+    if logic.get_hero().facing == 'L':
         gameDisplay.blit(heroImgLeft, (x, y))
-    elif gM.entityContainer[gM.get_hero_index()].facing == 'R':
+    elif logic.get_hero().facing == 'R':
         gameDisplay.blit(heroImgRight, (x, y))
-    elif gM.entityContainer[gM.get_hero_index()].facing == 'U':
+    elif logic.get_hero().facing == 'U':
         gameDisplay.blit(heroImgUp, (x, y))
     else:
         gameDisplay.blit(heroImgDown, (x, y))
 
 
 def game_map():
-    for i in range(len(list(x for x in gM.entityContainer if type(x) is entities.Entity))):
-        if gM.entityContainer[i].canBePassed:
-            floor(gM.entityContainer[i].positionWidth, gM.entityContainer[i].positionHeight)
+    for i in range(logic.get_map_tiles_len()):
+        if logic.game_all_entities()[i].canBePassed:
+            floor(logic.game_all_entities()[i].positionWidth, logic.game_all_entities()[i].positionHeight)
         else:
-            wall(gM.entityContainer[i].positionWidth, gM.entityContainer[i].positionHeight)
-    hero(gM.entityContainer[gM.get_hero_index()].positionWidth, gM.entityContainer[gM.get_hero_index()].positionHeight)
+            wall(logic.game_all_entities()[i].positionWidth, logic.game_all_entities()[i].positionHeight)
+    hero(logic.get_hero().positionWidth, logic.get_hero().positionHeight)
 
 
 def game_loop():
@@ -70,13 +73,13 @@ def game_loop():
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            gM.move_hero_horizontal(-gM.entityWidth)
+            logic.move_hero_horizontal(-logic.game_ent_width())
         if keys[pygame.K_RIGHT]:
-            gM.move_hero_horizontal(gM.entityHeight)
+            logic.move_hero_horizontal(logic.game_ent_width())
         if keys[pygame.K_UP]:
-            gM.move_hero_vertical(-gM.entityHeight)
+            logic.move_hero_vertical(-logic.game_ent_height())
         if keys[pygame.K_DOWN]:
-            gM.move_hero_vertical(gM.entityHeight)
+            logic.move_hero_vertical(logic.game_ent_height())
 
         gameDisplay.fill(black)
         game_map()
