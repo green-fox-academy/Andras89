@@ -27,7 +27,7 @@ class GameMap:
         self.entityContainer = self.populate_entities()
 
     def populate_entities(self):
-        mapContainer = [x.strip() for x in open('src/map/MAPS.txt', encoding='utf-8')]
+        mapContainer = [x.strip() for x in open('src/map/MAPS.txt', encoding='utf-8-sig')]
         entities = []
 
         for i in range(10):
@@ -77,5 +77,5 @@ class GameMap:
         if type(descisor) is Entity:
             self.entityContainer[100].positionHeight += heroMoveHeight
 
-gameScape = GameMap(600, 600, 500, 500)
-gameScape.move_hero_horizontal(50)
+
+gLS = GameMap(600, 600, 500, 500)
