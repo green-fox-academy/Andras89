@@ -78,7 +78,7 @@ class GameMap:
                          x.canBePassed), 0)
 
         if type(descisor) is Entity:
-            self.entityContainer[100].positionWidth += heroMoveWidth
+            self.entityContainer[self.get_hero_index()].positionWidth += heroMoveWidth
 
     def move_hero_vertical(self, heroMoveHeight):
         if heroMoveHeight < 0:
@@ -95,4 +95,4 @@ class GameMap:
                          x.canBePassed), 0)
 
         if type(descisor) is Entity:
-            self.entityContainer[100].positionHeight += heroMoveHeight
+            self.entityContainer[self.get_hero_index()].positionHeight += heroMoveHeight
