@@ -8,18 +8,13 @@ class Entity:
 
 class Character(Entity):
     def __init__(self):
+        super().__init__()
         self.canMove = True
-        self.canBePassed = True
-        self.positionWidth = 0
-        self.positionHeight = 0
 
 
 class Hero(Character):
     def __init__(self):
-        self.canMove = True
-        self.canBePassed = True
-        self.positionWidth = 0
-        self.positionHeight = 0
+        super().__init__()
         self.facing = 'D'
 
 
