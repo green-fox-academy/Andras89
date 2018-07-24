@@ -17,12 +17,18 @@ gameDisplay = pygame.display.set_mode((canvasWidth, canvasHeight))
 pygame.display.set_caption('Wanderer the RPG Game')
 clock = pygame.time.Clock()
 
-floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-heroImgDown = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-heroImgUp = pygame.transform.scale(pygame.image.load('src/images/hero-up.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-heroImgLeft = pygame.transform.scale(pygame.image.load('src/images/hero-left.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-heroImgRight = pygame.transform.scale(pygame.image.load('src/images/hero-right.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-wallImg = pygame.transform.scale(pygame.image.load('src/images/wall.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgDown = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'),
+                                     (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgUp = pygame.transform.scale(pygame.image.load('src/images/hero-up.gif'),
+                                   (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgLeft = pygame.transform.scale(pygame.image.load('src/images/hero-left.gif'),
+                                     (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgRight = pygame.transform.scale(pygame.image.load('src/images/hero-right.gif'),
+                                      (int(gM.entityWidth), int(gM.entityHeight)))
+floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'),
+                                  (int(gM.entityWidth), int(gM.entityHeight)))
+wallImg = pygame.transform.scale(pygame.image.load('src/images/wall.gif'),
+                                 (int(gM.entityWidth), int(gM.entityHeight)))
 
 
 def floor(x, y):
@@ -45,7 +51,7 @@ def hero(x, y):
 
 
 def game_map():
-    for i in range(len(gM.entityContainer) - 1):
+    for i in range(len(list(x for x in gM.entityContainer if type(x) is entities.Entity))):
         if gM.entityContainer[i].canBePassed:
             floor(gM.entityContainer[i].positionWidth, gM.entityContainer[i].positionHeight)
         else:
