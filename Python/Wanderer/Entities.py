@@ -12,6 +12,14 @@ class Character(Entity):
         self.canBePassed = True
         self.positionWidth = 0
         self.positionHeight = 0
+
+
+class Hero(Character):
+    def __init__(self):
+        self.canMove = True
+        self.canBePassed = True
+        self.positionWidth = 0
+        self.positionHeight = 0
         self.facing = 'D'
 
 
@@ -47,7 +55,7 @@ class GameMap:
         return entities
 
     def populate_hero(self, entities):
-        hero = Character()
+        hero = Hero()
         hero.positionWidth = self.mapOffSetWidth
         hero.positionHeight = self.mapOffSetHeight
         entities.append(hero)
@@ -55,7 +63,7 @@ class GameMap:
         return entities
 
     def get_hero_index(self):
-        hero = next(x for x in self.entityContainer if type(x) == Character)
+        hero = next(x for x in self.entityContainer if type(x) is Hero)
         heroIndex = self.entityContainer.index(hero)
 
         return heroIndex
@@ -93,6 +101,3 @@ class GameMap:
 
         if type(descisor) is Entity:
             self.entityContainer[100].positionHeight += heroMoveHeight
-
-
-gLS = GameMap(600, 600, 500, 500)

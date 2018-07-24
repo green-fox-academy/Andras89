@@ -61,7 +61,6 @@ def game_loop():
     gameExit = False
 
     while not gameExit:
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 gameExit = True
