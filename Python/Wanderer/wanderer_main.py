@@ -13,7 +13,8 @@ mapOffSetHeight = (canvasHeight - mapHeight)/2
 heroPosWidth = mapOffSetWidth
 heroPosHeight = mapOffSetHeight
 
-white = (0, 0, 0)
+black = (0, 0, 0)
+white = (255, 255, 255)
 
 gameDisplay = pygame.display.set_mode((canvasWidth, canvasHeight))
 pygame.display.set_caption('Wanderer the RPG Game')
@@ -31,7 +32,7 @@ def hero(x, y):
     gameDisplay.blit(heroImg, (x, y))
 
 
-def gameMap():
+def game_map():
     for i in range(10):
         for j in range(10):
             floor(mapOffSetWidth+(j * entityWidth), mapOffSetHeight+(i * entityHeight))
@@ -56,8 +57,8 @@ while not gameExit:
 
         print(event)
 
-    gameDisplay.fill(white)
-    gameMap()
+    gameDisplay.fill(black)
+    game_map()
     hero(heroPosWidth, heroPosHeight)
     pygame.display.update()
     clock.tick(60)
