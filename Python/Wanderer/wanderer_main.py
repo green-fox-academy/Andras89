@@ -44,6 +44,15 @@ while not gameExit:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameExit = True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                heroPosWidth -= entityWidth
+            if event.key == pygame.K_RIGHT:
+                heroPosWidth += entityWidth
+            if event.key == pygame.K_UP:
+                heroPosHeight -= entityHeight
+            if event.key == pygame.K_DOWN:
+                heroPosHeight += entityHeight
 
         print(event)
 
