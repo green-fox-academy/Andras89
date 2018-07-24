@@ -18,7 +18,10 @@ pygame.display.set_caption('Wanderer the RPG Game')
 clock = pygame.time.Clock()
 
 floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
-heroImg = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgDown = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgUp = pygame.transform.scale(pygame.image.load('src/images/hero-up.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgLeft = pygame.transform.scale(pygame.image.load('src/images/hero-left.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
+heroImgRight = pygame.transform.scale(pygame.image.load('src/images/hero-right.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
 wallImg = pygame.transform.scale(pygame.image.load('src/images/wall.gif'), (int(gM.entityWidth), int(gM.entityHeight)))
 
 
@@ -31,7 +34,14 @@ def wall(x, y):
 
 
 def hero(x, y):
-    gameDisplay.blit(heroImg, (x, y))
+    if gM.entityContainer[gM.get_hero_index()].facing == 'L':
+        gameDisplay.blit(heroImgLeft, (x, y))
+    elif gM.entityContainer[gM.get_hero_index()].facing == 'R':
+        gameDisplay.blit(heroImgRight, (x, y))
+    elif gM.entityContainer[gM.get_hero_index()].facing == 'U':
+        gameDisplay.blit(heroImgUp, (x, y))
+    else:
+        gameDisplay.blit(heroImgDown, (x, y))
 
 
 def game_map():

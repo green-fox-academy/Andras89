@@ -12,6 +12,7 @@ class Character(Entity):
         self.canBePassed = True
         self.positionWidth = 0
         self.positionHeight = 0
+        self.facing = 'D'
 
 
 class GameMap:
@@ -60,6 +61,11 @@ class GameMap:
         return heroIndex
 
     def move_hero_horizontal(self, heroMoveWidth):
+        if heroMoveWidth < 0:
+            self.entityContainer[self.get_hero_index()].facing = 'L'
+        if heroMoveWidth > 0:
+            self.entityContainer[self.get_hero_index()].facing = 'R'
+
         heroPosWidth = self.entityContainer[self.get_hero_index()].positionWidth
         heroPosHeight = self.entityContainer[self.get_hero_index()].positionHeight
         selectedWidth = heroPosWidth + heroMoveWidth
@@ -72,6 +78,11 @@ class GameMap:
             self.entityContainer[100].positionWidth += heroMoveWidth
 
     def move_hero_vertical(self, heroMoveHeight):
+        if heroMoveHeight < 0:
+            self.entityContainer[self.get_hero_index()].facing = 'U'
+        if heroMoveHeight > 0:
+            self.entityContainer[self.get_hero_index()].facing = 'D'
+
         heroPosWidth = self.entityContainer[self.get_hero_index()].positionWidth
         heroPosHeight = self.entityContainer[self.get_hero_index()].positionHeight
         selectedHeight = heroPosHeight + heroMoveHeight
