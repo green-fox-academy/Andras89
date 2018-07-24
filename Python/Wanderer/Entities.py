@@ -30,8 +30,8 @@ class GameMap:
         mapContainer = [x.strip() for x in open('src/map/MAPS.txt', encoding='utf-8-sig')]
         entities = []
 
-        for i in range(10):
-            for j in range(10):
+        for i in range(int(self.mapHeight / self.entityHeight)):
+            for j in range(int(self.mapWidth / self.entityWidth)):
                 temp = Entity()
                 temp.positionWidth = self.mapOffSetWidth + (j * self.entityWidth)
                 temp.positionHeight = self.mapOffSetHeight + (i * self.entityHeight)
@@ -53,9 +53,15 @@ class GameMap:
 
         return entities
 
+    def get_hero_index(self):
+        hero = next(x for x in self.entityContainer if type(x) == Character)
+        heroIndex = self.entityContainer.index(hero)
+
+        return heroIndex
+
     def move_hero_horizontal(self, heroMoveWidth):
-        heroPosWidth = self.entityContainer[100].positionWidth
-        heroPosHeight = self.entityContainer[100].positionHeight
+        heroPosWidth = self.entityContainer[self.get_hero_index()].positionWidth
+        heroPosHeight = self.entityContainer[self.get_hero_index()].positionHeight
         selectedWidth = heroPosWidth + heroMoveWidth
 
         descisor = next((x for x in self.entityContainer if x.positionWidth == selectedWidth and
@@ -66,8 +72,8 @@ class GameMap:
             self.entityContainer[100].positionWidth += heroMoveWidth
 
     def move_hero_vertical(self, heroMoveHeight):
-        heroPosWidth = self.entityContainer[100].positionWidth
-        heroPosHeight = self.entityContainer[100].positionHeight
+        heroPosWidth = self.entityContainer[self.get_hero_index()].positionWidth
+        heroPosHeight = self.entityContainer[self.get_hero_index()].positionHeight
         selectedHeight = heroPosHeight + heroMoveHeight
 
         descisor = next((x for x in self.entityContainer if x.positionHeight == selectedHeight and
