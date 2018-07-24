@@ -20,8 +20,8 @@ gameDisplay = pygame.display.set_mode((canvasWidth, canvasHeight))
 pygame.display.set_caption('Wanderer the RPG Game')
 clock = pygame.time.Clock()
 
-floorImg = pygame.transform.scale(pygame.image.load('src/floor.gif'), (int(entityWidth), int(entityHeight)))
-heroImg = pygame.transform.scale(pygame.image.load('src/hero-down.gif'), (int(entityWidth), int(entityHeight)))
+floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'), (int(entityWidth), int(entityHeight)))
+heroImg = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'), (int(entityWidth), int(entityHeight)))
 
 
 def floor(x, y):
