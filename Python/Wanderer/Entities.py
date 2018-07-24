@@ -65,6 +65,17 @@ class GameMap:
         if type(descisor) is Entity:
             self.entityContainer[100].positionWidth += heroMoveWidth
 
+    def move_hero_vertical(self, heroMoveHeight):
+        heroPosWidth = self.entityContainer[100].positionWidth
+        heroPosHeight = self.entityContainer[100].positionHeight
+        selectedHeight = heroPosHeight + heroMoveHeight
+
+        descisor = next((x for x in self.entityContainer if x.positionHeight == selectedHeight and
+                         x.positionWidth == heroPosWidth and
+                         x.canBePassed), 0)
+
+        if type(descisor) is Entity:
+            self.entityContainer[100].positionHeight += heroMoveHeight
 
 gameScape = GameMap(600, 600, 500, 500)
 gameScape.move_hero_horizontal(50)
