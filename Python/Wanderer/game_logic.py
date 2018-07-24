@@ -58,12 +58,10 @@ class GameLogic:
         if heroMoveWidth > 0:
             self.gameMap.entityContainer[self.get_hero_index()].facing = 'R'
 
-        heroPosWidth = self.gameMap.entityContainer[self.get_hero_index()].positionWidth
-        heroPosHeight = self.gameMap.entityContainer[self.get_hero_index()].positionHeight
-        selectedWidth = heroPosWidth + heroMoveWidth
+        selectedWidth = self.get_hero().positionWidth + heroMoveWidth
 
         descisor = next((x for x in self.gameMap.entityContainer if x.positionWidth == selectedWidth and
-                         x.positionHeight == heroPosHeight and
+                         x.positionHeight == self.get_hero().positionHeight and
                          x.canBePassed), 0)
 
         if type(descisor) is Entity:
@@ -75,12 +73,10 @@ class GameLogic:
         if heroMoveHeight > 0:
             self.gameMap.entityContainer[self.get_hero_index()].facing = 'D'
 
-        heroPosWidth = self.gameMap.entityContainer[self.get_hero_index()].positionWidth
-        heroPosHeight = self.gameMap.entityContainer[self.get_hero_index()].positionHeight
-        selectedHeight = heroPosHeight + heroMoveHeight
+        selectedHeight = self.get_hero().positionHeight + heroMoveHeight
 
         descisor = next((x for x in self.gameMap.entityContainer if x.positionHeight == selectedHeight and
-                         x.positionWidth == heroPosWidth and
+                         x.positionWidth == self.get_hero().positionWidth and
                          x.canBePassed), 0)
 
         if type(descisor) is Entity:
