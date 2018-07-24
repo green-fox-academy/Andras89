@@ -65,19 +65,20 @@ def game_loop():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 gameExit = True
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
-                    gM.move_hero_horizontal(-gM.entityWidth)
-                if event.key == pygame.K_RIGHT:
-                    gM.move_hero_horizontal(gM.entityHeight)
-                if event.key == pygame.K_UP:
-                    gM.move_hero_vertical(-gM.entityHeight)
-                if event.key == pygame.K_DOWN:
-                    gM.move_hero_vertical(gM.entityHeight)
 
             print(event)
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            gM.move_hero_horizontal(-gM.entityWidth)
+        if keys[pygame.K_RIGHT]:
+            gM.move_hero_horizontal(gM.entityHeight)
+        if keys[pygame.K_UP]:
+            gM.move_hero_vertical(-gM.entityHeight)
+        if keys[pygame.K_DOWN]:
+            gM.move_hero_vertical(gM.entityHeight)
 
         gameDisplay.fill(black)
         game_map()
         pygame.display.update()
-        clock.tick(60)
+        clock.tick(9)
