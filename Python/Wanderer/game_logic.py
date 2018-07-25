@@ -1,9 +1,12 @@
-from entities import GameMap, Entity, Hero
+from random import randint
+
+from entities import GameMap, Entity, Hero, Skeleton
 
 
 class GameLogic:
     def __init__(self, canvasWidth, canvasHeight, mapWidth, mapHeight):
         self.gameMap = GameMap(canvasWidth, canvasHeight, mapWidth, mapHeight)
+        self.skeletonCount = [2, 5]
         self.entityContainer = []
 
     def get_map_tiles_len(self):
@@ -39,6 +42,10 @@ class GameLogic:
                 else:
                     temp.canBePassed = False
                     self.entityContainer.append(temp)
+
+    def populate_skeletons(self):
+        for i in range(randint(self.skeletonCount[0], self.skeletonCount[1])):
+            self.try_place_character(Skeleton())
 
     def populate_hero(self, inputHero):
         hero = inputHero
@@ -81,3 +88,21 @@ class GameLogic:
 
         if type(selector) is Entity:
             self.entityContainer[self.get_hero_index()].positionHeight += heroMoveHeight
+
+    def try_place_character(self, character):
+        prohibitor = False
+
+        while not prohibitor:
+            character.positionWidth = randint(0, self.gameMap.mapWidth / self.game_ent_width()) * self.game_ent_width()
+            character.positionHeight = randint(0,
+                                               self.gameMap.mapHeight / self.game_ent_height()) * self.game_ent_height()
+
+            chosen = list([x for x in self.game_all_entities() if
+                           x.positionWidth == character.positionWidth and
+                           x.positionHeight == character.positionHeight and
+                           x.canBePassed])
+
+            if len(chosen) == 1:
+                prohibitor = True
+
+        self.entityContainer.append(character)
