@@ -22,7 +22,7 @@ clock = pygame.time.Clock()
 
 def load_image(filePath):
     return pygame.transform.scale(pygame.image.load(filePath),
-                                  logic.game_ent_width(), logic.game_ent_height())
+                                  (logic.game_ent_width(), logic.game_ent_height()))
 
 
 heroImgDown = load_image('src/images/hero-down.gif')
