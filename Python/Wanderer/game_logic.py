@@ -21,6 +21,9 @@ class GameLogic:
     def get_map_tiles_len(self):
         return len(list(x for x in self.game_all_entities() if type(x) is Entity))
 
+    def get_boss(self):
+        return self.game_all_entities()[self.get_boss_index()]
+
     def get_hero(self):
         return self.game_all_entities()[self.get_hero_index()]
 

@@ -46,6 +46,10 @@ def skeleton(x, y):
     gameDisplay.blit(skeletonImg, (x, y))
 
 
+def boss(x, y):
+    gameDisplay.blit(bossImg, (x, y))
+
+
 def hero(x, y):
     if logic.get_hero().facing == 'L':
         gameDisplay.blit(heroImgLeft, (x, y))
@@ -67,6 +71,7 @@ def game_map():
     for i in range(logic.get_first_skeleton_index(), logic.get_first_skeleton_index() + logic.get_skeletons_len()):
         skeleton(logic.game_all_entities()[i].positionWidth, logic.game_all_entities()[i].positionHeight)
 
+    boss(logic.get_boss().positionWidth, logic.get_boss().positionHeight)
     hero(logic.get_hero().positionWidth, logic.get_hero().positionHeight)
 
 
