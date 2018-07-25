@@ -19,18 +19,20 @@ gameDisplay = pygame.display.set_mode((canvasWidth, canvasHeight))
 pygame.display.set_caption('Wanderer the RPG Game')
 clock = pygame.time.Clock()
 
-heroImgDown = pygame.transform.scale(pygame.image.load('src/images/hero-down.gif'),
-                                     (logic.game_ent_width(), logic.game_ent_height()))
-heroImgUp = pygame.transform.scale(pygame.image.load('src/images/hero-up.gif'),
-                                   (logic.game_ent_width(), logic.game_ent_height()))
-heroImgLeft = pygame.transform.scale(pygame.image.load('src/images/hero-left.gif'),
-                                     (logic.game_ent_width(), logic.game_ent_height()))
-heroImgRight = pygame.transform.scale(pygame.image.load('src/images/hero-right.gif'),
-                                      (logic.game_ent_width(), logic.game_ent_height()))
-floorImg = pygame.transform.scale(pygame.image.load('src/images/floor.gif'),
-                                  (logic.game_ent_width(), logic.game_ent_height()))
-wallImg = pygame.transform.scale(pygame.image.load('src/images/wall.gif'),
-                                 (logic.game_ent_width(), logic.game_ent_height()))
+
+def load_image(filePath):
+    return pygame.transform.scale(pygame.image.load(filePath),
+                                  logic.game_ent_width(), logic.game_ent_height())
+
+
+heroImgDown = load_image('src/images/hero-down.gif')
+heroImgUp = load_image('src/images/hero-up.gif')
+heroImgLeft = load_image('src/images/hero-left.gif')
+heroImgRight = load_image('src/images/hero-right.gif')
+floorImg = load_image('src/images/floor.gif')
+wallImg = load_image('src/images/wall.gif')
+skeletonImg = load_image('src/images/skeleton.gif')
+bossImg = load_image('src/images/boss.gif')
 
 
 def floor(x, y):
