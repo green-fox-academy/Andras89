@@ -90,9 +90,9 @@ class GameLogic:
             self.entityContainer[self.get_hero_index()].positionHeight += heroMoveHeight
 
     def try_place_character(self, character):
-        prohibitor = False
+        prohibition = False
 
-        while not prohibitor:
+        while not prohibition:
             character.positionWidth = randint(0, self.gameMap.mapWidth / self.game_ent_width()) * self.game_ent_width()
             character.positionHeight = randint(0,
                                                self.gameMap.mapHeight / self.game_ent_height()) * self.game_ent_height()
@@ -103,6 +103,6 @@ class GameLogic:
                            x.canBePassed])
 
             if len(chosen) == 1:
-                prohibitor = True
+                prohibition = True
 
         self.entityContainer.append(character)
