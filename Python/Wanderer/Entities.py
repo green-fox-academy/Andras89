@@ -10,6 +10,13 @@ class Character(Entity):
     def __init__(self):
         super().__init__()
         self.canMove = True
+        self.hasKey = False
+
+
+class Skeleton(Entity):
+    def __init__(self):
+        super().__init__()
+        self.hasKey = True
 
 
 class Hero(Character):

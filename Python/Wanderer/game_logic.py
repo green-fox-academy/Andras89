@@ -22,7 +22,6 @@ class GameLogic:
         return int(self.gameMap.entityHeight)
 
     def populate_entities(self, inputHero):
-        self.gameMap.entityContainer = []
         self.populate_tiles()
         self.populate_hero(inputHero)
 
