@@ -28,4 +28,3 @@ class GameMap:
         self.entityHeight = mapHeight / 10
         self.mapOffSetWidth = (canvasWidth - mapWidth) / 2
         self.mapOffSetHeight = (canvasHeight - mapHeight) / 2
-        self.entityContainer = []
