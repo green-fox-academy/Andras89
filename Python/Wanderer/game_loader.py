@@ -13,7 +13,6 @@ logic = GameLogic(canvasWidth, canvasHeight, mapWidth, mapHeight)
 logic.populate_entities(Hero())
 
 black = (0, 0, 0)
-white = (255, 255, 255)
 
 gameDisplay = pygame.display.set_mode((canvasWidth, canvasHeight))
 pygame.display.set_caption('Wanderer the RPG Game')

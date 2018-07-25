@@ -1,6 +1,6 @@
 from random import randint
 
-from entities import GameMap, Entity, Hero, Skeleton
+from entities import GameMap, Entity, Hero, Skeleton, Boss
 
 
 class GameLogic:
@@ -37,6 +37,7 @@ class GameLogic:
         self.populate_tiles()
         self.populate_hero(inputHero)
         self.populate_skeletons()
+        self.populate_boss()
 
     def populate_tiles(self):
         mapContainer = [x.strip() for x in open('src/map/MAPS.txt', encoding='utf-8-sig')]
@@ -57,11 +58,21 @@ class GameLogic:
         for i in range(randint(self.skeletonCount[0], self.skeletonCount[1])):
             self.try_place_character(Skeleton())
 
+    def populate_boss(self):
+        for i in range(randint(self.skeletonCount[0], self.skeletonCount[1])):
+            self.try_place_character(Boss())
+
     def populate_hero(self, inputHero):
         hero = inputHero
         hero.positionWidth = self.gameMap.mapOffSetWidth
         hero.positionHeight = self.gameMap.mapOffSetHeight
         self.entityContainer.append(hero)
+
+    def get_boss_index(self):
+        boss = next(x for x in self.entityContainer if type(x) is Boss)
+        bossIndex = self.entityContainer.index(boss)
+
+        return bossIndex
 
     def get_hero_index(self):
         hero = next(x for x in self.entityContainer if type(x) is Hero)

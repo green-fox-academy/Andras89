@@ -13,10 +13,15 @@ class Character(Entity):
         self.hasKey = False
 
 
-class Skeleton(Entity):
+class Skeleton(Character):
     def __init__(self):
         super().__init__()
         self.hasKey = True
+
+
+class Boss(Character):
+    def __init__(self):
+        super().__init__()
 
 
 class Hero(Character):
