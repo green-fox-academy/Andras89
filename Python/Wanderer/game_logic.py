@@ -9,6 +9,15 @@ class GameLogic:
         self.skeletonCount = [2, 5]
         self.entityContainer = []
 
+    def get_first_skeleton_index(self):
+        skeleton = next(x for x in self.entityContainer if type(x) is Skeleton)
+        skeletonIndex = self.entityContainer.index(skeleton)
+
+        return skeletonIndex
+
+    def get_skeletons_len(self):
+        return len(list(x for x in self.game_all_entities() if type(x) is Skeleton))
+
     def get_map_tiles_len(self):
         return len(list(x for x in self.game_all_entities() if type(x) is Entity))
 
@@ -27,6 +36,7 @@ class GameLogic:
     def populate_entities(self, inputHero):
         self.populate_tiles()
         self.populate_hero(inputHero)
+        self.populate_skeletons()
 
     def populate_tiles(self):
         mapContainer = [x.strip() for x in open('src/map/MAPS.txt', encoding='utf-8-sig')]
